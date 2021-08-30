@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-$root = '\App\Http\Controllers';
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +16,3 @@ $root = '\App\Http\Controllers';
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
-Route::get('/app/testing', $root . '\app\testing\index@main');
-
-// Route::get('/app/testing', function()
-// {
-//     return 'ok';
-// });

@@ -3,9 +3,6 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -25,6 +22,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontFlash = [
+        'current_password',
         'password',
         'password_confirmation',
     ];
@@ -39,39 +37,5 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
-    }
-
-    //render
-    public function render($request, Throwable $exception)
-    {
-
-
-        if ($exception)
-        {
-
-
-            $Config = new Config;
-            $status = $exception->getStatusCode();
-
-
-            $data = [
-                'URI'       =>  $Config->URI(),
-                'code'       =>  $status,
-                'content'       =>  $status === 404 ? 'Halaman tidak ditemukan' : 'Opsss... Halaman bermasalah'
-            ];
-
-
-            return response()->view('error.page',$data,$status);
-
-
-        }
-
-
-
-        
-        return parent::render($request, $exception);
-
-    
-        
     }
 }
