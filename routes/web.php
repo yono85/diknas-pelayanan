@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+$root = '\App\Http\Controllers';
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', $root . '\front\index@main');
+
+Route::get('/login', $root . '\access\index@login');
+Route::get('/register', $root . '\access\index@register');
+Route::get('/forgetpassword', $root . '\access\index@forgetpassword');
+Route::get('/changepassword', $root . '\access\index@pagechangepassword');
+
+
+Route::group(['prefix' => '/dashboard'], function() use ($root)
+{
+
 });
