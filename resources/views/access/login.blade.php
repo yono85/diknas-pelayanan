@@ -108,14 +108,6 @@ $(document).ready(function()
     });
 
 
-    $.validator.addMethod("customemail", function(t, n)
-    {
-            t=t.trim();
-            var r= $(n).prop("required"),
-            i=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(t);
-            return r?""!==t&&i:""===t||i
-    }, "Sorry, I've enabled very strict email validation");
-
     var validateProduct = 
     {
         rules:{
@@ -125,12 +117,12 @@ $(document).ready(function()
             },
             password:{
                 required:!0,
-                // minlength:6,
+                minlength:6,
                 normalizer:r,
             }
         },
         messages:{
-            email:'Isikan alamat email',
+            email:'Isikan alamat email valid',
             password:'Password sekurangnya 6 karakter'
         },
         errorPlacement:function(t,n)
@@ -146,7 +138,7 @@ $(document).ready(function()
         button = form.find('button.cmd-submit');
 
         form.find('label.error').remove();
-        form.find('.error').removeClass('.error');
+        form.find('.error').removeClass('error');
 
         if( button.attr('role') === 'off')
         {
@@ -159,13 +151,15 @@ $(document).ready(function()
             $t.success(function(n)
             {
                 // console.log(n);
-                button.attr('role', 'off');
-                form.attr('role', 'false');
+                // button.attr('role', 'off');
+                // form.attr('role', 'false');
+
+                // window.location.href = '/dashboard';
             });
             $t.error(function(n)
             {
                 var resp = n.responseJSON;
-                console.log(resp);
+                // console.log(resp);
                 if(n.status === 500)
                 {
                     //

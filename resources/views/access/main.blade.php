@@ -114,6 +114,7 @@
 
 <script src="{{$apps['URI']}}/assets/js/jquery-1.12.4.min.js"></script>
 <script src="{{$apps['URI']}}/assets/js/dashboard/jquery.validate.js"></script>
+<script src="{{$apps['URI']}}/assets/js/validate-custome.js"></script>
 <!-- <script src="{{$apps['URI']}}/assets/js/access/animate.js" type="text/javascript"></script> -->
 
 

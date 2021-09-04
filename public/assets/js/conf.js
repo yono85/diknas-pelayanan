@@ -1,9 +1,9 @@
-// form function
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': config.apps.X_CSRF_TOKEN
-    }
-});
+// // form function
+// $.ajaxSetup({
+//     headers: {
+//         'X-CSRF-TOKEN': config.apps.X_CSRF_TOKEN
+//     }
+// });
 
 var currentURL = (document.URL),
 partURL = currentURL.split("/")[3],
@@ -34,10 +34,9 @@ function getCookie(cname)
         }
         if (c.indexOf(name) == 0) 
         {
-            // JSON.parse(e, true);
+
             return JSON.parse(c.substring(name.length, c.length));
-        
-        // return decodedCookie;
+    
         }
     }
 
@@ -72,7 +71,6 @@ function checkLogout()
     {
         deleteCookies();
         location.href = config.apps.URL + '/login';
-
     }
 
 }
@@ -94,7 +92,6 @@ function infologin(e)
 {
 
     // console.log(e);
-    
     var response = e; //JSON.parse(e, true);
     $('#account-image').attr('src', response.account.image);
     $('#account-logout').attr('href', config.apps.URL_API + '/api/logout?token=' + response.token);
@@ -105,7 +102,6 @@ function infologin(e)
 
 function getaccount()
 {
-
     var cookie = getCookie(config.apps.cookie_name);
 
     return cookie.account;
@@ -114,7 +110,6 @@ function getaccount()
 // get token
 function getToken()
 {
-
     if( getCookie(config.apps.cookie_name) !== "" )
     {
         var token = getCookie(config.apps.cookie_name);
@@ -200,15 +195,11 @@ function getRefreshCookie(e)
             // console.log(n);
             // deleteCookies();
             // location.href = config.apps.URL + '/login';
-
             setsessionlogin();
         }
     });
 
 }
 
-var r = function(t)
-{
-    return t.trim()
-}
+
 

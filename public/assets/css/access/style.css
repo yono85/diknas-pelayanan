@@ -902,7 +902,7 @@ body{
     padding: 10px 12px;
     z-index: 4;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 11px;
     background-color: #c5291e;
     color: #fff;
     top: -25px;
@@ -925,9 +925,32 @@ body{
 .are-hov.error .label-error, .are-hov.error label.error{
     display: inline-block;
 }
+
+.label-error a, label.error a{
+    color: rgb(99, 196, 252);
+    font-size: 11px;
+}
 /* end new */
 
 
+/* alert */
+
+.alert-error, .alert-success{
+    font-size: 12px;
+}
+
+.alert-error{
+    background-color: rgb(209, 54, 54) !important;
+    color: #f8f8f8 !important;
+    text-shadow: 0px 1px 0px #333 !important;
+}
+
+.alert-error button.close{
+    color: #f8f8f8 !important;
+    text-shadow: 0px 1px 0px #333 !important;
+    outline: none !important;
+}
+/* end alert */
 
 
 .show .animate-zoom {animation:animatezoom 0.6s}
@@ -987,6 +1010,11 @@ body{
 
     .in-box-acs{
         padding-top: 25px;
+    }
+
+    .alert-error, .alert-success{
+        right: 2px !important;
+        width: calc(100% - 4px);
     }
 }
 

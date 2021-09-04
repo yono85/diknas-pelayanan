@@ -1,7 +1,7 @@
 @extends('access.main')
 
 @section('content')
-<form action="{{$apps['URL_API']}}/api/resetpassword" id="form-repass" class="login100-form validate-form">
+<form action="{{$apps['URL_API']}}/api/forgetpassword" id="form-resetpassword" class="login100-form validate-form">
 
     <div class="div">
         <div class="ic-accss">
@@ -40,7 +40,7 @@
             <div class="div inner">
 
                 <div class="div">
-                    <button class="nw-button green" role="off" tabindex="2" >Kirim</button>
+                    <button class="nw-button green cmd-submit" role="off" tabindex="2" >Kirim</button>
                 </div>
 
                 <div class="div">
@@ -87,4 +87,110 @@
     </div>
     <div class="bck"></div>
 </div>
+
+<script>
+$(document).ready(function()
+{
+    $('#form-resetpassword').submit(function(e)
+    {
+        e.preventDefault();
+        var form = $(this);
+
+        form.validate(validateProduct);
+        form.valid();
+
+        cekingsubmit = form.valid();
+        if( cekingsubmit )
+        {
+            submitForm(form);
+        }
+
+    });
+
+
+    var validateProduct = 
+    {
+        rules:{
+            email:{
+                required:!0,
+                customemail:!0
+            }
+        },
+        messages:{
+            email:'Isikan alamat email valid'
+        },
+        errorPlacement:function(t,n)
+        {
+            $(n).parent('.are-hov').addClass('error');
+            $(n).parent('.are-hov').append(t);
+        }
+    }
+
+
+    function submitForm(form)
+    {
+        var form,
+        button = form.find('button.cmd-submit');
+
+        form.find('label.error').remove();
+        form.find('.error').removeClass('error');
+
+        if( button.attr('role') === 'off')
+        {
+            button.attr('role', 'on');
+            form.attr('role', 'true');
+
+            var $URL = form.attr('action');
+            var $t = FormSending(form,"POST","","",$URL);
+
+            $t.success(function(n)
+            {
+                console.log(n);
+                button.attr('role', 'off');
+                form.attr('role', 'false');
+
+                $('body').find('.msgbox-success .lbl-email').html(form.find('input[name="email"]').val());
+                form.find('input[name="email"]').val('');
+                form.find('input[name="email"]').parent('.are-hov').attr('role', 'off');
+                $('body').find('.msgbox-success').show();
+
+
+            });
+            $t.error(function(n)
+            {
+                var resp = n.responseJSON;
+                // console.log(resp);
+                if(n.status === 500 || n.status === 401)
+                {
+                    //
+                    button.attr('role', 'off');
+                    form.attr('role', 'false');
+                    flagnotif('error', resp.message);
+                    return;
+                }
+
+                form.find('*[name="'+resp.focus+'"]').addClass('error');
+                form.find('*[name="'+resp.focus+'"]').parent('div').addClass('error');
+                form.find('*[name="'+resp.focus+'"]').parent('div').append('<label class="error">'+resp.message+'</label>');
+                button.attr('role', 'off');
+                form.attr('role', 'false');
+                form.find('*[name="'+resp.focus+'"]').focus();
+            });
+        }
+    }
+
+
+    $('body').find('.msgbox-success a.close').click(function(e)
+    {
+        e.preventDefault();
+        if($(this).attr('role') === 'off')
+        {
+            $(this).attr('role', 'on');
+            $(this).parents('.msgbox-success').hide();
+            $(this).attr('role', 'off');
+        }
+    })
+    return false;
+});
+</script>
 @endsection

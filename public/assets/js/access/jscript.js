@@ -2,9 +2,6 @@
 
 $(document).ready(function()
 {
-
-    
-
     //
     $('.fcs').focus(function(e){
         var text = $(this),
@@ -32,57 +29,57 @@ $(document).ready(function()
     });
 
     //validate
-    $("body").on("keyup", ".fcs", function()
-    {
-        var text = $(this),
-        area = text.parent("div"),
-        form = text.parents("form"),
-        type = form.find('input[name="type"]').val(),
-        email = form.find("input[name='email']");
+    // $("body").on("keyup", ".fcs", function()
+    // {
+    //     var text = $(this),
+    //     area = text.parent("div"),
+    //     form = text.parents("form"),
+    //     type = form.find('input[name="type"]').val(),
+    //     email = form.find("input[name='email']");
         
-        area.find(".btn-txt-r").hide();
+    //     area.find(".btn-txt-r").hide();
         
-        form.find('.fcs').removeClass('txt-error-s');
-        text.parents('.error').removeClass('error');
-        // form.find('.f-error').css({'display':'none'});
+    //     form.find('.fcs').removeClass('txt-error-s');
+    //     text.parents('.error').removeClass('error');
+    //     // form.find('.f-error').css({'display':'none'});
 
-        //
-        if( type === 'changepassword')
-        {  
-            var password = form.find('input[name="password"]'),
-            repassword = form.find('input[name="repassword"]');
+    //     //
+    //     // if( type === 'changepassword')
+    //     // {  
+    //     //     var password = form.find('input[name="password"]'),
+    //     //     repassword = form.find('input[name="repassword"]');
 
-            if( $.trim(password.val()).length < 8 )
-            {
-                password.parent('.are-hov').addClass('error');
-                password.parent('.are-hov').find('.label-error').html('Password sekurangnya 8 karakter');
-                return;
-            }
-            else if( $.trim(repassword.val() ) !== $.trim(password.val()) )
-            {
-                repassword.parent('.are-hov').addClass('error');
-                repassword.parent('.are-hov').find('.label-error').html('Re-Password harus sama dangan Password');
-                return;
-            }
-            else
-            {
-                return;
-            }
-            // console.log('change');
-            // return;
-        }
+    //     //     if( $.trim(password.val()).length < 8 )
+    //     //     {
+    //     //         password.parent('.are-hov').addClass('error');
+    //     //         password.parent('.are-hov').find('.label-error').html('Password sekurangnya 8 karakter');
+    //     //         return;
+    //     //     }
+    //     //     else if( $.trim(repassword.val() ) !== $.trim(password.val()) )
+    //     //     {
+    //     //         repassword.parent('.are-hov').addClass('error');
+    //     //         repassword.parent('.are-hov').find('.label-error').html('Re-Password harus sama dangan Password');
+    //     //         return;
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         return;
+    //     //     }
+    //     //     // console.log('change');
+    //     //     // return;
+    //     // }
 
-        // if( $.trim( text.val() ) !== '' && validateEmail(email.val()) )
-        // {
+    //     // if( $.trim( text.val() ) !== '' && validateEmail(email.val()) )
+    //     // {
 
-        //     area.find(".btn-txt-r").show();
-        // }
-        // else
-        // {
-        //     form.find("button").attr("disabled", "disabled");
-        // }
+    //     //     area.find(".btn-txt-r").show();
+    //     // }
+    //     // else
+    //     // {
+    //     //     form.find("button").attr("disabled", "disabled");
+    //     // }
 
-    });
+    // });
 
     //clear
     $("body").on("click", "a[class*='clear']", function(e)
@@ -180,15 +177,15 @@ $(document).ready(function()
         }
     });
 
-    function validateEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
+    // function validateEmail(email) {
+    //     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(email);
+    // }
 
     $('body').on('submit', 'form', function(){
         return false;
     });
 
-    // $('body').find('.fcs1').focus();
+    $('body').find('.fcs1').focus();
     return false;
 });
