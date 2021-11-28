@@ -68,7 +68,7 @@
                                                                 </div>
                                                             </div>
             
-                                                            <div class="div ar-ctn area-select-seksi">
+                                                            <div class="div ar-ctn area-select-seksi hide">
                                                                 <!-- <div class="in-arctn"> -->
             
                                                                     <div class="ddwn area-ddwn ar-content keep">
@@ -93,6 +93,33 @@
                                                                     <!-- labelerror -->
                                                                 <!-- </div> -->
                                                             </div>
+
+                                                            <div class="div ar-ctn area-select-pelayanan hide">
+                                                                <!-- <div class="in-arctn"> -->
+            
+                                                                    <div class="ddwn area-ddwn ar-content keep">
+            
+                                                                        <button class="btn br-rds8 cddwn fcs" disabled="disabled" role="off">
+                                                                            <label><span class="fsize14 color-black">Pilih Pelayanan</span></label>
+                                                                        </button>
+            
+                                                                        <div class="ddwn-pg area-ddwn-page">
+                                                                            <ul>
+                                                                                <!-- list -->
+                                                                                <li aria-selected="false">
+                                                                                    <button role="off" dataid="1" data-modal="" data-modal-label="" data-get="" class="cmd-status"><span>PNS</span></button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+            
+                                                                        <input type="hidden" class="value-dropdown" name="pelayanan_selected" value="">
+            
+                                                                    </div>
+            
+                                                                    <!-- labelerror -->
+                                                                <!-- </div> -->
+                                                            </div>
+
                                                             <div class="div ar-ctn ar-content mg-b0" role="false">
                                                                 <div class="">
                                                                     <textarea name="text" class="fcs" placeholder="Tuliskan detail pengajuan tiket..."></textarea>

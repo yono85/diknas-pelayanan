@@ -215,7 +215,7 @@
                                     <div class="icmg br-rds50p"></div>
                                     <div class="inf">
                                         <div class="div">
-                                            <span>{user_name}</span>
+                                            <b>{user_name}</b>
                                         </div>
                                         <div class="div fsize11 up-txt">
                                             <span class="label">({noid})</span>
@@ -240,12 +240,13 @@
                             <div class="td-iner">
                                 <div class="div">
                                     <span class="ic flaticon-suitcase fsize11"></span>
-                                    <span>{bidang}</span>
+                                    <b>{bidang}</b>
                                 </div>
-                                <div class="div label">
-                                    <span class="label">
-                                        {pelayanan}
-                                    </span>
+                                <div class="div">
+                                    {seksi}
+                                </div>
+                                <div class="div">
+                                    {pelayanan}
                                 </div>
                             </div>
                         </td>
@@ -419,7 +420,8 @@ function createTempTable(e,w)
         listx = listx.replace('{user_company}', item.user_company);
         listx = listx.replace('{detail}', item.detail);
         listx = listx.replace('{bidang}', item.bidang);
-        listx = listx.replace('{pelayanan}', (item.pelayanan === null ? "" : item.pelayanan));
+        listx = listx.replace('{seksi}', (item.seksi === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span>'+item.seksi+'</span>'));
+        listx = listx.replace('{pelayanan}', (item.pelayanan === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span>'+item.pelayanan+'</span>'));
         listx = listx.replace('{status}', ( item.progress === 0 ? '<li  class="waiting"><span>WAITING</span></li>' : ( item.progress === 1 ? '<li  class="progress"><span>PROGRESS</span></li>' : '<li  class="done"><span>DONE</span></li>') ) );
         
         if( item.replay !== "")
@@ -513,12 +515,26 @@ $(document).ready(function()
         if(cmd.attr("role") === "off")
         {
             cmd.attr("role","on");
-            area.find(".area-select-seksi button.btn label span").html("Pilih Pelayanan");
+
+            //
+            area.find(".area-select-seksi button.btn label span").html("Pilih Seksi");
+            area.find(".area-select-seksi").addClass("hide");
             area.find(".area-select-seksi button.btn").attr("disabled","disabled");
             area.find(".area-select-seksi input.value-dropdown").val("");
             area.find(".area-select-seksi").find("span.error").remove();
             area.find(".area-select-seksi button.btn").removeClass("br-error");
+
+            area.find(".area-select-pelayanan button.btn label span").html("Pilih pelayanan");
+            area.find(".area-select-pelayanan").addClass("hide");
+            area.find(".area-select-pelayanan button.btn").attr("disabled","disabled");
+            area.find(".area-select-pelayanan input.value-dropdown").val("");
+            area.find(".area-select-pelayanan").find("span.error").remove();
+            area.find(".area-select-pelayanan button.btn").removeClass("br-error");
+
+            //
             form.find("input[name='subbidang']").val(cmd.attr("data-sub"));
+            form.find("input[name='pelayanan_selected']").val('');
+
             //open sub level
             if( cmd.attr("data-sub") !== "0")
             {
@@ -530,21 +546,83 @@ $(document).ready(function()
                     var list = '';
                     $.each(rsp, function(i, item)
                     {
-                        list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get=""><span>'+item.name+'</span></button></li>';
+                        list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get="" class="cmd-select-seksi" data-sub="'+item.sub+'"><span>'+item.name+'</span></button></li>';
                     });
                     area.find(".area-select-seksi ul").html(list);
                     area.find(".area-select-seksi button.btn").removeAttr("disabled");
+                    area.find(".area-select-seksi").removeClass("hide");
+
+                    
+
+
                 });
                 $t.error(function(n)
                 {
                     console.log(n);
                 });
             }
+            else
+            {
+                $URL_PEL = '&bidang='+cmd.attr('dataid')+'&sub=0';
+
+                callPelayanan($URL_PEL,$(this));
+            }
 
             cmd.attr("role", "off");
         }
     });
 
+
+    $("body").on("click", "#area-modal-show .cmd-select-seksi", function(e)
+    {
+        e.preventDefault();
+        var cmd = $(this),
+        area = $("body").find("#area-modal-show"),
+        form = cmd.parents("form"),
+        $URL = 'bidang=' + form.find("input[name='bidang_selected']").val() + '&sub=' + cmd.attr("dataid");
+
+
+        if(cmd.attr("role") === "off")
+        {
+            cmd.attr("role","on");
+            callPelayanan($URL,$(this));
+            cmd.attr("role", "off");
+        }
+    });
+
+    function callPelayanan(e,w)
+    {
+
+        var cmd = w,
+        area = $("body").find("#area-modal-show"),
+        form = cmd.parents("form");
+
+        area.find(".area-select-pelayanan button.btn label span").html("Pilih Pelayanan");
+        area.find(".area-select-pelayanan").addClass("hide");
+        area.find(".area-select-pelayanan button.btn").attr("disabled","disabled");
+
+        var $URL = '/api/data/subpelayanan?' + e;
+        var $t = FormSendingNew("","GET","key","",$URL);
+        $t.success(function(n)
+        {
+            var rsp = n.response;
+            // console.log(n);
+            var list = '';
+            $.each(rsp, function(i, item)
+            {
+                list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get=""><span>'+item.name+'</span></button></li>';
+            });
+            area.find(".area-select-pelayanan ul").html(list);
+            area.find(".area-select-pelayanan button.btn").removeAttr("disabled");
+            area.find(".area-select-pelayanan").removeClass("hide");
+
+        });
+        $t.error(function(n)
+        {
+            console.log(n);
+        });
+
+    }
 
     //MENU FILTER
     $('body').on('click', '.cmd-ddwn-hd', function(e)
@@ -668,6 +746,7 @@ $(document).ready(function()
         subbidang = form.find("input[name='subbidang']"),
         seksi = form.find("input[name='seksi_selected']"),
         text = form.find("textarea[name='text']"),
+        pelayanan = form.find("input[name='pelayanan_selected']"),
         cmd = form.find("button.submit");
 
         if( bidang.val() === '')
@@ -680,8 +759,15 @@ $(document).ready(function()
         if( subbidang.val() === '1' && seksi.val() === '')
         {
             seksi.parents('.ar-content').find('span.error').remove();
-            seksi.parents('.ar-content').append('<span class="error">Harap pilih Pelayanan</span>');
+            seksi.parents('.ar-content').append('<span class="error">Harap pilih Seksi</span>');
             seksi.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( pelayanan.val() === '')
+        {
+            pelayanan.parents('.ar-content').find('span.error').remove();
+            pelayanan.parents('.ar-content').append('<span class="error">Harap pilih Pelayanan</span>');
+            pelayanan.parents('.ar-content').find('.fcs').addClass('br-error');
         }
 
         if( $.trim(text.val()).length  < 11)
@@ -691,7 +777,7 @@ $(document).ready(function()
             text.parents('.ar-content').find('.fcs').addClass('br-error');
         }
 
-        if( bidang.val() === "" || subbidang.val() === '1' && seksi.val() === "" || $.trim(text.val()).length < 11 )
+        if( bidang.val() === "" || subbidang.val() === '1' && seksi.val() === "" || pelayanan.val() === '' || $.trim(text.val()).length < 11 )
         {
             return false;
         }
