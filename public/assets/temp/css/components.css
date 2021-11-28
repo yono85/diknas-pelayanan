@@ -1,0 +1,2315 @@
+/*
+ @Author: Mobythemes (mobythemes.com)
+ This file contains the styling for the actual theme, this
+ is the file you need to edit to change the look of the
+ theme.
+ However we used scss to make things easy to maintain, this is the compressed output, we recommend to edit the scss files and then recombile the files and add the result here.
+*/
+/**
+ *
+ * BudgetAnalysis
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: Ecommerce
+ * Title: BudgetAnalysis styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.budget-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid #e3e8ea; }
+  @media (max-width: 567px) {
+    .budget-filter {
+      flex-flow: row wrap; } }
+  .budget-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .datepicker {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4.5px 10px;
+    width: 127px;
+    border-right: 0; }
+  .budget-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .divider {
+    color: rgba(150, 165, 171, 0.5); }
+  .budget-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .moby__calander i {
+    font-size: 16px;
+    margin-left: 5px; }
+  @media (max-width: 567px) {
+    .budget-filter .filter-btn .moby__filter-btn-holder {
+      margin-bottom: 20px; } }
+  @media (max-width: 567px) {
+    .budget-filter .filter-btn {
+      width: 100%; } }
+  .budget-filter .report-btn .btn {
+    margin-top: 1px; }
+    @media (max-width: 567px) {
+      .budget-filter .report-btn .btn {
+        width: 100%; } }
+    .budget-filter .report-btn .btn .icon {
+      font-size: 10px; }
+  @media (max-width: 567px) {
+    .budget-filter .report-btn {
+      width: 100%; } }
+
+@media (min-width: 1200px) {
+  .budget-analysis #MobyBudgetAnalysisChart {
+    min-height: 265px !important; }
+    .budget-analysis #MobyBudgetAnalysisChart .apexcharts-canvas,
+    .budget-analysis #MobyBudgetAnalysisChart .apexcharts-svg {
+      height: 250px !important; }
+    .budget-analysis #MobyBudgetAnalysisChart .apexcharts-inner {
+      transform: translate(49px, 50px) !important; }
+    .budget-analysis #MobyBudgetAnalysisChart .apexcharts-yaxis {
+      transform: translate(16px, 20px) !important; } }
+
+.budget-img img {
+  width: 100%; }
+
+.analysis-list-holder {
+  border-top: 1px solid #e3e8ea;
+  margin-left: -1px; }
+  .analysis-list-holder .list-analysis {
+    overflow: hidden;
+    padding: 30px 20px;
+    border-right: 1px solid #e3e8ea; }
+    .analysis-list-holder .list-analysis .title-border {
+      font-size: 16px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      color: #202124;
+      display: block;
+      position: relative; }
+      .analysis-list-holder .list-analysis .title-border:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        border-bottom: 2px solid #202124; }
+        @media screen and (max-width: 1440px) {
+          .analysis-list-holder .list-analysis .title-border:after {
+            width: 60px; } }
+      @media screen and (max-width: 1440px) {
+        .analysis-list-holder .list-analysis .title-border {
+          font-size: 15px;
+          margin-bottom: 10px; } }
+    .analysis-list-holder .list-analysis .b-danger:after {
+      border-color: #ea4335; }
+    .analysis-list-holder .list-analysis .b-primary:after {
+      border-color: #689df6; }
+    .analysis-list-holder .list-analysis .b-success:after {
+      border-color: #34a853; }
+    .analysis-list-holder .list-analysis .b-warning:after {
+      border-color: #fbbc05; }
+    .analysis-list-holder .list-analysis .sub-title {
+      font-size: 14px;
+      color: #a4b1b6;
+      display: block;
+      margin-bottom: 10px; }
+      @media screen and (max-width: 1370px) {
+        .analysis-list-holder .list-analysis .sub-title {
+          font-size: 13px; } }
+      @media screen and (max-width: 1300px) {
+        .analysis-list-holder .list-analysis .sub-title {
+          font-size: 12px; } }
+      @media screen and (max-width: 1023px) {
+        .analysis-list-holder .list-analysis .sub-title {
+          font-size: 14px; } }
+    .analysis-list-holder .list-analysis .sub-num {
+      font-size: 16px;
+      color: #202124;
+      display: inline-block;
+      line-height: 1; }
+      @media screen and (max-width: 1440px) {
+        .analysis-list-holder .list-analysis .sub-num {
+          font-size: 15px; } }
+    .analysis-list-holder .list-analysis .vertical-divider {
+      position: relative;
+      top: .6px;
+      display: inline-block;
+      height: 0.9em;
+      margin: 0 8px;
+      vertical-align: middle;
+      border-top: 0;
+      border-right: 1px solid rgba(227, 232, 234, 0.9); }
+    @media (max-width: 767px) {
+      .analysis-list-holder .list-analysis {
+        border-right: 0;
+        border-bottom: 1px solid #e3e8ea; } }
+
+/**
+ *
+ * Calander
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Jan 13 2020
+ * Category: Pages
+ * Title: Calander styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.moby__inline-calander {
+  padding-bottom: 10px; }
+  .moby__inline-calander .ui-widget {
+    box-shadow: none;
+    font-size: 14px; }
+    @media (max-width: 480px) {
+      .moby__inline-calander .ui-widget {
+        display: block !important; } }
+    .moby__inline-calander .ui-widget.ui-widget-content {
+      border: 0;
+      padding: 0; }
+    .moby__inline-calander .ui-widget .search-input {
+      line-height: 32px; }
+      .moby__inline-calander .ui-widget .search-input .icon {
+        line-height: 32px; }
+    .moby__inline-calander .ui-widget .ui-widget-header {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #e3e8ea;
+      padding: 0 20px 15px;
+      border-radius: 0px; }
+      .moby__inline-calander .ui-widget .ui-widget-header .ui-datepicker-title {
+        line-height: 24px;
+        margin: 0 40px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(32, 33, 36, 0.7); }
+        .moby__inline-calander .ui-widget .ui-widget-header .ui-datepicker-title span {
+          font-size: 16px; }
+      .moby__inline-calander .ui-widget .ui-widget-header .ui-corner-all {
+        color: rgba(32, 33, 36, 0.7);
+        width: 40px;
+        height: 30px;
+        line-height: 20px;
+        display: none; }
+        .moby__inline-calander .ui-widget .ui-widget-header .ui-corner-all span {
+          left: 0;
+          top: 12px;
+          margin-left: 0; }
+      .moby__inline-calander .ui-widget .ui-widget-header .ui-icon {
+        text-indent: 1px;
+        overflow: visible;
+        font-size: 16px;
+        font-weight: 600; }
+      .moby__inline-calander .ui-widget .ui-widget-header .ui-datepicker-prev {
+        top: 15px;
+        left: 20px;
+        cursor: pointer;
+        padding: 0; }
+      .moby__inline-calander .ui-widget .ui-widget-header .ui-datepicker-next {
+        top: 15px;
+        right: 80px;
+        cursor: pointer;
+        padding: 0; }
+  .moby__inline-calander .ui-datepicker-inline {
+    width: 100%; }
+  .moby__inline-calander .ui-datepicker td {
+    padding: 3px 14px; }
+    @media (max-width: 1640px) {
+      .moby__inline-calander .ui-datepicker td {
+        padding: 3px 0; } }
+  .moby__inline-calander .ui-widget-content a,
+  .moby__inline-calander .ui-widget-content .ui-state-default {
+    text-align: center;
+    border-radius: 50%;
+    background: transparent;
+    border-color: transparent;
+    font-size: 14px;
+    color: rgba(32, 33, 36, 0.7);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    padding: 0; }
+    @media screen and (max-width: 1200px) {
+      .moby__inline-calander .ui-widget-content a,
+      .moby__inline-calander .ui-widget-content .ui-state-default {
+        font-size: 13px; } }
+    @media screen and (max-width: 767px) {
+      .moby__inline-calander .ui-widget-content a,
+      .moby__inline-calander .ui-widget-content .ui-state-default {
+        font-size: 13px; } }
+    .moby__inline-calander .ui-widget-content a:hover,
+    .moby__inline-calander .ui-widget-content .ui-state-default:hover {
+      background: #689df6;
+      color: #fff; }
+  .moby__inline-calander .ui-widget-content a.ui-state-hover {
+    border: 0; }
+  .moby__inline-calander .ui-datepicker-calendar {
+    margin: 0; }
+    .moby__inline-calander .ui-datepicker-calendar th {
+      font-size: 16px;
+      text-transform: capitalize;
+      font-weight: 700;
+      padding: 10px 14px 5px;
+      color: rgba(32, 33, 36, 0.7); }
+      .moby__inline-calander .ui-datepicker-calendar th span {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        line-height: 40px; }
+      @media (max-width: 1640px) {
+        .moby__inline-calander .ui-datepicker-calendar th {
+          padding: 10px 8px 5px; } }
+      @media (max-width: 1550px) {
+        .moby__inline-calander .ui-datepicker-calendar th {
+          padding: 10px 7px 5px; } }
+      @media (max-width: 1520px) {
+        .moby__inline-calander .ui-datepicker-calendar th {
+          padding: 10px 6px 5px; } }
+      @media (max-width: 1440px) {
+        .moby__inline-calander .ui-datepicker-calendar th {
+          padding: 10px 0 5px; } }
+    .moby__inline-calander .ui-datepicker-calendar thead {
+      width: 100%;
+      display: table; }
+    .moby__inline-calander .ui-datepicker-calendar tbody {
+      width: 100%;
+      display: table; }
+  .moby__inline-calander .ui-state-highlight,
+  .moby__inline-calander .ui-widget-content .ui-state-highlight,
+  .moby__inline-calander .ui-widget-header .ui-state-highlight {
+    border: 1px solid #b18403 !important;
+    background: #fbbc05 !important;
+    color: #fff !important; }
+  .moby__inline-calander .ui-state-active,
+  .moby__inline-calander .ui-widget-content .ui-state-active,
+  .moby__inline-calander .ui-widget-header .ui-state-active,
+  .moby__inline-calander a.ui-button:active,
+  .moby__inline-calander .ui-button:active,
+  .moby__inline-calander .ui-button.ui-state-active:hover {
+    border: 1px solid #206ef2;
+    background: #689df6;
+    color: #fff !important; }
+  .moby__inline-calander .ui-datepicker-calendar {
+    display: block; }
+
+.add-event-modal .modal-dialog {
+  max-width: 750px; }
+
+.events-calendar-year {
+  position: absolute;
+  top: 62px;
+  left: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(32, 33, 36, 0.7); }
+  .events-calendar-year .icon {
+    font-size: 12px;
+    vertical-align: 0; }
+
+.calender-add-icon {
+  position: absolute;
+  cursor: pointer;
+  top: 60px;
+  right: 35px;
+  color: #fbbc05 !important;
+  font-size: 24px !important; }
+
+/**
+*
+* Conversations
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 07 2020
+* Category: Pages
+* Title: Conversations styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+/* @include transition(all,2s,ease-out); */
+.moby__conversations-holder {
+  overflow: hidden;
+  position: relative; }
+  @media (max-width: 991px) {
+    .moby__conversations-holder {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 20px 0 rgba(0, 0, 0, 0.05), 0px 1px 11px 0px rgba(0, 0, 0, 0.05);
+      min-height: 100%;
+      border-radius: 4px;
+      border: 1px solid #e3e8ea;
+      margin: 100px 20px 20px; } }
+  .moby__conversations-holder .conversation-list-btn {
+    position: fixed;
+    top: 185px;
+    right: 20px;
+    z-index: 9999;
+    display: none; }
+    @media (max-width: 991px) {
+      .moby__conversations-holder .conversation-list-btn {
+        display: block; } }
+  .moby__conversations-holder .conversation-list-h {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    .moby__conversations-holder .conversation-list-h .search-input {
+      padding: 15px 20px;
+      height: 75px; }
+      @media screen and (max-width: 1024px) {
+        .moby__conversations-holder .conversation-list-h .search-input {
+          height: 65px; } }
+      .moby__conversations-holder .conversation-list-h .search-input .form-control {
+        height: 40px; }
+        @media screen and (max-width: 1024px) {
+          .moby__conversations-holder .conversation-list-h .search-input .form-control {
+            height: 35px; } }
+      .moby__conversations-holder .conversation-list-h .search-input .icon {
+        line-height: 40px; }
+        @media screen and (max-width: 1024px) {
+          .moby__conversations-holder .conversation-list-h .search-input .icon {
+            line-height: 35px; } }
+    .moby__conversations-holder .conversation-list-h .group-list {
+      height: 755px; }
+      @media (max-width: 1440px) {
+        .moby__conversations-holder .conversation-list-h .group-list {
+          height: 688px; } }
+      @media (max-width: 1370px) {
+        .moby__conversations-holder .conversation-list-h .group-list {
+          height: 443px; } }
+      @media (max-width: 1300px) {
+        .moby__conversations-holder .conversation-list-h .group-list {
+          height: 588px; } }
+      @media (max-width: 1024px) {
+        .moby__conversations-holder .conversation-list-h .group-list {
+          height: 566px; } }
+    @media (max-width: 991px) {
+      .moby__conversations-holder .conversation-list-h {
+        border-radius: 4px 0 0 4px;
+        position: absolute;
+        width: 50%;
+        top: 0;
+        left: -200px;
+        opacity: 0;
+        visibility: hidden;
+        background: #fff;
+        z-index: 999;
+        height: 801px;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 20px 0 rgba(0, 0, 0, 0.05), 0px 1px 11px 0px rgba(0, 0, 0, 0.05); } }
+    @media (max-width: 570px) {
+      .moby__conversations-holder .conversation-list-h {
+        width: 60%; } }
+    @media (max-width: 480px) {
+      .moby__conversations-holder .conversation-list-h {
+        width: 70%; } }
+    @media (max-width: 320px) {
+      .moby__conversations-holder .conversation-list-h {
+        width: 91%; } }
+    .moby__conversations-holder .conversation-list-h.conversation-list-mobile-view {
+      left: 0px;
+      opacity: 1;
+      visibility: visible; }
+  .moby__conversations-holder .moby__conversation {
+    height: 100%; }
+    .moby__conversations-holder .moby__conversation .conversation-head {
+      border-bottom: 1px solid #e3e8ea;
+      height: 75px;
+      line-height: 45px; }
+      .moby__conversations-holder .moby__conversation .conversation-head .title {
+        font-size: 16px;
+        display: block;
+        color: #202124;
+        padding: 15px 0;
+        padding-left: 20px; }
+        @media screen and (max-width: 1024px) {
+          .moby__conversations-holder .moby__conversation .conversation-head .title {
+            font-size: 14px; } }
+        @media screen and (max-width: 480px) {
+          .moby__conversations-holder .moby__conversation .conversation-head .title {
+            font-size: 12px;
+            display: none; } }
+      .moby__conversations-holder .moby__conversation .conversation-head .conversation-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; }
+        .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a,
+        .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn {
+          display: inline-block;
+          border-left: 1px solid #e3e8ea !important;
+          height: 75px;
+          padding: 15px 20px; }
+          .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a .icon,
+          .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn .icon {
+            margin-right: 0;
+            color: rgba(150, 165, 171, 0.7) !important; }
+          .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a:hover .icon,
+          .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn:hover .icon {
+            color: #689df6 !important; }
+          @media screen and (max-width: 1024px) {
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a,
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn {
+              height: 65px; } }
+          @media screen and (max-width: 480px) {
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a,
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn {
+              padding: 15px; } }
+          @media (max-width: 375px) {
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li a,
+            .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn {
+              padding: 15px 10px; } }
+        .moby__conversations-holder .moby__conversation .conversation-head .conversation-list li .btn {
+          border-radius: 0px;
+          border: 0; }
+      @media screen and (max-width: 1024px) {
+        .moby__conversations-holder .moby__conversation .conversation-head {
+          height: 65px;
+          line-height: 35px; } }
+    .moby__conversations-holder .moby__conversation .conversation-content {
+      position: relative;
+      height: 750px;
+      overflow: hidden !important; }
+      @media (max-width: 1440px) {
+        .moby__conversations-holder .moby__conversation .conversation-content {
+          height: 688px; } }
+      @media (max-width: 1370px) {
+        .moby__conversations-holder .moby__conversation .conversation-content {
+          height: 443px; } }
+      @media (max-width: 1300px) {
+        .moby__conversations-holder .moby__conversation .conversation-content {
+          height: 588px; } }
+      @media (max-width: 1024px) {
+        .moby__conversations-holder .moby__conversation .conversation-content {
+          height: 566px; } }
+      .moby__conversations-holder .moby__conversation .conversation-content .messages {
+        padding: 20px;
+        height: 615px; }
+        @media (max-width: 1440px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 553px; } }
+        @media (max-width: 1370px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 310px; } }
+        @media (max-width: 1300px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 450px; } }
+        @media (max-width: 1024px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 420px; } }
+        @media (max-width: 480px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 375px; } }
+        @media (max-width: 320px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .messages {
+            height: 345px; } }
+      .moby__conversations-holder .moby__conversation .conversation-content .message-holder {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 30px; }
+      .moby__conversations-holder .moby__conversation .conversation-content .user {
+        margin-right: 20px;
+        text-align: center;
+        width: 35px; }
+        .moby__conversations-holder .moby__conversation .conversation-content .user .user-avatar {
+          margin-right: 0; }
+      .moby__conversations-holder .moby__conversation .conversation-content .ant-avatar {
+        margin-bottom: 10px; }
+      .moby__conversations-holder .moby__conversation .conversation-content .time {
+        font-size: 14px;
+        color: #96a5ab; }
+      .moby__conversations-holder .moby__conversation .conversation-content .message p {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 12px 20px;
+        border-radius: 4px;
+        background: #f1f3f3;
+        color: #96a5ab;
+        position: relative; }
+        .moby__conversations-holder .moby__conversation .conversation-content .message p:after {
+          content: "";
+          position: absolute;
+          top: 15px;
+          left: 0;
+          right: 0;
+          width: 12px;
+          height: 12px;
+          margin: 0 0 0 -5px;
+          background: #f1f3f3;
+          transform: rotate(45deg);
+          z-index: -1; }
+        @media screen and (max-width: 1024px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .message p {
+            font-size: 13px; } }
+        @media screen and (max-width: 480px) {
+          .moby__conversations-holder .moby__conversation .conversation-content .message p {
+            font-size: 12px; } }
+      .moby__conversations-holder .moby__conversation .conversation-content .right {
+        flex-direction: row-reverse; }
+        .moby__conversations-holder .moby__conversation .conversation-content .right .user {
+          margin-right: 0;
+          margin-left: 20px; }
+        .moby__conversations-holder .moby__conversation .conversation-content .right .message p {
+          background-color: #689df6;
+          color: #fff; }
+          .moby__conversations-holder .moby__conversation .conversation-content .right .message p:after {
+            margin: 0 -5px 0 auto;
+            background: #689df6; }
+      .moby__conversations-holder .moby__conversation .conversation-content .conversation-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99; }
+    .moby__conversations-holder .moby__conversation .quick-replies {
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.95); }
+      .moby__conversations-holder .moby__conversation .quick-replies .btn {
+        margin-right: 10px; }
+      @media screen and (max-width: 1199px) {
+        .moby__conversations-holder .moby__conversation .quick-replies .btn {
+          margin-bottom: 10px; } }
+    .moby__conversations-holder .moby__conversation .write-message {
+      background: #fff;
+      padding: 15px 20px;
+      border-top: 1px solid #e3e8ea; }
+      .moby__conversations-holder .moby__conversation .write-message .form-control {
+        height: 40px;
+        border: 0; }
+      .moby__conversations-holder .moby__conversation .write-message ::placeholder {
+        color: #d0d8db; }
+      .moby__conversations-holder .moby__conversation .write-message .prefix {
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        height: 40px;
+        line-height: 40px; }
+        .moby__conversations-holder .moby__conversation .write-message .prefix .icon {
+          color: rgba(32, 33, 36, 0.7); }
+        .moby__conversations-holder .moby__conversation .write-message .prefix.suffix .icon {
+          color: #96a5ab; }
+
+.drawar-conversation-user-info .user-info-head {
+  border-bottom: 1px solid #e3e8ea;
+  height: 75px;
+  line-height: 45px;
+  padding: 15px 20px; }
+
+.drawar-conversation-user-info .user-info-holder .user-profile-list {
+  padding: 20px !important; }
+  .drawar-conversation-user-info .user-info-holder .user-profile-list li {
+    margin-bottom: 30px; }
+
+/**
+ *
+ * CreatAccount
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 24 2019
+ * Category: Pages
+ * Title: CreatAccount styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.account-heading {
+  margin-bottom: 60px; }
+  @media (max-width: 567px) {
+    .account-heading {
+      margin-bottom: 30px; } }
+  .account-heading .title {
+    font-size: 22px;
+    color: #202124;
+    margin-bottom: 10px; }
+    @media screen and (max-width: 1024px) {
+      .account-heading .title {
+        font-size: 18px; } }
+  .account-heading p {
+    font-size: 16px;
+    color: rgba(150, 165, 171, 0.5);
+    margin-bottom: 20px; }
+    @media screen and (max-width: 767px) {
+      .account-heading p {
+        font-size: 14px; } }
+
+/**
+ *
+ * EcommereceSale
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: Ecommerce
+ * Title: EcommereceSale styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.widget-graph-detail {
+  line-height: 30px !important; }
+  .widget-graph-detail .sale-info {
+    font-size: 18px;
+    font-weight: 600;
+    color: #202124;
+    display: inline-block; }
+    .widget-graph-detail .sale-info .icon {
+      font-size: 14px;
+      margin-left: 10px; }
+    @media (max-width: 1440px) {
+      .widget-graph-detail .sale-info {
+        font-size: 16px; } }
+    @media screen and (max-width: 1200px) {
+      .widget-graph-detail .sale-info {
+        font-size: 15px; } }
+  .widget-graph-detail .total-quantity {
+    color: #909395;
+    font-size: 16px;
+    line-height: 30px !important;
+    font-weight: 400;
+    margin: 0; }
+    @media (max-width: 1440px) {
+      .widget-graph-detail .total-quantity {
+        font-size: 14px; } }
+  .widget-graph-detail p {
+    color: #909395;
+    font-size: 16px; }
+    @media (max-width: 1440px) {
+      .widget-graph-detail p {
+        font-size: 14px; } }
+  .widget-graph-detail .graph-h > div {
+    min-height: 175px !important; }
+
+/**
+ *
+ * EventInterest
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 17 2019
+ * Category: EventsManagement
+ * Title: EventInterest styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.interest-section .comparison-description {
+  font-size: 14px;
+  color: #96a5ab;
+  margin-bottom: 30px; }
+
+.interest-section .comparison-detail-right {
+  display: flex;
+  flex-flow: row wrap; }
+
+.interest-section .comparison-detail {
+  text-align: right;
+  width: 100%; }
+
+.interest-section .comparison-graph-description {
+  font-size: 14px;
+  color: #96a5ab;
+  margin-bottom: 0; }
+
+.interest-section .comparison-detail-header {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 10px; }
+
+.interest-section .comparison-icon {
+  margin-left: 20px; }
+  .interest-section .comparison-icon .icon {
+    font-size: 48px; }
+
+.interest-section .comparison-graph-detail .comparison-graph-number {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #202124;
+  padding-bottom: 5px; }
+
+.interest-section .comparison-graph-detail .comparison-graph-percent {
+  color: #96a5ab;
+  font-weight: 400;
+  font-size: 15px; }
+
+.interest-section .comparison-graph-detail .comarison-graph-title {
+  font-size: 14px;
+  color: #202124;
+  font-weight: 400; }
+
+.interest-section .comparison-detail-left .comparison-detail {
+  text-align: left; }
+
+.interest-section .comparison-detail-left .comparison-detail-header {
+  flex-direction: row; }
+
+.interest-section .comparison-detail-left .comparison-icon {
+  margin-left: 0;
+  margin-right: 20px; }
+
+.interest-section .comparison-mb {
+  margin-bottom: 80px; }
+  @media (max-width: 767px) {
+    .interest-section .comparison-mb {
+      margin-bottom: 30px; } }
+
+@media (max-width: 767px) {
+  .interest-section .graph-h {
+    margin: 10px 0 0; } }
+
+/**
+ *
+ * HelpCenter
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 24 2019
+ * Category: Ecommerce
+ * Title: HelpCenter styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.help-center .moby__sub-header .sub-header-title {
+  font-size: 24px;
+  color: black; }
+  @media screen and (max-width: 1440px) {
+    .help-center .moby__sub-header .sub-header-title {
+      font-size: 20px; } }
+
+.help-center .moby__help-center-sub-header .title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: black; }
+  @media screen and (max-width: 1440px) {
+    .help-center .moby__help-center-sub-header .title {
+      font-size: 17px; } }
+
+.help-center .moby__help-center-sub-header p {
+  font-size: 14px;
+  color: #96a5ab;
+  margin-bottom: 0;
+  font-weight: 600; }
+
+.help-center .list-title {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  @media screen and (max-width: 1440px) {
+    .help-center .list-title {
+      font-size: 15px; } }
+
+.help-center .help-list {
+  list-style: disc;
+  margin-left: 15px !important; }
+  .help-center .help-list li {
+    color: #96a5ab;
+    padding-bottom: 8px; }
+    .help-center .help-list li:last-child {
+      padding-bottom: 0; }
+    @media screen and (max-width: 1440px) {
+      .help-center .help-list li {
+        font-size: 13px; } }
+
+/**
+ *
+ * InvoiceAside
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Jan 08 2020
+ * Category: Pages
+ * Title: InvoiceAside styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.invoice-note .title {
+  font-size: 15px;
+  margin-bottom: 15px; }
+
+.invoice-note p {
+  font-size: 15px;
+  color: #96a5ab; }
+
+/**
+*
+* NewInvoice
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Thu Jan 09 2020
+* Category: Pages
+* Title: NewInvoice
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+/* @include transition(all,2s,ease-out); */
+.invoice .invoice-content-h {
+  overflow: hidden; }
+  @media (max-width: 991px) {
+    .invoice .invoice-content-h .row {
+      position: relative; }
+      .invoice .invoice-content-h .row.no-gutters > .col,
+      .invoice .invoice-content-h .row.no-gutters > [class*="col-"] {
+        position: initial; } }
+
+.invoice .invoice-list-btn {
+  display: none; }
+  @media (max-width: 991px) {
+    .invoice .invoice-list-btn {
+      display: inline-block; } }
+
+@media (max-width: 991px) {
+  .invoice .new-invoice-btn {
+    display: none; } }
+
+@media (max-width: 480px) {
+  .invoice .moby__sub-header.pd-30 {
+    padding: 20px !important; } }
+
+.invoice .moby__filter-btn-holder {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 11px; }
+  .invoice .moby__filter-btn-holder .moby__calander i {
+    margin-right: 0; }
+
+@media (max-width: 480px) {
+  .invoice .btn-h.text-right {
+    text-align: center !important; } }
+
+.invoice .input-group .input-group-prepend .input-group-text {
+  height: 40px; }
+
+.invoice .dropdown.dropdown-white-bg .dropdown-toggle {
+  line-height: 35px;
+  height: 35px; }
+
+.invoice .invoice-list-holder {
+  height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  @media screen and (max-width: 991px) {
+    .invoice .invoice-list-holder {
+      position: absolute;
+      width: 260px;
+      top: 0;
+      left: -200px;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      z-index: 999;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 20px 0 rgba(0, 0, 0, 0.05), 0px 1px 11px 0px rgba(0, 0, 0, 0.05); } }
+  .invoice .invoice-list-holder.invoice-list-holder-mobile-view {
+    left: 0px;
+    opacity: 1;
+    visibility: visible; }
+
+.invoice .search-input {
+  padding: 15px 20px; }
+  .invoice .search-input .form-control {
+    height: 40px; }
+    @media screen and (max-width: 1024px) {
+      .invoice .search-input .form-control {
+        height: 35px; } }
+  .invoice .search-input .icon {
+    line-height: 40px; }
+    @media screen and (max-width: 1024px) {
+      .invoice .search-input .icon {
+        line-height: 35px; } }
+
+.invoice .list-card {
+  min-height: 212px; }
+  .invoice .list-card .title {
+    margin-bottom: 10px;
+    font-size: 17px; }
+    @media screen and (max-width: 1024px) {
+      .invoice .list-card .title {
+        font-size: 15px; } }
+  .invoice .list-card .subtitle {
+    display: block;
+    font-size: 14px;
+    padding-top: 5px; }
+    @media screen and (max-width: 1024px) {
+      .invoice .list-card .subtitle {
+        font-size: 13px; } }
+  .invoice .list-card .card-list li {
+    color: #96a5ab;
+    padding-bottom: 10px;
+    font-size: 15px; }
+    .invoice .list-card .card-list li a {
+      color: #96a5ab; }
+      .invoice .list-card .card-list li a:hover {
+        color: #689df6; }
+    .invoice .list-card .card-list li .list-title,
+    .invoice .list-card .card-list li .list-subtitle {
+      width: 48%;
+      display: inline-block; }
+    .invoice .list-card .card-list li .list-title {
+      color: #202124; }
+    .invoice .list-card .card-list li:last-child {
+      padding-bottom: 0; }
+    @media screen and (max-width: 1024px) {
+      .invoice .list-card .card-list li {
+        font-size: 13px;
+        padding-bottom: 5px; } }
+
+.invoice .min-amount .form-control {
+  height: 40px;
+  line-height: 40px; }
+
+.invoice .new-invoice-card li {
+  color: #96a5ab; }
+
+.invoice .new-invoice-card .title {
+  color: #202124; }
+
+.invoice .new-invoice-card strong {
+  color: #202124; }
+
+.invoice .invoice-form {
+  margin-bottom: 30px; }
+  .invoice .invoice-form .form-title {
+    font-size: 17px;
+    margin-bottom: 20px; }
+  .invoice .invoice-form label {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 32px; }
+  .invoice .invoice-form .form-control {
+    border-color: #e3e8ea; }
+
+.invoice .invoice-logo {
+  width: 100%; }
+  .invoice .invoice-logo img {
+    width: 100%; }
+  .invoice .invoice-logo a {
+    display: block; }
+    @media (max-width: 991px) {
+      .invoice .invoice-logo a {
+        max-width: 50%;
+        margin: 0 auto 30px; } }
+
+.invoice .invoice-table {
+  border-bottom: 0; }
+  .invoice .invoice-table thead tr th {
+    border-top: 0;
+    text-transform: capitalize; }
+    .invoice .invoice-table thead tr th:first-child {
+      width: 50%; }
+      @media (max-width: 1440px) {
+        .invoice .invoice-table thead tr th:first-child {
+          width: 40%; } }
+  .invoice .invoice-table tbody:last-child tr td {
+    border-bottom: 0; }
+  .invoice .invoice-table tbody td {
+    position: relative;
+    padding: 10px; }
+    .invoice .invoice-table tbody td .cancel-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      height: 100%;
+      line-height: 90px;
+      background: #e3e8ea;
+      border-left: 1px solid #e3e8ea; }
+      .invoice .invoice-table tbody td .cancel-btn i::before {
+        font-size: 18px;
+        margin-right: 0; }
+  .invoice .invoice-table .form-control {
+    border: 0;
+    padding: 0 !important; }
+  .invoice .invoice-table i {
+    font-size: 20px; }
+  .invoice .invoice-table.sub-total {
+    border: 1px solid #e3e8ea; }
+    .invoice .invoice-table.sub-total thead td {
+      border-bottom-width: inherit; }
+  .invoice .invoice-table.view-invoice-table thead tr th:first-child {
+    width: 60%; }
+    @media (max-width: 1440px) {
+      .invoice .invoice-table.view-invoice-table thead tr th:first-child {
+        width: 50%; } }
+
+.invoice .invoice-info-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px; }
+  .invoice .invoice-info-list li:last-child {
+    padding-bottom: 0; }
+
+.invoice .allow-payment .custom-control-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px; }
+
+/**
+ *
+ * Pageview
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: Pageview styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.moby__page-view {
+  padding: 0; }
+  .moby__page-view .moby__card-body {
+    height: 100%;
+    min-height: 200px;
+    max-height: 520px; }
+  .moby__page-view .spin-nested-loading {
+    position: relative; }
+    .moby__page-view .spin-nested-loading .spin-container {
+      position: relative;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+  .moby__page-view .list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-color: #96a5ab;
+    padding: 15px 20px;
+    transition: all ease-in-out 0.4s;
+    border-bottom: 1px solid #e8e8e8; }
+    @media screen and (max-width: 320px) {
+      .moby__page-view .list-item {
+        padding: 15px; } }
+    .moby__page-view .list-item .list-item-meta {
+      display: flex;
+      flex: 1 1; }
+      .moby__page-view .list-item .list-item-meta .list-item-meta-avatar {
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: middle; }
+        .moby__page-view .list-item .list-item-meta .list-item-meta-avatar .icon {
+          font-size: 22px; }
+      .moby__page-view .list-item .list-item-meta .list-item-meta-content {
+        display: inline-block;
+        vertical-align: middle; }
+        .moby__page-view .list-item .list-item-meta .list-item-meta-content h4 {
+          margin-bottom: 10px;
+          line-height: 1.2;
+          font-size: 14px; }
+          @media (max-width: 1440px) {
+            .moby__page-view .list-item .list-item-meta .list-item-meta-content h4 {
+              font-size: 13px; } }
+      .moby__page-view .list-item .list-item-meta .list-item-meta-title {
+        margin-bottom: 10px; }
+      .moby__page-view .list-item .list-item-meta .list-item-meta-description {
+        font-size: 14px;
+        color: #96a5ab;
+        line-height: 1.2;
+        font-weight: 400; }
+        @media (max-width: 1440px) {
+          .moby__page-view .list-item .list-item-meta .list-item-meta-description {
+            font-size: 13px; } }
+    .moby__page-view .list-item .moby__page-view-list {
+      text-align: right; }
+      .moby__page-view .list-item .moby__page-view-list .moby__page-view-num {
+        display: block;
+        font-size: 14px;
+        color: #202124;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 10px; }
+        @media (max-width: 1440px) {
+          .moby__page-view .list-item .moby__page-view-list .moby__page-view-num {
+            font-size: 13px;
+            margin-bottom: 5px; } }
+      .moby__page-view .list-item .moby__page-view-list .moby__page-view-rating {
+        font-size: 13px;
+        color: #96a5ab;
+        line-height: 1.2;
+        font-weight: 400; }
+        @media (max-width: 1440px) {
+          .moby__page-view .list-item .moby__page-view-list .moby__page-view-rating {
+            font-size: 12px; } }
+
+/**
+ *
+ * Performance
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: Ecommerce
+ * Title: Performance styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.performance-holder .retention-holder {
+  float: left; }
+
+@media (max-width: 580px) {
+  .performance-holder .select-with-picker .light-dropdown .dropdown-toggle {
+    border: 1px solid #e3e8ea;
+    border-radius: 4px;
+    margin-bottom: 20px; } }
+
+.performance-holder .filter-btn .moby__filter-btn-holder {
+  border-radius: 0 4px 4px 0;
+  border-color: #e3e8ea; }
+  @media (max-width: 580px) {
+    .performance-holder .filter-btn .moby__filter-btn-holder {
+      border-radius: 4px;
+      text-align: left; } }
+  .performance-holder .filter-btn .moby__filter-btn-holder.filter-btn-alternative {
+    line-height: 22px; }
+    .performance-holder .filter-btn .moby__filter-btn-holder.filter-btn-alternative .datepicker {
+      width: 112px;
+      border-right: 0; }
+      @media (max-width: 580px) {
+        .performance-holder .filter-btn .moby__filter-btn-holder.filter-btn-alternative .datepicker {
+          width: 93%;
+          padding: 5px 11px; } }
+    .performance-holder .filter-btn .moby__filter-btn-holder.filter-btn-alternative .moby__calander i {
+      font-size: 16px;
+      margin-left: 5px; }
+      @media (max-width: 580px) {
+        .performance-holder .filter-btn .moby__filter-btn-holder.filter-btn-alternative .moby__calander i {
+          margin-right: 3px; } }
+
+.performance-holder .report-btn .btn {
+  margin-top: 1px; }
+  @media (max-width: 580px) {
+    .performance-holder .report-btn .btn {
+      margin-top: 20px; } }
+  @media (max-width: 567px) {
+    .performance-holder .report-btn .btn {
+      width: 100%; } }
+  .performance-holder .report-btn .btn .icon {
+    font-size: 10px; }
+
+@media (max-width: 580px) {
+  .performance-holder .report-btn.text-right {
+    text-align: center !important; } }
+
+/**
+ *
+ * PricingPlan
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 24 2019
+ * Category: Ecommerce
+ * Title: PricingPlan styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.plan-card {
+  text-align: center;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif !important; }
+  .plan-card .close-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    color: rgba(32, 33, 36, 0.7);
+    cursor: pointer;
+    display: none; }
+  .plan-card .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 598px;
+    padding: 50px 20px; }
+    @media (min-width: 992px) {
+      .plan-card .card-body {
+        padding: 50px 30px; } }
+    .plan-card .card-body .card-body-h {
+      flex: 1 1; }
+  .plan-card .icon {
+    font-size: 50px;
+    color: #689df6;
+    margin-bottom: 20px; }
+    @media (min-width: 992px) {
+      .plan-card .icon {
+        font-size: 56px; } }
+  .plan-card .img-icon {
+    height: 100px;
+    margin-bottom: 10px; }
+  .plan-card .card-title {
+    font-size: 22px;
+    line-height: 22px;
+    color: rgba(32, 33, 36, 0.65);
+    font-weight: 700 !important;
+    margin-bottom: 20px; }
+    @media (min-width: 992px) {
+      .plan-card .card-title {
+        font-size: 25px;
+        line-height: 25px;
+        margin-bottom: 30px; } }
+  .plan-card p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(32, 33, 36, 0.7); }
+    @media (min-width: 992px) {
+      .plan-card p {
+        font-size: 18px;
+        line-height: 22px; } }
+  .plan-card .divider {
+    display: block;
+    border-top: 1px solid rgba(227, 232, 234, 0.9);
+    margin: 30px auto;
+    min-width: 60%;
+    width: 60%; }
+    @media (min-width: 992px) {
+      .plan-card .divider {
+        margin: 40px auto 30px;
+        min-width: 40%;
+        width: 40%; } }
+  .plan-card .prize {
+    font-size: 30px;
+    font-weight: 600 !important;
+    line-height: 30px;
+    color: rgba(32, 33, 36, 0.65);
+    font-weight: 400;
+    margin-bottom: 10px; }
+    @media (min-width: 992px) {
+      .plan-card .prize {
+        font-size: 35px;
+        line-height: 35px; } }
+  .plan-card .subtitle {
+    display: block;
+    color: rgba(32, 33, 36, 0.65); }
+  .plan-card .btn {
+    margin-top: 30px;
+    border-radius: 30px !important; }
+  .plan-card .hover {
+    color: rgba(32, 33, 36, 0.65); }
+  .plan-card.required-card {
+    transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    z-index: 7; }
+    @media (max-width: 1300px) {
+      .plan-card.required-card {
+        margin-top: -10px; } }
+    @media (max-width: 992px) {
+      .plan-card.required-card {
+        margin-top: -8px; } }
+    @media (max-width: 767px) {
+      .plan-card.required-card {
+        margin: 20px 0 50px !important;
+        transform: scale(1.03); } }
+    .plan-card.required-card .card-title {
+      background-image: linear-gradient(45deg, #689df6, #00cccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent; }
+    .plan-card.required-card .prize {
+      color: #00cccc; }
+    .plan-card.required-card .btn.btn-primary {
+      background-image: linear-gradient(45deg, #689df6, #00cccc);
+      color: #fff;
+      border-color: transparent !important; }
+      .plan-card.required-card .btn.btn-primary:hover, .plan-card.required-card .btn.btn-primary:focus {
+        opacity: 0.8;
+        color: #fff !important;
+        border-color: transparent !important; }
+  .plan-card.closeable-card .close-icon {
+    display: block; }
+  .plan-card.ribbon-left .close-icon {
+    left: 0;
+    right: 0;
+    margin: 0 20px 0 auto;
+    width: 20px; }
+  .plan-card.card-hoverable:hover {
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15); }
+
+.pricing-plan {
+  padding-bottom: 30px; }
+  .pricing-plan .icon {
+    font-size: 120px;
+    display: block;
+    color: #202124 !important;
+    margin-bottom: 20px; }
+    @media screen and (max-width: 1024px) {
+      .pricing-plan .icon {
+        font-size: 80px; } }
+  .pricing-plan h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #202124; }
+    @media screen and (max-width: 1024px) {
+      .pricing-plan h4 {
+        font-size: 18px; } }
+  .pricing-plan p {
+    font-size: 16px;
+    color: rgba(150, 165, 171, 0.5);
+    margin-bottom: 20px; }
+    .pricing-plan p:last-child {
+      margin-bottom: 0; }
+    @media screen and (max-width: 1024px) {
+      .pricing-plan p {
+        font-size: 12px; } }
+    @media screen and (max-width: 767px) {
+      .pricing-plan p {
+        font-size: 14px; } }
+    @media screen and (max-width: 480px) {
+      .pricing-plan p {
+        font-size: 13px; } }
+  .pricing-plan strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #202124; }
+    @media screen and (max-width: 1024px) {
+      .pricing-plan strong {
+        font-size: 17px;
+        margin-bottom: 30px; } }
+  .pricing-plan .plan-btn.btn-lg {
+    height: 40px;
+    line-height: 40px; }
+  .pricing-plan .plan-btn.btn-primary {
+    border-color: transparent;
+    background: rgba(104, 157, 246, 0.9); }
+
+/**
+ *
+ * ProductRating
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: Ecommerce
+ * Title: ProductRating styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.product-rating-list {
+  height: 356.5px; }
+  @media (max-width: 1440px) {
+    .product-rating-list {
+      height: 355.5px; } }
+  .product-rating-list .product-rating-holder {
+    padding: 15px 20px;
+    transition: all ease-in-out .4s; }
+    .product-rating-list .product-rating-holder:hover {
+      transform: scale(1.02); }
+      .product-rating-list .product-rating-holder:hover .hover {
+        display: block; }
+      .product-rating-list .product-rating-holder:hover .number {
+        display: none; }
+    .product-rating-list .product-rating-holder .hover {
+      display: none;
+      flex: 1 1 0;
+      transition: all ease-in-out .4s; }
+    .product-rating-list .product-rating-holder .title {
+      font-size: 16px;
+      color: #202124;
+      display: block; }
+    .product-rating-list .product-rating-holder .rateit {
+      margin-left: 10px; }
+    .product-rating-list .product-rating-holder .subtitle {
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 50%;
+      text-align: center; }
+      .product-rating-list .product-rating-holder .subtitle .icon {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 16px; }
+    .product-rating-list .product-rating-holder .text {
+      font-size: 14px;
+      font-weight: 400;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #96a5ab;
+      margin-top: 1px;
+      text-align: center; }
+      @media (max-width: 1440px) {
+        .product-rating-list .product-rating-holder .text {
+          font-size: 12px; } }
+    .product-rating-list .product-rating-holder .number {
+      color: #96a5ab;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 50%;
+      font-size: 14px;
+      text-align: center;
+      transition: all ease-in-out .4s; }
+      @media (max-width: 1440px) {
+        .product-rating-list .product-rating-holder .number {
+          font-size: 12px; } }
+    .product-rating-list .product-rating-holder.product-rating-head {
+      padding: 0 20px 20px; }
+      .product-rating-list .product-rating-holder.product-rating-head .text {
+        text-align: left; }
+      .product-rating-list .product-rating-holder.product-rating-head:hover {
+        transform: scale(1); }
+
+/**
+ *
+ * ProfitRatio
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Fri Dec 20 2019
+ * Category: Ecommerce
+ * Title: ProfitRatio styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.profit-ratio .profit-total-columns-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  @media (max-width: 480px) {
+    .profit-ratio .profit-total-columns-h {
+      flex-flow: row wrap;
+      width: 100%; }
+      .profit-ratio .profit-total-columns-h > * {
+        flex: 1 1 100%; } }
+
+/**
+ *
+ * PropertyOverview
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: EventsManagement
+ * Title: PropertyOverview styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.property-overview .table-holder {
+  height: 465px; }
+  @media (max-width: 1550px) {
+    .property-overview .table-holder {
+      height: 523px; } }
+
+.property-overview .overview-cards-list {
+  padding-right: 30px; }
+  @media (max-width: 1550px) {
+    .property-overview .overview-cards-list {
+      padding: 0 10px; } }
+  .property-overview .overview-cards-list .moby__page-filter {
+    margin: 0;
+    padding: 10px 0 30px; }
+    @media (max-width: 767px) {
+      .property-overview .overview-cards-list .moby__page-filter .filter-list {
+        justify-content: flex-end; } }
+    @media (max-width: 480px) {
+      .property-overview .overview-cards-list .moby__page-filter .filter-list {
+        width: 100%;
+        justify-content: center; } }
+
+/**
+ *
+ * RecentlyTable
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Fri Jan 03 2020
+ * Category: Pages
+ * Title: RecentlyTable styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.uploaded-table {
+  padding-bottom: 30px; }
+  .uploaded-table .borderless td,
+  .uploaded-table .borderless th {
+    border: none; }
+  .uploaded-table a {
+    display: inline-block; }
+  .uploaded-table .file-icon {
+    font-size: 25px;
+    margin-right: 16px;
+    color: #202124; }
+    @media (max-width: 767px) {
+      .uploaded-table .file-icon {
+        font-size: 20px;
+        margin-right: 6px; } }
+  .uploaded-table .file-title {
+    font-size: 16px;
+    color: #202124;
+    font-weight: 600; }
+    @media (max-width: 991px) {
+      .uploaded-table .file-title {
+        font-size: 15px; } }
+  .uploaded-table .table-subtitle {
+    font-size: 14px;
+    color: #96a5ab; }
+
+/**
+ *
+ * RegisteredProperty
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: RealEstate
+ * Title: RegisteredProperty styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.registeredProperty .chart-holder {
+  margin: 20px 0; }
+
+/**
+ *
+ * SalesAnalysis
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: SalesAnalysis styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.sales-data .card-body {
+  text-align: center;
+  background: #f9fafa; }
+
+.sales-data strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #202124; }
+  @media (max-width: 1440px) {
+    .sales-data strong {
+      font-size: 14px; } }
+
+.sales-data span {
+  font-size: 16px;
+  color: #202124;
+  display: inline-block; }
+  @media (max-width: 1440px) {
+    .sales-data span {
+      font-size: 15px; } }
+
+.sales-data .sales-info p {
+  font-size: 14px;
+  color: #96a5ab;
+  margin-bottom: 0;
+  text-align: left; }
+  @media (max-width: 1440px) {
+    .sales-data .sales-info p {
+      font-size: 13px; } }
+
+/**
+ *
+ * SalesRevenue
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 17 2019
+ * Category: EventsManagement
+ * Title: SalesRevenue styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.sales-bg {
+  background-image: url("../images/sales-revenue-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% 0%;
+  line-height: 25px !important; }
+  .sales-bg .total-revenue {
+    text-align: center;
+    padding: 30px 0;
+    overflow: hidden;
+    line-height: 1.3; }
+    @media screen and (max-width: 1440px) {
+      .sales-bg .total-revenue {
+        padding: 20px 0; } }
+    .sales-bg .total-revenue strong {
+      font-size: 25px;
+      color: #202124;
+      font-weight: 600;
+      display: block; }
+      @media screen and (max-width: 768px) {
+        .sales-bg .total-revenue strong {
+          font-size: 16px; } }
+      @media screen and (max-width: 1440px) {
+        .sales-bg .total-revenue strong {
+          font-size: 18px; } }
+    .sales-bg .total-revenue span {
+      color: #96a5ab;
+      font-size: 14px; }
+  .sales-bg .sales-list {
+    overflow: hidden;
+    padding: 0 20px; }
+    .sales-bg .sales-list li {
+      margin-bottom: 20px; }
+      .sales-bg .sales-list li strong {
+        font-size: 25px;
+        color: #202124;
+        font-weight: 600;
+        display: block; }
+        @media screen and (max-width: 768px) {
+          .sales-bg .sales-list li strong {
+            font-size: 16px; } }
+        @media screen and (max-width: 1440px) {
+          .sales-bg .sales-list li strong {
+            font-size: 18px; } }
+      .sales-bg .sales-list li span {
+        color: #96a5ab;
+        font-size: 14px; }
+      .sales-bg .sales-list li .progress {
+        margin: 10px 0;
+        height: 8px; }
+
+/**
+ *
+ * StaticTable
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Dec 09 2019
+ * Category: Multi
+ * Title: StaticTable styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.moby__chart-holder {
+  border-top: 1px solid #e3e8ea;
+  overflow: hidden; }
+  .moby__chart-holder .chart-list {
+    overflow: hidden;
+    margin-left: -1px;
+    margin-bottom: -1px; }
+    .moby__chart-holder .chart-list .chart-bg {
+      background: #f9fafa; }
+    .moby__chart-holder .chart-list li {
+      float: left !important;
+      width: 50%;
+      padding: 14.1px 30px;
+      min-height: 77px;
+      border-bottom: 1px solid #e3e8ea;
+      border-left: 1px solid #e3e8ea;
+      position: relative; }
+      @media screen and (max-width: 1440px) {
+        .moby__chart-holder .chart-list li {
+          font-size: 13px; } }
+      @media screen and (max-width: 1300px) {
+        .moby__chart-holder .chart-list li {
+          padding: 14.1px 20px; } }
+      @media screen and (max-width: 1024px) {
+        .moby__chart-holder .chart-list li {
+          padding: 20px;
+          min-height: 87px; } }
+      .moby__chart-holder .chart-list li strong {
+        font-size: 14px;
+        color: #202124;
+        font-weight: 600;
+        display: block;
+        padding-bottom: 5px; }
+      .moby__chart-holder .chart-list li .chart-rating {
+        font-size: 14px;
+        color: #202124;
+        position: relative;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        @media screen and (max-width: 480px) {
+          .moby__chart-holder .chart-list li .chart-rating {
+            font-size: 12px; } }
+        .moby__chart-holder .chart-list li .chart-rating:after {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          background: #fff;
+          border: 2px solid #202124;
+          border-radius: 100%; }
+      .moby__chart-holder .chart-list li .danger::after {
+        border-color: #ea4335; }
+      .moby__chart-holder .chart-list li .success::after {
+        border-color: #34a853; }
+      .moby__chart-holder .chart-list li .warning::after {
+        border-color: #fbbc05; }
+      .moby__chart-holder .chart-list li .primary::after {
+        border-color: #689df6; }
+      .moby__chart-holder .chart-list li .chart-percent {
+        font-size: 12px;
+        color: #96a5ab; }
+        .moby__chart-holder .chart-list li .chart-percent .icon {
+          font-size: 10px;
+          margin-right: 5px; }
+        @media (max-width: 1024px) {
+          .moby__chart-holder .chart-list li .chart-percent {
+            font-size: 11px; }
+            .moby__chart-holder .chart-list li .chart-percent .icon {
+              font-size: 9px; } }
+
+/**
+*
+* TableWidget
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 14 2020
+* Category: Pages
+* Title: TableWidget styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.advance-table-search {
+  overflow: hidden;
+  display: block; }
+  .advance-table-search .dataTables_length {
+    float: left;
+    line-height: 30px; }
+    .advance-table-search .dataTables_length label {
+      font-size: 16px;
+      font-weight: 600; }
+    .advance-table-search .dataTables_length select {
+      float: right;
+      margin-left: 10px;
+      border-color: #e3e8ea;
+      color: #96a5ab;
+      font-size: 13px;
+      min-height: 30px; }
+  .advance-table-search .dataTables_filter {
+    float: right; }
+    .advance-table-search .dataTables_filter input {
+      width: 100%;
+      border-color: #e3e8ea;
+      padding: 10px 11px !important;
+      padding-left: 35px;
+      color: #96a5ab;
+      font-size: 14px;
+      height: 45px;
+      line-height: 45px;
+      border: 1px solid #e3e8ea;
+      border-radius: 4px; }
+    .advance-table-search .dataTables_filter label {
+      font-size: 16px; }
+  .advance-table-search .table {
+    border-radius: 4px;
+    border-bottom-width: 0;
+    margin-bottom: 20px !important; }
+    .advance-table-search .table thead th {
+      border-bottom-width: 0;
+      font-size: 16px; }
+  .advance-table-search .dataTables_info {
+    float: left;
+    font-size: 16px;
+    padding-top: 0 !important; }
+  .advance-table-search .dataTables_paginate {
+    float: right; }
+    .advance-table-search .dataTables_paginate .paginate_button {
+      margin-right: 15px;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 5px 10px;
+      background: #f9fafa;
+      border-radius: 4px;
+      border: 1px solid #e3e8ea; }
+      .advance-table-search .dataTables_paginate .paginate_button.current {
+        background: #689df6;
+        color: #fff !important; }
+      .advance-table-search .dataTables_paginate .paginate_button:hover {
+        background: none;
+        color: #202124 !important;
+        border-color: #e3e8ea; }
+    .advance-table-search .dataTables_paginate .previous {
+      background: none; }
+    .advance-table-search .dataTables_paginate .next {
+      background: none; }
+
+.advance-table-search .toggle-list li {
+  float: left;
+  margin-right: 10px; }
+  .advance-table-search .toggle-list li a {
+    color: #96a5ab;
+    display: block; }
+
+/**
+*
+* TaskList
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Thu Jan 16 2020
+* Category: Pages
+* Title: TasksList styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.task-list .moby__search-bar {
+  padding: 15px 20px !important; }
+  .task-list .moby__search-bar .search-input .icon {
+    line-height: 35px !important; }
+    @media (max-width: 1200px) {
+      .task-list .moby__search-bar .search-input .icon {
+        line-height: 32px; } }
+
+.task-list .task-list-items {
+  height: 400px; }
+
+.task-list .task-list-item {
+  transition: all ease-in-out .4s; }
+  .task-list .task-list-item:hover {
+    background: #f9fafa; }
+  @media (max-width: 560px) {
+    .task-list .task-list-item {
+      flex-flow: row wrap; }
+      .task-list .task-list-item.pd-20 {
+        padding: 20px 15px; } }
+
+.task-list .checkbox {
+  margin-top: 7px; }
+  @media (max-width: 567px) {
+    .task-list .checkbox {
+      display: none; } }
+
+.task-list .user-info .user-avatar {
+  min-width: 35px; }
+
+.task-list .user-info .title {
+  font-size: 15px; }
+
+@media (max-width: 567px) {
+  .task-list .user-info > .pd-l-20 {
+    padding-left: 15px; } }
+
+.task-list .task-list-item-hover .task-list-actions {
+  transition: all .4s ease-in-out;
+  opacity: 0;
+  visibility: hidden; }
+
+.task-list .task-list-item-hover:hover .task-list-actions {
+  opacity: 1;
+  visibility: visible; }
+
+.task-list .task-list-actions {
+  flex: 1 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; }
+  .task-list .task-list-actions li {
+    padding-left: 10px; }
+    .task-list .task-list-actions li .icon {
+      font-size: 16px;
+      vertical-align: middle; }
+      .task-list .task-list-actions li .icon:hover {
+        color: #202124 !important; }
+  @media (max-width: 480px) {
+    .task-list .task-list-actions {
+      display: none !important; } }
+
+/**
+ *
+ * Ticketsale
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 17 2019
+ * Category: EventsManagement
+ * Title: Ticketsale styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+@media (max-width: 1440px) {
+  .ticket-sale #MobyTicketSaleChart {
+    min-height: 305px !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-canvas,
+    .ticket-sale #MobyTicketSaleChart .apexcharts-svg {
+      height: 305px !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-inner {
+      transform: translate(40px, 7px) !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-yaxis {
+      transform: translate(9px, -20px) !important; } }
+
+@media (max-width: 991px) {
+  .ticket-sale #MobyTicketSaleChart {
+    min-height: 353px !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-canvas,
+    .ticket-sale #MobyTicketSaleChart .apexcharts-svg {
+      height: 338px !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-inner {
+      transform: translate(42px, 30px) !important; }
+    .ticket-sale #MobyTicketSaleChart .apexcharts-yaxis {
+      transform: translate(9px, 0px) !important; } }
+
+.tickets-sales-graph-detail-list {
+  display: flex;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden; }
+  .tickets-sales-graph-detail-list li {
+    width: 33.33%;
+    padding: 20px;
+    border-top: 1px solid #e3e8ea;
+    border-right: 1px solid #e3e8ea; }
+    .tickets-sales-graph-detail-list li:nth-child(odd) {
+      background: #f9fafa; }
+    .tickets-sales-graph-detail-list li:last-child {
+      border-right: 0; }
+    @media screen and (max-width: 992px) {
+      .tickets-sales-graph-detail-list li {
+        padding: 10px 20px; } }
+    @media screen and (max-width: 480px) {
+      .tickets-sales-graph-detail-list li {
+        padding: 10px 15px; } }
+    @media screen and (max-width: 375px) {
+      .tickets-sales-graph-detail-list li {
+        padding: 10px 8px; } }
+    @media screen and (max-width: 320px) {
+      .tickets-sales-graph-detail-list li {
+        border-right: 0;
+        width: 100%;
+        padding: 10px 20px; } }
+  .tickets-sales-graph-detail-list .tickets-sales-number {
+    font-size: 18px;
+    font-weight: 600;
+    color: #202124;
+    display: block; }
+    @media screen and (max-width: 1440px) {
+      .tickets-sales-graph-detail-list .tickets-sales-number {
+        font-size: 16px; } }
+    @media screen and (max-width: 1024px) {
+      .tickets-sales-graph-detail-list .tickets-sales-number {
+        font-size: 15px; } }
+    @media screen and (max-width: 480px) {
+      .tickets-sales-graph-detail-list .tickets-sales-number {
+        font-size: 14px; } }
+  .tickets-sales-graph-detail-list .tickets-sales-title {
+    font-size: 13px;
+    font-weight: 600; }
+    @media screen and (max-width: 480px) {
+      .tickets-sales-graph-detail-list .tickets-sales-title {
+        font-size: 12px; } }
+  @media screen and (max-width: 320px) {
+    .tickets-sales-graph-detail-list {
+      flex-flow: row wrap; } }
+
+/**
+ *
+ * UserProfile
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 25 2019
+ * Category: Pages
+ * Title: UserProfile styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.user-profile-holder .details-list {
+  padding: 20px 0; }
+  .user-profile-holder .details-list li {
+    margin-bottom: 15px;
+    overflow: hidden; }
+    .user-profile-holder .details-list li .title {
+      font-size: 16px;
+      font-weight: 600; }
+      @media screen and (max-width: 992px) {
+        .user-profile-holder .details-list li .title {
+          font-size: 12px; } }
+    .user-profile-holder .details-list li .sub-title {
+      color: #96a5ab;
+      font-size: 15px; }
+      @media screen and (max-width: 992px) {
+        .user-profile-holder .details-list li .sub-title {
+          font-size: 11px; } }
+
+.user-profile-holder.with-cover .user-avatar {
+  margin-top: -50px; }
+
+/**
+ *
+ * WatchList
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: WatchList styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.watch-list .search-input .icon {
+  line-height: 30px; }
+
+.watch-list .watch-details-holder {
+  border-top: 1px solid #e3e8ea;
+  height: 359.5px; }
+  @media (max-width: 1440px) {
+    .watch-list .watch-details-holder {
+      height: 379.5px; } }
+  .watch-list .watch-details-holder .moby__list-detail {
+    padding: 15px 20px;
+    font-size: 14px;
+    text-align: left;
+    color: rgba(32, 33, 36, 0.7); }
+    @media (max-width: 1440px) {
+      .watch-list .watch-details-holder .moby__list-detail {
+        font-size: 13px; } }
+    @media screen and (max-width: 320px) {
+      .watch-list .watch-details-holder .moby__list-detail {
+        text-align: center !important; } }
+
+@media (max-width: 1440px) {
+  .data-graph #MobyPageViewChart {
+    min-height: 433px !important; }
+    .data-graph #MobyPageViewChart .apexcharts-canvas,
+    .data-graph #MobyPageViewChart .apexcharts-svg {
+      height: 418px !important; }
+    .data-graph #MobyPageViewChart .apexcharts-inner {
+      transform: translate(27px, 42px) !important; } }

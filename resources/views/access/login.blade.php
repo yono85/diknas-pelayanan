@@ -67,7 +67,7 @@
             </div>
 
             <div class="div">
-                <a href="{{$apps['URI']}}/register" tabindex="4" class="nw-button mg-b0">Buat Akun Baru</a>
+                <a href="{{$apps['URI']}}/registers" tabindex="4" class="nw-button mg-b0">Buat Akun Baru</a>
             </div>
 
             <div class="div">
@@ -90,7 +90,6 @@
 <script>
 $(document).ready(function()
 {
-
     $('#form-login').submit(function(e)
     {
         var form = $(this);
@@ -106,7 +105,6 @@ $(document).ready(function()
         }
 
     });
-
 
     var validateProduct = 
     {
@@ -135,10 +133,13 @@ $(document).ready(function()
     function submitForm(form)
     {
         var form,
-        button = form.find('button.cmd-submit');
+        button = form.find('button.cmd-submit'),
+        keeplogin = parseFloat(form.find('input[name="keeplogin"]').val());
 
         form.find('label.error').remove();
         form.find('.error').removeClass('error');
+
+        var exp = keeplogin === 1 ? 365 : 1 ;
 
         if( button.attr('role') === 'off')
         {
@@ -150,20 +151,21 @@ $(document).ready(function()
 
             $t.success(function(n)
             {
-                // console.log(n);
-                // button.attr('role', 'off');
-                // form.attr('role', 'false');
 
-                // window.location.href = '/dashboard';
+                // console.log(n);
+                setCookie(config.apps.COOKIE_NAME,JSON.stringify(n.response),exp);
+                location.href = "/dashboard";
             });
             $t.error(function(n)
             {
                 var resp = n.responseJSON;
-                // console.log(resp);
-                if(n.status === 500)
+                console.log(resp);
+                if(n.status === 500 || n.status === 401 )
                 {
                     //
                     flagnotif('error', resp.message);
+                    button.attr('role', 'off');
+                    form.attr('role', 'false');
                     return;
                 }
 
@@ -176,6 +178,20 @@ $(document).ready(function()
             });
         }
     }
+
+
+    $('.cmd-keeplogin').click(function(e)
+    {
+        e.preventDefault();
+
+        var cmd = $(this),
+        form = cmd.parents('form');
+
+        cmd.attr('role') === 'off' ? cmd.attr('role', 'on'): cmd.attr('role', 'off');
+        //
+        var val = cmd.attr('role') === 'on' ? '1' : '0';
+        form.find('input[name="keeplogin"]').val( val );
+    });
 
     return false;
 });

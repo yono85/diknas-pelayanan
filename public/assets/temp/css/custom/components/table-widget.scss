@@ -1,0 +1,112 @@
+/**
+*
+* TableWidget
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 14 2020
+* Category: Pages
+* Title: TableWidget styles
+*
+*/
+
+@import "../variables.scss";
+
+// Table Style
+.advance-table-search {
+  overflow: hidden;
+  display: block;
+  .dataTables_length {
+    float: left;
+    line-height: $base-line-height + 10;
+    label {
+      font-size: $base-font + 2;
+      font-weight: $base-font-weight + 200;
+    }
+    select {
+      float: right;
+      margin-left: $base-margin - 20;
+      border-color: $border-color-base;
+      color: $secondary-color;
+      font-size: $base-font - 1;
+      min-height: 30px;
+    }
+  }
+  .dataTables_filter {
+    float: right;
+    input {
+      width: 100%;
+      border-color: $border-color-base;
+      padding: $base-padding - 20 $base-padding - 19 !important;
+      padding-left: $base-padding + 5;
+      color: $secondary-color;
+      font-size: $base-font;
+      height: 45px;
+      line-height: $base-line-height + 25;
+      border: $base-border-width $base-border-style $border-color-base;
+      border-radius: $border-radius-base;
+    }
+    label {
+      font-size: $base-font + 2;
+    }
+  }
+  .table {
+    border-radius: $border-radius-base;
+    border-bottom-width: 0;
+    margin-bottom: $base-margin - 10 !important;
+    thead {
+      th {
+        border-bottom-width: 0;
+        font-size: $base-font + 2;
+      }
+    }
+  }
+  .dataTables_info {
+    float: left;
+    font-size: $base-font + 2;
+    padding-top: 0 !important;
+  }
+  .dataTables_paginate {
+    float: right;
+    .paginate_button {
+      margin-right: $base-margin - 15;
+      font-size: $base-font;
+      cursor: pointer;
+      padding: $base-padding - 25 $base-padding - 20;
+      background: $primary-bg-color;
+      border-radius: $border-radius-base;
+      border: $base-border-width $base-border-style $border-color-base;
+      &.current {
+        background: $primary-color;
+        color: $white !important;
+      }
+      &:hover {
+        background: none;
+        color: $black !important;
+        border-color: $border-color-base;
+      }
+    }
+    .previous {
+      background: none;
+    }
+    .next {
+      background: none;
+    }
+  }
+}
+
+// Table Style 1
+
+.advance-table-search {
+  .toggle-list {
+    li {
+      float: left;
+      margin-right: $base-margin - 20;
+      a {
+        color: $secondary-color;
+        display: block;
+      }
+    }
+  }
+}

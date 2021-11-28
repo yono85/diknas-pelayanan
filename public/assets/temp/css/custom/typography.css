@@ -1,0 +1,178 @@
+/**
+*
+* Typography
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 14 2020
+* Category: Pages
+* Title: Typography styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.hero-heading {
+  color: #202124; }
+  @media (min-width: 320px) {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    .hero-heading {
+      font-size: 15px; } }
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  line-height: 20px;
+  font-weight: 600; }
+
+.hd-1,
+.hd-2,
+.hd-3,
+.hd-4,
+.hd-5,
+.hd-6,
+.hd-7,
+.hd-8 {
+  color: #202124; }
+
+.hero-heading {
+  font-size: 24px;
+  font-weight: 600; }
+  @media screen and (max-width: 480px) {
+    .hero-heading {
+      font-size: 18px; } }
+  @media screen and (max-width: 768px) {
+    .hero-heading {
+      font-size: 18px; } }
+  @media screen and (max-width: 1440px) {
+    .hero-heading {
+      font-size: 18px; } }
+
+h1,
+.h1,
+.hd-1 {
+  font-size: 22px;
+  font-weight: 600; }
+
+h2,
+.h2,
+.hd-2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0; }
+  @media screen and (max-width: 1023px) {
+    h2,
+    .h2,
+    .hd-2 {
+      font-size: 16px; } }
+  @media screen and (max-width: 320px) {
+    h2,
+    .h2,
+    .hd-2 {
+      font-size: 12px; } }
+
+@media screen and (max-width: 320px) {
+  .sub-header-title {
+    font-size: 15px; } }
+
+@media screen and (max-width: 480px) {
+  .sub-header-title {
+    font-size: 15px; } }
+
+@media screen and (max-width: 768px) {
+  .sub-header-title {
+    font-size: 15px; } }
+
+h3,
+.h3,
+.hd-3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0; }
+  @media screen and (max-width: 1440px) {
+    h3,
+    .h3,
+    .hd-3 {
+      font-size: 14px; } }
+  @media screen and (max-width: 320px) {
+    h3,
+    .h3,
+    .hd-3 {
+      font-size: 13px; } }
+
+h4,
+.h4,
+.hd-4 {
+  color: #202124;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0; }
+  @media screen and (max-width: 1440px) {
+    h4,
+    .h4,
+    .hd-4 {
+      font-size: 13px; } }
+  @media screen and (max-width: 320px) {
+    h4,
+    .h4,
+    .hd-4 {
+      font-size: 12px; } }
+
+.hd-5,
+.hd-6 {
+  font-size: 14px; }
+
+p,
+.paragraph {
+  font-size: 15px; }
+
+p {
+  font-size: 14px;
+  margin-bottom: 0; }
+
+a {
+  color: #202124; }
+  a:hover {
+    color: #96a5ab; }
+
+.paragraph {
+  font-size: 14px; }

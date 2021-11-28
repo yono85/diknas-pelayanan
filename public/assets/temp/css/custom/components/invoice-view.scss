@@ -1,0 +1,26 @@
+/**
+ *
+ * InvoiceAside
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Jan 08 2020
+ * Category: Pages
+ * Title: InvoiceAside styles
+ *
+ */
+
+@import "../variables.scss";
+
+// Invoice Note
+.invoice-note {
+  .title {
+    font-size: $base-font + 1;
+    margin-bottom: $base-margin - 15;
+  }
+  p {
+    font-size: $base-font + 1;
+    color: $secondary-color;
+  }
+}

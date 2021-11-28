@@ -1,0 +1,56 @@
+/**
+ *
+ * EcommereceSale
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: Ecommerce
+ * Title: EcommereceSale styles
+ *
+ */
+
+@import "../variables.scss";
+
+.widget-graph-detail {
+  line-height: $base-line-height + 10 !important;
+  .sale-info {
+    font-size: $base-font + 4;
+    font-weight: $base-font-weight + 200;
+    color: $black;
+    display: inline-block;
+    .icon {
+      font-size: $base-font;
+      margin-left: $base-margin - 20;
+    }
+    @media (max-width: $screen-xlg-min) {
+      font-size: $base-font + 2;
+    }
+    @media screen and (max-width: $screen-lg-min) {
+      font-size: $base-font + 1;
+    }
+  }
+  .total-quantity {
+    color: #909395;
+    font-size: $base-font + 2;
+    line-height: $base-line-height + 10 !important;
+    font-weight: $base-font-weight;
+    margin: 0;
+    @media (max-width: $screen-xlg-min) {
+      font-size: $base-font;
+    }
+  }
+  p {
+    color: #909395;
+    font-size: $base-font + 2;
+    @media (max-width: $screen-xlg-min) {
+      font-size: $base-font;
+    }
+  }
+  .graph-h {
+    &> div {
+      min-height: 175px !important;
+    }
+  }
+}

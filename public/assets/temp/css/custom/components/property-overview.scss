@@ -1,0 +1,42 @@
+/**
+ *
+ * PropertyOverview
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: EventsManagement
+ * Title: PropertyOverview styles
+ *
+ */
+
+@import "../variables.scss";
+
+.property-overview {
+  .table-holder {
+    height: 465px;
+    @media (max-width: $screen-xlg-min + 110) {
+      height: 523px;
+    }
+  }
+  .overview-cards-list {
+    padding-right: $base-padding;
+    @media (max-width: $screen-xlg-min + 110) {
+      padding: 0 $base-padding - 20;
+    }
+    .moby__page-filter {
+      margin: 0;
+      padding: $base-padding - 20 0 $base-padding;
+      .filter-list {
+        @media (max-width: $screen-xs-max) {
+          justify-content: flex-end;
+        }
+        @media (max-width: $screen-xxs-max) {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

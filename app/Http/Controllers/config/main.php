@@ -29,6 +29,7 @@ class main extends Controller
 
         $data = [
             'name'              =>  'Sistem Managemen Pelayanan Disdik',
+            'key'               =>  'b8e08d17f612d9d6c5af200c861e9fc9',
             'favicon'           =>  $this->URI() . '/assets/images/logo/logo-disdik-dki.png',
             'logo'              =>  $this->URI() . '/assets/images/logo/logo-disdik-dki.png',
             'URI'               =>  $this->URI(),

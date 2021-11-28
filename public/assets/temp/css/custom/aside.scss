@@ -1,0 +1,207 @@
+/**
+*
+* Theme: Aside
+* Author: Mobythemes
+* Website: MobythemesCom
+* Version: 1.0
+* Date: Thu Nov 28 2019
+* Category: 
+* Title: Aside styles
+*
+*/
+
+@import './variables.scss';
+.moby__aside-holder {
+    height: 100%;
+    .side-bar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-right: $base-border-width $base-border-style $border-color-base;
+        border-bottom: $base-border-width $base-border-style $border-color-base;
+        padding: 0 $base-padding - 20 0 $base-padding - 15;
+        background: $white;
+        height: 75px;
+        width: 100%;
+        overflow: hidden;
+        @media (max-width: $screen-xs-max) {
+            height: 64px;
+        }
+        .side-menu-text {
+          font-weight: $base-font-weight + 200;
+          color: $black;
+          font-size: $base-font + 1;
+        }
+        .logo {
+            display: block;
+            .icon-logo {
+                font-size: $base-font + 17 !important;
+                line-height: $base-line-height + 80;
+            }
+        }
+        .drawer-icon {
+          padding: 0 $base-padding - 28;
+          vertical-align: -1px;
+          &.icon {
+            cursor: pointer;
+            font-size: $base-font + 8;
+            &:hover {
+              color: $black!important;
+            }
+          }
+        }
+        .menu-icon {
+            .icon {
+                cursor: pointer;
+                font-size: $base-font + 8;
+                &:hover {
+                  color: $black!important;
+                }
+            }
+            display: none;
+        }
+    }
+    .moby__side-bar {
+        z-index: 999999;
+        .moby__drawer-menu {
+            width: 100%;
+            height: 100%;
+            height: calc(100% - 75px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-right: $base-border-width $base-border-style $border-color-base;
+            background: $secondary-bg-color-darker;
+            padding-top: $base-padding - 10;
+            @media (max-width: $screen-xs-max) {
+                height: calc(100% - 60px);
+            }
+            li {
+                text-align: left;
+                font-size: $base-font;
+                font-weight: $base-font-weight + 200;
+                margin: 0;
+                a,
+                .collapsed {
+                    text-decoration: none;
+                    font-size: $base-font - 1;
+                    color: $black;
+                    font-weight: $base-font-weight;
+                    padding: 0 $base-padding - 15;
+                    line-height: $base-line-height + 30 !important;
+                    display: block;
+                    width: 100%;
+                    position: relative;
+                    font-weight: $base-font-weight + 200;
+                    &:hover {
+                        color: $primary-color;
+                        .icon {
+                            color: $primary-color;
+                        }
+                    }
+                    .icon {
+                        margin-right: $base-margin - 15;
+                        font-size: $base-font + 2;
+                        color: $black;
+                        @media (min-width: $screen-xlg-min + 1) {
+                            font-size: $base-font + 4;
+                        }
+                    }
+                    .arrow-icon {
+                        position: absolute;
+                        top: 22px;
+                        right: 19px;
+                        font-size: $base-font - 6;
+                        color: $black;
+                        margin-right: 0;
+                        transform: rotate(0deg);
+                    }
+                    &[aria-expanded="true"] {
+                        .arrow-icon {
+                            transform: rotate(180deg);
+                        }
+                        color: $primary-color !important;
+                        .icon {
+                            color: $primary-color !important;
+                        }
+                    }
+                    &.active {
+                        color: $primary-color;
+                        .icon {
+                            color: $primary-color;
+                        }
+                        &[aria-expanded="true"] {
+                            .arrow-icon {
+                                transform: rotate(0deg);
+                            }
+                        }
+                        &[aria-expanded="false"] {
+                            .arrow-icon {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    @media (min-width: $screen-xlg-min + 1) {
+                        font-size: $base-font + 1;
+                    }
+                }
+                .collapse,
+                .collapsing {
+                    ul {
+                        li {
+                            margin: 0;
+                            a {
+                                padding-left: $base-padding + 20;
+                                font-size: $base-font - 2;
+                                font-weight: $base-font-weight + 200;
+                                color: rgba($black, .7);
+                                position: relative;
+                                &:before {
+                                  content: "";
+                                  position: absolute;
+                                  top: 21px;
+                                  left: 50px;
+                                  width: 7px;
+                                  height: 7px;
+                                  background: rgba($secondary-color, .6);
+                                  border-radius: 50%;
+                                }
+                                &:hover {
+                                    color: $primary-color;
+                                    .icon {
+                                        color: $primary-color;
+                                    }
+                                    &:before {
+                                        background: $primary-color;
+                                    }
+                                }
+                                span {
+                                    margin-left: $base-margin - 15;
+                                }
+                                &[data-toggle="collapse"] {
+                                    &:before {
+                                        display: none;
+                                    }
+                                }
+                                &.active {
+                                    color: $primary-color;
+                                    .icon {
+                                        color: $primary-color;
+                                    }
+                                    &:before {
+                                        background: $primary-color;
+                                    }
+                                }
+                                @media (min-width: $screen-xlg-min+ 1) {
+                                    font-size: $base-font;
+                                }
+                            }
+                        }
+                    }
+                    .collapse {
+                        padding-left: $base-padding - 15;
+                    }
+                }
+            }
+        }
+    }
+}

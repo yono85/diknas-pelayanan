@@ -1,19 +1,35 @@
 
 // info login account
-infologin( getCookie(config.apps.cookie_name) );
+infologin( getCookie(config.apps.COOKIE_NAME) );
 
 $(document).ready(function()
 {
 
     //logout
-    $('#account-logout').click(function(e)
+    $("body").on("click", ".account-signout", function(e)
     {
         e.preventDefault();
-        var token = $(this).attr('href').split("token=");
+        // var token = $(this).attr('href').split("token=");
 
-        logout(token);
+        // logout(token);
+
+        callLogout();
        
     });
+
+    $("#account-logout").click(function(e)
+    {
+        e.preventDefault();
+        // var token = $(this).attr('href').split("token=");
+
+        // logout(token);
+
+        callLogout();
+       
+    });
+
+
+
 
 
     return false;
@@ -22,43 +38,44 @@ $(document).ready(function()
 
 
 // logout
-function logout(e)
+function callLogout()
 {
-    var token = e;
-        // console.log(token[1]);
-        $.ajax({
-        type: 'POST',
-        url:  config.apps.URL_API + '/api/logout',
-        timeout: 18000,
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + token[1]
-        },
-        data: JSON.stringify({"token":token[1]}),
-        dataType: 'JSON',
-        success: function(e,n,r)
+    
+    var token = getCookie(config.apps.COOKIE_NAME).token;
+
+    // console.log(token[1]);
+    $.ajax({
+    type: 'POST',
+    url:  config.apps.URL_API + '/api/logout',
+    timeout: 18000,
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+    },
+    data: JSON.stringify({"token":token}),
+    dataType: 'JSON',
+    success: function(e,n,r)
+    {
+
+        if( r.status === 200)
         {
-
-            if( r.status === 200)
-            {
-                // console.log(e.response.redirect);
-                deleteCookies();
-                location.href = config.apps.URL + e.response.redirect;
-            }
-
-            // console.log(e);
-
-        },
-        error: function(e)
-        {
-
-            // console.log(e.responseJSON.response.redirect + ' in error');
+            // console.log(e.response.redirect);
             deleteCookies();
-            location.href = config.apps.URL + e.responseJSON.response.redirect;
-            // console.log(e);
+            location.href = e.response.redirect;
         }
 
-    });
+        // console.log(e);
+
+    },
+    error: function(e)
+    {
+
+        console.log(e);
+        deleteCookies();
+        location.href = config.apps.URL + e.responseJSON.response.redirect;
+    }
+
+});
 }
 
 
@@ -1001,7 +1018,7 @@ function runGetNotification()
 
 function notifTitlePage(e)
 {
-    var defaultTitle = config.page.title;
+    var defaultTitle = config.page.TITLE;
 
     var chTitle = parseFloat(e) > 0 ? '(' + e + ') Pemberitahuan Baru | ' + config.apps.name : defaultTitle;
 
@@ -1090,12 +1107,7 @@ function startTimerCHToken()
        
        var token = getToken();
         getRefreshCookie(token);
-        // console.log(timeStatusCHToken);
-        // location.reload();
-        // window.location.href = window.location.href;
 
-        // refresh cookie
-        // getRefreshCookie(e)
    }
 
    

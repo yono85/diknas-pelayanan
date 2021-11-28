@@ -1,0 +1,208 @@
+/**
+ *
+ * Calander
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Jan 13 2020
+ * Category: Pages
+ * Title: Calander styles
+ *
+ */
+
+@import "../variables.scss";
+
+.moby__inline-calander {
+  padding-bottom: $base-padding - 20;
+  .ui-widget {
+    box-shadow: none;
+    font-size: $base-font;
+    @media (max-width: $screen-xxs-max) {
+      display: block !important;
+    }
+    &.ui-widget-content {
+      border: 0;
+      padding: 0;
+    }
+    .search-input {
+      line-height: $base-line-height + 12;
+      .icon {
+        line-height: $base-line-height + 12;
+      }
+    }
+    .ui-widget-header {
+      background: transparent;
+      border: 0;
+      border-bottom: $base-border-width $base-border-style $border-color-base;
+      padding: 0 $base-padding - 10 $base-padding - 15;
+      border-radius: $border-radius-base - 4;
+      .ui-datepicker-title {
+        line-height: $base-line-height + 4;
+        margin: 0 40px;
+        cursor: pointer;
+        font-size: $base-font + 2;
+        font-weight: $base-font-weight + 200;
+        color: rgba($black, .7);
+        span {
+          font-size: $base-font + 2;
+        }
+      }
+      .ui-corner-all {
+        color: rgba($black, .7);
+        width: 40px;
+        height: 30px;
+        line-height: $base-line-height;
+        display: none;
+        span {
+          left: 0;
+          top: 12px;
+          margin-left: 0;
+        }
+      }
+      .ui-icon {
+        text-indent: 1px;
+        overflow: visible;
+        font-size: $base-font + 2;
+        font-weight: $base-font-weight + 200;
+      }
+      .ui-datepicker-prev {
+        top: 15px;
+        left: 20px;
+        cursor: pointer;
+        padding: 0;
+      }
+      .ui-datepicker-next {
+        top: 15px;
+        right: 80px;
+        cursor: pointer;
+        padding: 0;
+      }
+    }
+  }
+  .ui-datepicker-inline {
+    width: 100%;
+  }
+  .ui-datepicker {
+    td {
+      padding: $base-padding - 27 $base-padding - 16;
+      @media (max-width: $screen-xlg-min + 200) {
+        padding: $base-padding - 27 0;
+      }
+    }
+  }
+  .ui-widget-content {
+    a,
+    .ui-state-default {
+      text-align: center;
+      border-radius: 50%;
+      background: transparent;
+      border-color: transparent;
+      font-size: $base-font;
+      color: rgba($black, .7);
+      height: 40px;
+      width: 40px;
+      line-height: $base-line-height + 20;
+      padding: 0;
+      @media screen and (max-width: $screen-lg-min) {
+        font-size: $base-font - 1;
+      }
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: $base-font - 1;
+      }
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+    a {
+      &.ui-state-hover {
+        border: 0;
+      }
+    }
+  }
+  .ui-datepicker-calendar {
+    margin: 0;
+    th {
+      font-size: $base-font + 2;
+      text-transform: capitalize;
+      font-weight: $base-font-weight + 300;
+      padding: $base-padding - 20 $base-padding - 16 $base-padding - 25;
+      color: rgba($black, .7);
+      span {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        line-height: $base-line-height + 20;
+      }
+      @media (max-width: $screen-xlg-min + 200) {
+        padding: $base-padding - 20 $base-padding - 22 $base-padding - 25;
+      }
+      @media (max-width: $screen-xlg-min + 110) {
+        padding: $base-padding - 20 $base-padding - 23 $base-padding - 25;
+      }
+      @media (max-width: $screen-xlg-min + 80) {
+        padding: $base-padding - 20 $base-padding - 24 $base-padding - 25;
+      }
+      @media (max-width: $screen-xlg-min) {
+        padding: $base-padding - 20 0 $base-padding - 25;
+      }
+    }
+    thead {
+      width: 100%;
+      display: table;
+    }
+    tbody {
+      width: 100%;
+      display: table;
+    }
+  }
+  .ui-state-highlight,
+  .ui-widget-content .ui-state-highlight,
+  .ui-widget-header .ui-state-highlight {
+    border: 1px solid darken($warning-color, 15%) !important;
+    background: $warning-color !important;
+    color: $white !important;
+  }
+  .ui-state-active,
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active,
+  a.ui-button:active,
+  .ui-button:active,
+  .ui-button.ui-state-active:hover {
+    border: 1px solid darken($primary-color, 15%);
+    background: $primary-color;
+    color: $white !important;
+  }
+  .ui-datepicker-calendar {
+    display: block;
+  }
+}
+
+.add-event-modal {
+  .modal-dialog {
+    max-width: 750px;
+  }
+}
+
+.events-calendar-year {
+  position: absolute;
+  top: 62px;
+  left: 35px;
+  font-size: $base-font + 2;
+  font-weight: $base-font-weight + 200;
+  color: rgba($black, .7);
+  .icon {
+    font-size: $base-font - 2;
+    vertical-align: 0;
+  }
+}
+
+.calender-add-icon {
+  position: absolute;
+  cursor: pointer;
+  top: 60px;
+  right: 35px;
+  color: $warning-color !important;
+  font-size: $base-font + 10 !important;
+}

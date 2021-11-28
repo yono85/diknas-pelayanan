@@ -1,0 +1,37 @@
+/**
+ *
+ * CreatAccount
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 24 2019
+ * Category: Pages
+ * Title: CreatAccount styles
+ *
+ */
+
+@import "../variables.scss";
+
+.account-heading {
+  margin-bottom: $base-margin + 30;
+  @media (max-width: $screen-xxs-max + 87) {
+    margin-bottom: $base-margin;
+  }
+  .title {
+    font-size: $base-font + 8;
+    color: $black;
+    margin-bottom: $base-margin - 20;
+    @media screen and (max-width: $screen-md-max) {
+      font-size: $base-font + 4;
+    }
+  }
+  p {
+    font-size: $base-font + 2;
+    color: rgba($secondary-color, 0.5);
+    margin-bottom: $base-margin - 10;
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: $base-font;
+    }
+  }
+}

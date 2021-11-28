@@ -1,0 +1,161 @@
+/**
+*
+* Typography
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 14 2020
+* Category: Pages
+* Title: Typography styles
+*
+*/
+
+@import "../custom/variables.scss";
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.hero-heading {
+  color: $black;
+  @media (min-width: $screen-xxxs) {
+    font-size: $base-font + 1;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  line-height: $base-line-height;
+  font-weight: $base-font-weight + 200;
+}
+
+.hd-1,
+.hd-2,
+.hd-3,
+.hd-4,
+.hd-5,
+.hd-6,
+.hd-7,
+.hd-8 {
+  color: $black;
+}
+
+.hero-heading {
+  @media screen and (max-width: $screen-xxs-max) {
+    font-size: $base-font + 4;
+  }
+  @media screen and (max-width: $screen-xs-min) {
+    font-size: $base-font + 4;
+  }
+  @media screen and (max-width: $screen-xlg-min) {
+    font-size: $base-font + 4;
+  }
+  font-size: $base-font + 10;
+  font-weight: $base-font-weight + 200;
+}
+
+h1,
+.h1,
+.hd-1 {
+  font-size: $base-font + 8;
+  font-weight: $base-font-weight + 200;
+}
+
+h2,
+.h2,
+.hd-2 {
+  font-size: $base-font + 4;
+  font-weight: $base-font-weight + 200;
+  margin: 0;
+  @media screen and (max-width: $screen-md-max - 1) {
+    font-size: $base-font + 2;
+  }
+  @media screen and (max-width: $screen-xxxs) {
+    font-size: $base-font - 2;
+  }
+}
+
+.sub-header-title {
+  @media screen and (max-width: $screen-xxxs) {
+    font-size: $base-font + 1;
+  }
+  @media screen and (max-width: $screen-xxs-max) {
+    font-size: $base-font + 1;
+  }
+  @media screen and (max-width: $screen-xs-min) {
+    font-size: $base-font + 1;
+  }
+}
+
+h3,
+.h3,
+.hd-3 {
+  font-size: $base-font + 2;
+  font-weight: $base-font-weight + 200;
+  margin: 0;
+  @media screen and (max-width: $screen-xlg-min) {
+    font-size: $base-font;
+  }
+  @media screen and (max-width: $screen-xxxs) {
+    font-size: $base-font - 1;
+  }
+}
+
+h4,
+.h4,
+.hd-4 {
+  color: $black;
+  font-size: $base-font + 1;
+  font-weight: $base-font-weight + 200;
+  margin: 0;
+  @media screen and (max-width: $screen-xlg-min) {
+    font-size: $base-font - 1;
+  }
+  @media screen and (max-width: $screen-xxxs) {
+    font-size: $base-font - 2;
+  }
+}
+
+.hd-5,
+.hd-6 {
+  font-size: $base-font;
+}
+
+p,
+.paragraph {
+  font-size: $base-font + 1;
+}
+
+p {
+  font-size: $base-font;
+  margin-bottom: 0;
+}
+a {
+  color: $black;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.paragraph {
+  font-size: $base-font;
+}

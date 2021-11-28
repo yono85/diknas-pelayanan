@@ -1,0 +1,94 @@
+/**
+*
+* TaskList
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Thu Jan 16 2020
+* Category: Pages
+* Title: TasksList styles
+*
+*/
+
+@import "../variables.scss";
+
+.task-list {
+  .moby__search-bar {
+    padding: $base-padding - 15 $base-padding - 10 !important;
+    .search-input {
+      .icon {
+        line-height: $base-line-height + 15 !important;
+        @media (max-width: $screen-lg-min) {
+          line-height: $base-line-height + 12;
+        }
+      }
+    }
+  }
+  .task-list-items {
+    height: 400px;
+  }
+  .task-list-item {
+    transition: all ease-in-out .4s;
+    &:hover {
+      background: $primary-bg-color;
+    }
+    @media (max-width: $screen-xxs-max + 80) {
+      flex-flow: row wrap;
+      &.pd-20 {
+        padding: $base-padding - 10 $base-padding - 15;
+      }
+    }
+  }
+  .checkbox {
+    margin-top: $base-margin - 23;
+    @media (max-width: $screen-xxs-max + 87) {
+      display: none;
+    }
+  }
+  .user-info {
+    .user-avatar {
+      min-width: 35px;
+    }
+    .title {
+      font-size: $base-font + 1;
+    }
+    @media (max-width: $screen-xxs-max + 87) {
+      & > .pd-l-20 {
+        padding-left: $base-padding - 15;
+      }
+    }
+  }
+  .task-list-item-hover {
+    .task-list-actions {
+      transition: all .4s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover {
+      .task-list-actions {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .task-list-actions {
+    flex: 1 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    li {
+      padding-left: $base-padding - 20;
+      .icon {
+        font-size: $base-font + 2;
+        vertical-align: middle;
+        &:hover {
+          color: $black !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxs-max) {
+      display: none !important;
+    }
+  }
+}

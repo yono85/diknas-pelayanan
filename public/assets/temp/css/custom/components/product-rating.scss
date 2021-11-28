@@ -1,0 +1,94 @@
+/**
+ *
+ * ProductRating
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: Ecommerce
+ * Title: ProductRating styles
+ *
+ */
+
+@import "../variables.scss";
+
+.product-rating-list {
+  height: 356.5px;
+  @media (max-width: $screen-xlg-min) {
+    height: 355.5px;
+  }
+  .product-rating-holder {
+    padding: $base-padding - 15 $base-padding - 10;
+    transition: all ease-in-out .4s;
+    &:hover {
+      .hover {
+        display: block;
+      }
+      .number {
+        display: none;
+      }
+      transform: scale(1.02);
+    }
+    .hover {
+      display: none;
+      flex: 1 1 0;
+      transition: all ease-in-out .4s;
+    }
+    .title {
+      font-size: $base-font + 2;
+      color: $black;
+      display: block;
+    }
+    .rateit {
+      margin-left: $base-margin - 20;
+    }
+    .subtitle {
+      font-size: $base-font - 2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 50%;
+      text-align: center;
+      .icon {
+        display: inline-block;
+        margin-top: $base-margin - 10;
+        font-size: $base-font + 2;
+      }
+    }
+    .text {
+      font-size: $base-font;
+      font-weight: $base-font-weight ;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: $secondary-color;
+      margin-top: $base-margin - 29;
+      text-align: center;
+      @media (max-width: $screen-xlg-min) {
+        font-size: $base-font - 2;
+      }
+    }
+    .number {
+      color: $secondary-color;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 50%;
+      font-size: $base-font;
+      text-align: center;
+      transition: all ease-in-out .4s;
+      @media (max-width: $screen-xlg-min) {
+        font-size: $base-font - 2;
+      }
+    }
+    &.product-rating-head {
+      padding: 0 $base-padding - 10 $base-padding - 10;
+      .text {
+        text-align: left;
+      }
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,339 @@
+/**
+*
+* Conversations
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Tue Jan 07 2020
+* Category: Pages
+* Title: Conversations styles
+*
+*/
+
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.moby__conversations-holder {
+  overflow: hidden;
+  position: relative;
+  @media (max-width: $screen-sm-max) {
+    @include card-shadow();
+    min-height: 100%;
+    border-radius: $border-radius-base;
+    border: $base-border-width $base-border-style $border-color-base;
+    margin: $base-margin + 70 $base-margin - 10 $base-margin - 10;
+  }
+  .conversation-list-btn {
+    position: fixed;
+    top: 185px;
+    right: 20px;
+    z-index: 9999;
+    display: none;
+    @media (max-width: $screen-sm-max) {
+      display: block;
+    }
+  }
+  // Conversation List
+  .conversation-list-h {
+    .search-input {
+      padding: $base-padding - 15 $base-padding - 10;
+      height: 75px;
+      @media screen and (max-width: $screen-md-max) {
+        height: 65px;
+      }
+      .form-control {
+        height: 40px;
+        @media screen and (max-width: $screen-md-max) {
+          height: 35px;
+        }
+      }
+      .icon {
+        line-height: $base-line-height + 20;
+        @media screen and (max-width: $screen-md-max) {
+          line-height: $base-line-height + 15;
+        }
+      }
+    }
+    .group-list {
+      height: 755px;
+      @media (max-width: $screen-xlg-min) {
+        height: 688px;
+      }
+      @media (max-width: $screen-xlg-min - 70) {
+        height: 443px;
+      }
+      @media (max-width: $screen-lg-min + 100) {
+        height: 588px;
+      }
+      @media (max-width: $screen-md-max) {
+        height: 566px;
+      }
+    }
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    @media (max-width: $screen-sm-max) {
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+      position: absolute;
+      width: 50%;
+      top: 0;
+      left: -200px;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      z-index: 999;
+      height: 801px;
+      @include card-shadow();
+    }
+    @media (max-width: $screen-xxs-max + 90) {
+      width: 60%;
+    }
+    @media (max-width: $screen-xxs-max) {
+      width: 70%;
+    }
+    @media (max-width: $screen-xxxs) {
+      width: 91%;
+    }
+    &.conversation-list-mobile-view {
+      left: 0px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  // Conversation
+  .moby__conversation {
+    height: 100%;
+    .conversation-head {
+      border-bottom: $base-border-width $base-border-style $border-color-base;
+      height: 75px;
+      line-height: $base-line-height + 25;
+      .title {
+        font-size: $base-font + 2;
+        display: block;
+        color: $black;
+        padding: $base-padding - 15 0;
+        padding-left: $base-padding - 10;
+        @media screen and (max-width: $screen-md-max) {
+          font-size: $base-font;
+        }
+        @media screen and (max-width: $screen-xxs-max) {
+          font-size: $base-font - 2;
+          display: none;
+        }
+      }
+      .conversation-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        li {
+          a,
+          .btn {
+            display: inline-block;
+            border-left: $base-border-width $base-border-style $border-color-base !important;
+            height: 75px;
+            padding: $base-padding - 15 $base-padding - 10;
+            .icon {
+              margin-right: 0;
+              color: rgba($secondary-color, .7) !important;
+            }
+            &:hover {
+              .icon {
+                color: $primary-color !important;
+              }
+            }
+            @media screen and (max-width: $screen-md-max) {
+              height: 65px;
+            }
+            @media screen and (max-width: $screen-xxs-max) {
+              padding: $base-padding - 15;
+            }
+            @media (max-width: $screen-xxs - 25) {
+              padding: $base-padding - 15 $base-padding - 20;
+            }
+          }
+          .btn {
+            border-radius: $border-radius-base - 4;
+            border: 0;
+          }
+        }
+      }
+      @media screen and (max-width: $screen-md-max) {
+        height: 65px;
+        line-height: $base-line-height + 15;
+      }
+    }
+    .conversation-content {
+      position: relative;
+      height: 750px;
+      overflow: hidden !important;
+      @media (max-width: $screen-xlg-min) {
+        height: 688px;
+      }
+      @media (max-width: $screen-xlg-min - 70) {
+        height: 443px;
+      }
+      @media (max-width: $screen-lg-min + 100) {
+        height: 588px;
+      }
+      @media (max-width: $screen-md-max) {
+        height: 566px;
+      }
+      .messages {
+        padding: $base-padding - 10;
+        height: 615px;
+        @media (max-width: $screen-xlg-min) {
+          height: 553px;
+        }
+        @media (max-width: $screen-xlg-min - 70) {
+          height: 310px;
+        }
+        @media (max-width: $screen-lg-min + 100) {
+          height: 450px;
+        }
+        @media (max-width: $screen-md-max) {
+          height: 420px;
+        }
+        @media (max-width: $screen-xxs-max) {
+          height: 375px;
+        }
+        @media (max-width: $screen-xxxs) {
+          height: 345px;
+        }
+      }
+      .message-holder {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: $base-margin;
+      }
+      .user {
+        margin-right: $base-margin - 10;
+        text-align: center;
+        width: 35px;
+        .user-avatar {
+          margin-right: 0;
+        }
+      }
+      .ant-avatar {
+        margin-bottom: $base-padding - 20;
+      }
+      .time {
+        font-size: $base-font;
+        color: $secondary-color;
+      }
+      .message {
+        p {
+          display: inline-block;
+          margin-bottom: 0;
+          padding: $base-padding - 18 $base-padding - 10;
+          border-radius: $border-radius-base;
+          background: darken($primary-bg-color, 3%);
+          color: $secondary-color;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 $base-margin - 35;
+            background: darken($primary-bg-color, 3%);
+            transform: rotate(45deg);
+            z-index: -1;
+          }
+          @media screen and (max-width: $screen-md-max) {
+            font-size: $base-font - 1;
+          }
+          @media screen and (max-width: $screen-xxs-max) {
+            font-size: $base-font - 2;
+          }
+        }
+      }
+      .right {
+        flex-direction: row-reverse;
+        .user {
+          margin-right: 0;
+          margin-left: $base-margin - 10;
+        }
+        .message {
+          p {
+            background-color: $primary-color;
+            color: $white;
+            &:after {
+              margin: 0 $base-margin - 35 0 auto;
+              background: $primary-color;
+            }
+          }
+        }
+      }
+      .conversation-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+      }
+    }
+    .quick-replies {
+      padding: $base-padding - 15 $base-padding - 10;
+      background: rgba(255, 255, 255, .95);
+      .btn {
+        margin-right: $base-margin - 20;
+      }
+      @media screen and (max-width: $screen-lg-min - 1) {
+        .btn {
+          margin-bottom: $base-margin - 20;
+        }
+      }
+    }
+    .write-message {
+      background: $white;
+      padding: $base-padding - 15 $base-padding - 10;
+      border-top: $base-border-width $base-border-style $border-color-base;
+      .form-control {
+        height: 40px;
+        border: 0;
+      }
+      ::placeholder {
+        color: rgb(208, 216, 219);
+      }
+      .prefix {
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        height: 40px;
+        line-height: $base-line-height + 20;
+        .icon {
+          color: rgba($black, .7);
+        }
+        &.suffix {
+          .icon {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.drawar-conversation-user-info {
+  .user-info-head {
+    border-bottom: $base-border-width $base-border-style $border-color-base;
+    height: 75px;
+    line-height: 45px;
+    padding: $base-padding - 15 $base-padding - 10;
+  }
+  .user-info-holder {
+    .user-profile-list {
+      padding: $base-padding - 10 !important;
+      li {
+        margin-bottom: $base-margin;
+      }
+    }
+  }
+}
+

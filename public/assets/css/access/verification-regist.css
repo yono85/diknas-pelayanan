@@ -469,6 +469,10 @@ a{
 	.say-verif{
 		font-size: 26px;
 	}
+
+	.btn-vpass{
+		top: 5px;
+	}
 }
 
 

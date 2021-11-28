@@ -1,0 +1,65 @@
+/*************** 
+Moby Theme Variables 
+****************/
+
+/***********************
+  Global variables
+***********************/
+
+//Colors
+$white: #fff;
+$black: rgb(32, 33, 36);
+$secondary-color: rgb(150, 165, 171);
+$lighter-secondary-color: #99a8ae;
+$error-color:  rgb(234, 67, 53);
+$primary-color: rgb(104, 157, 246);
+$color-oval-blue: #00cccc;
+$success-color: rgb(52, 168, 83);
+$warning-color: rgb(251, 188, 5);
+$grey: #bccce9; // Todo
+$color-fb: #3578E5;
+$color-tw: #1da1f2;
+$color-in: #006097;
+
+//Bg Color
+$primary-bg-color: rgb(249, 250, 250); 
+$secondary-bg-color: rgb(252, 252, 252);
+$secondary-bg-color-darker: rgb(245, 247, 247);
+
+//Icons Color
+$icon-color: rgb(172,186,191);
+
+//Font
+$base-font: 14px; // major text font size
+
+$primary-font-family: 'Nunito Sans', sans-serif;
+$secondary-font-family: 'Roboto', sans-serif;
+
+$base-font-weight: 400;
+
+// Base Spacing 
+$base-margin: 30px;
+$base-padding: 30px;
+
+// Line Height
+$base-line-height: 20px;
+
+//Border
+$border-radius-base: 4px; // major border radius
+$border-color-base: rgb(227,232,234); // major border color
+$base-border-style: solid;
+$base-border-width: 1px;
+
+/***********************
+  Media Queries
+***********************/
+$screen-xxxs:           320px;
+$screen-xxs:            400px;
+$screen-xxs-max:        480px;
+$screen-xs-max:         767px;
+$screen-xs-min:         768px;
+$screen-sm-max:         991px;
+$screen-md-min:         992px;
+$screen-md-max:         1024px;
+$screen-lg-min:         1200px;
+$screen-xlg-min:        1440px;

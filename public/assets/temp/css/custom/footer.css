@@ -1,0 +1,68 @@
+/**
+*
+* Footer
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Wed Dec 11 2019
+* Category: Multi
+* Title: Footer styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.moby__footer-holder {
+  padding: 20px 30px;
+  overflow: hidden;
+  border-top: 1px solid #e3e8ea; }
+  @media (max-width: 320px) {
+    .moby__footer-holder {
+      text-align: center; } }
+  @media screen and (max-width: 480px) {
+    .moby__footer-holder {
+      padding: 30px; } }
+  .moby__footer-holder h3 {
+    font-size: 16px;
+    color: #96a5ab;
+    margin: 0;
+    font-weight: 400; }
+    @media (max-width: 568px) {
+      .moby__footer-holder h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+        text-align: center; } }
+  .moby__footer-holder .moby__footer-list {
+    text-align: right; }
+    .moby__footer-holder .moby__footer-list li {
+      display: inline-block;
+      padding: 0 20px; }
+      .moby__footer-holder .moby__footer-list li:last-child {
+        padding-right: 0; }
+        @media (max-width: 568px) {
+          .moby__footer-holder .moby__footer-list li:last-child {
+            padding-right: 20px; } }
+      .moby__footer-holder .moby__footer-list li a {
+        font-size: 14px;
+        color: #96a5ab;
+        text-decoration: none;
+        font-weight: 400; }
+        .moby__footer-holder .moby__footer-list li a:hover {
+          color: #202124;
+          transition: all ease-in-out 0.4s; }
+      @media screen and (max-width: 320px) {
+        .moby__footer-holder .moby__footer-list li {
+          text-align: center; } }
+    @media (max-width: 568px) {
+      .moby__footer-holder .moby__footer-list {
+        text-align: center;
+        float: none !important;
+        display: flex;
+        justify-content: center; } }

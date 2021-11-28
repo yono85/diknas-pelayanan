@@ -1,0 +1,68 @@
+/**
+*
+* Footer
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Wed Dec 11 2019
+* Category: Multi
+* Title: Footer styles
+*
+*/
+
+@import "./variables.scss";
+.moby__footer-holder {
+  padding: $base-padding - 10 $base-padding;
+  overflow: hidden;
+  border-top: $base-border-width $base-border-style $border-color-base;
+  @media (max-width: $screen-xxxs) {
+    text-align: center;
+  }
+  @media screen and (max-width: $screen-xxs-max) {
+    padding: $base-padding;
+  }
+  h3 {
+    font-size: $base-font + 2;
+    color: $secondary-color;
+    margin: 0;
+    font-weight: $base-font-weight ;
+    @media (max-width: $screen-xxs-max + 88) {
+      font-size: $base-font + 1;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+  .moby__footer-list {
+    text-align: right;
+    li {
+      display: inline-block;
+      padding: 0 $base-padding - 10;
+      &:last-child {
+        padding-right: 0;
+        @media (max-width: $screen-xxs-max + 88) {
+          padding-right: $base-padding - 10;
+        }
+      }
+      a {
+        font-size: $base-font;
+        color: $secondary-color;
+        text-decoration: none;
+        font-weight: $base-font-weight;
+        &:hover {
+          color: $black;
+          transition: all ease-in-out 0.4s;
+        }
+      }
+      @media screen and (max-width: $screen-xxxs) {
+        text-align: center;
+      }
+    }
+    @media (max-width: $screen-xxs-max + 88) {
+      text-align: center;
+      float: none !important;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -188,7 +188,8 @@ button.is-loading:focus{
     outline: none;
 }
 
-button.none.is-loading[role="on"]:after, button.grey.is-loading[role="on"]:after, button.blue.is-loading[role="on"]:after, button.green.is-loading[role="on"]:after, button.btn.is-loading[role="on"]:after{
+button.none.is-loading[role="on"]:after, button.grey.is-loading[role="on"]:after, button.blue.is-loading[role="on"]:after, button.green.is-loading[role="on"]:after, button.btn.is-loading[role="on"]:after,
+a.is-loading[role="on"]:after{
     content: "";
     display: block;
     position: absolute;
@@ -202,6 +203,42 @@ button.none.is-loading[role="on"]:after, button.grey.is-loading[role="on"]:after
     border: 2px solid #f3f3f3;
     border-top-color: rgb(243, 243, 243);
     border-right-color: rgb(243, 243, 243);
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-animation: spinAround 1s infinite linear;
+    animation: spinAround 1s infinite linear;
+    opacity: 1;
+}
+
+.is-loading-new[role="on"]{
+    position: relative;
+}
+
+.is-loading-new[role="on"].w32:after{
+    width: 32px;
+    height: 32px;
+}
+
+.is-loading-new[role="on"].blue:after{
+    border: 3px solid rgb(44, 131, 245);
+    border-top-color: rgb(223, 238, 250);
+    border-right-color: rgb(223, 238, 250);
+}
+
+.is-loading-new[role="on"] div{
+    opacity: .2;
+}
+
+.is-loading-new[role="on"]:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;    
     border-radius: 50%;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -631,16 +668,91 @@ button.rds4{
    outline: none !important;
 }
 
-.alert-error{
-    background-color: rgb(209, 54, 54) !important;
-    color: #f8f8f8 !important;
-    text-shadow: 0px 1px 0px #333 !important;
+.alert{
+    border-radius: 28px !important;
+    padding: 10px 22px !important;
+    border: 0px !important;
 }
 
-.alert-error button.close{
+.alert-success{
+    background-color: rgb(20, 167, 20) !important;
+    color: #fff !important;
+    /* text-shadow: 0px 1px 0px #333 !important; */
+}
+
+.alert-error{
+    background-color: rgb(221, 56, 34) !important;
+    color: #fff !important;
+    /* text-shadow: 0px 1px 0px #333 !important; */
+}
+
+.alert-error button.close, .alert-success button.close{
     color: #f8f8f8 !important;
     text-shadow: 0px 1px 0px #333 !important;
     outline: none !important;
+    height: unset !important;
+    padding: unset !important;
+    background-color: transparent !important;
+    line-height: unset !important;
+    border: 0 !important;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    /* background-color: pink !important; */
+    z-index: 3;
+}
+
+.alert-new{
+    position: absolute;
+    justify-content: center;
+    z-index: 9999;
+    width: 400px;
+    left: calc((100% - 400px) / 2);
+    box-sizing: border-box;
+    margin-top: 15px;
+    font-size: 12px;
+    box-shadow: 1px 1px 5px -1px #999;
+    border-radius: 19px;
+}
+
+.alert-new .inner{
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 14px 25px 14px 15px;
+}
+
+.alert-new .inner a.close{
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    z-index: 1;
+    color: #ddd;
+    font-size: 10px !important;
+    font-weight: normal !important;
+}
+
+.alert-new.error{
+    background-color: rgb(212, 22, 48);
+    color: #fff;
+}
+
+.alert-new.success{
+    background-color: rgb(11, 180, 11);
+    color: #fff;
+}
+
+
+.alert span.msg{
+    line-height: 120%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 300;
+    width: 100%;
+    display: block;;
 }
 /* end error  */
 
@@ -717,7 +829,7 @@ button.rds4{
     content:'';
     position: absolute;
     z-index: 3;
-    background-image: url('/assets/icon/herbindo-favicon.png');
+    background-image: url('/assets/images/logo/logo-disdik-dki.png');
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
@@ -902,6 +1014,10 @@ span.label{
     line-height: 120%;
 }
 
+span.lbl{
+    color: #888;
+}
+
 .w100p{
     width: 100% !important;
 }
@@ -1066,6 +1182,10 @@ input.form-control.phone{
     width: 40%;
 }
 
+.dis-in-block{
+    display:  inline-block !important;
+}
+
 textarea.noreseize{
     resize: none;
 }
@@ -1086,7 +1206,16 @@ label.error, span.error{
     font-weight: normal;
     line-height: 120%;
     display: block;
+    padding-top: 4px;
 }
+
+label.error:before, span.error:before{
+    content: '\e08b';
+    font-family: 'Simple-Line-Icons';
+    padding-right: 4px;
+    font-size: 10px;
+}
+
 
 .new-modal .dropdown select.error~button.btn.dropdown-toggle, .dropdown select.error~button.btn.dropdown-toggle{
     border-color: rgb(200, 27, 27) !important; 
@@ -1283,6 +1412,14 @@ label.error, span.error{
     padding-bottom: 0px !important;
 }
 
+.pd-b10{
+    padding-bottom: 10px !important;
+}
+
+.pd-b15{
+    padding-bottom: 15px !important;
+}
+
 .pd5{
     padding: 5px !important;
 }
@@ -1330,6 +1467,13 @@ label.error, span.error{
     padding-left: 30px !important;
 }
 
+.pd-l10{
+    padding-left: 10px;
+}
+
+.pd-l15{
+    padding-left: 15px;
+}
 
 .pd-null{
     padding: 0px !important;
@@ -1392,6 +1536,28 @@ span.dot.rt{
 
 span.ic{
     margin-right: 4px;
+}
+
+.overlay-screen {
+    position: fixed;
+    z-index: 9999991;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-screen.blk {
+    background-color: rgba(0,0,0,.58);
+}
+
+.overlay-fix {
+    z-index: 9999999;
+}
+
+.fix-area-modal{
+    z-index: 9999999;
+    position: fixed;
 }
 
 /* NOT FOUND */
@@ -1534,6 +1700,7 @@ span.ic{
     height: 13px;
     border-radius: 50%;
     background: rgb(108, 201, 108);
+    background: rgb(20, 148, 207);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   .lds-ellipsis div:nth-child(1) {

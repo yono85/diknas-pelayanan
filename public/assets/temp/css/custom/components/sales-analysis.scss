@@ -1,0 +1,48 @@
+/**
+ *
+ * SalesAnalysis
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: SalesAnalysis styles
+ *
+ */
+@import "../variables.scss";
+
+.sales-data {
+  .card-body {
+    text-align: center;
+    background: $primary-bg-color;
+  }
+  strong {
+    display: block;
+    font-size: $base-font + 1;
+    font-weight: $base-font-weight + 200;
+    color: $black;
+    @media (max-width: $screen-xlg-min) {
+     font-size: $base-font;
+    }
+  }
+  span {
+    font-size: $base-font + 2;
+    color: $black;
+    display: inline-block;
+    @media (max-width: $screen-xlg-min) {
+      font-size: $base-font + 1;
+     }
+  }
+  .sales-info {
+    p {
+      font-size: $base-font;
+      color: $secondary-color;
+      margin-bottom: 0;
+      text-align: left;
+      @media (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+    }
+  }
+}

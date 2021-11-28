@@ -1,0 +1,29 @@
+/**
+ *
+ * ProfitRatio
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Fri Dec 20 2019
+ * Category: Ecommerce
+ * Title: ProfitRatio styles
+ *
+ */
+
+@import "../variables.scss";
+
+.profit-ratio {
+  .profit-total-columns-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $screen-xxs-max) {
+      flex-flow: row wrap;
+      width: 100%;
+      &> * {
+        flex: 1 1 100%
+      }
+    }
+  }
+}

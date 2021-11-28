@@ -1,0 +1,68 @@
+/**
+ *
+ * EventManagment
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Dec 16 2019
+ * Category: Events Management
+ * Title: EventManagement styles
+ *
+ */
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.events-overview-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid #e3e8ea; }
+  @media (max-width: 567px) {
+    .events-overview-filter {
+      flex-flow: row wrap; } }
+  .events-overview-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .datepicker {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4.5px 10px;
+    width: 127px;
+    border-right: 0; }
+  .events-overview-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .divider {
+    color: rgba(150, 165, 171, 0.5); }
+  .events-overview-filter .filter-btn .moby__filter-btn-holder.filter-btn-alternative .moby__calander i {
+    font-size: 16px;
+    margin-left: 5px; }
+  @media (max-width: 567px) {
+    .events-overview-filter .filter-btn .moby__filter-btn-holder {
+      margin-bottom: 20px; } }
+  .events-overview-filter .report-btn .btn {
+    margin-top: 1px; }
+    @media (max-width: 567px) {
+      .events-overview-filter .report-btn .btn {
+        width: 100%; } }
+    .events-overview-filter .report-btn .btn .icon {
+      font-size: 10px; }
+  @media (max-width: 567px) {
+    .events-overview-filter .report-btn {
+      width: 100%; } }
+
+@media (max-width: 480px) {
+  .events-interest-comparison .graph-h {
+    margin: 10px 0; }
+    .events-interest-comparison .graph-h .apexcharts-canvas .apexcharts-inner {
+      transform: translate(53.5px, 0) !important; } }
+
+@media (max-width: 400px) {
+  .events-interest-comparison .graph-h .apexcharts-canvas .apexcharts-inner {
+    transform: translate(33.5px, 0) !important; } }
+
+@media (max-width: 320px) {
+  .events-interest-comparison .graph-h .apexcharts-canvas .apexcharts-inner {
+    transform: translate(0, 0) !important; } }

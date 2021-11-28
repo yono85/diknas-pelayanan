@@ -1,0 +1,110 @@
+/**
+ *
+ * StaticTable
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Dec 09 2019
+ * Category: Multi
+ * Title: StaticTable styles
+ *
+ */
+
+@import "../variables.scss";
+
+.moby__chart-holder {
+  border-top: $base-border-width $base-border-style $border-color-base;
+  overflow: hidden;
+  .chart-list {
+    overflow: hidden;
+    margin-left: $base-margin - 31;
+    margin-bottom: $base-margin - 31;
+    .chart-bg {
+      background: $primary-bg-color;
+    }
+    li {
+      float: left !important;
+      width: 50%;
+      padding: $base-padding - 15.9 $base-padding;
+      min-height: 77px;
+      border-bottom: $base-border-width $base-border-style $border-color-base;
+      border-left: $base-border-width $base-border-style $border-color-base;
+      position: relative;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+      @media screen and (max-width: $screen-lg-min + 100) {
+        padding: $base-padding - 15.9 $base-padding - 10;
+      }
+      @media screen and (max-width: $screen-md-max) {
+        padding: $base-padding - 10;
+        min-height: 87px;
+      }
+      strong {
+        font-size: $base-font;
+        color: $black;
+        font-weight: $base-font-weight + 200;
+        display: block;
+        padding-bottom: $base-margin - 25;
+      }
+      .chart-rating {
+        font-size: $base-font;
+        color: $black;
+        position: relative;
+        padding-left: $base-padding - 15;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: $screen-xxs-max) {
+          font-size: $base-font - 2;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          background: $white;
+          border: $base-border-width + 1 $base-border-style rgb(32, 33, 36);
+          border-radius: 100%;
+        }
+      }
+      .danger {
+        &::after {
+          border-color: $error-color;
+        }
+      }
+      .success {
+        &::after {
+          border-color: $success-color;
+        }
+      }
+      .warning {
+        &::after {
+          border-color: $warning-color;
+        }
+      }
+      .primary {
+        &::after {
+          border-color: $primary-color;
+        }
+      }
+      .chart-percent {
+        font-size: $base-font - 2;
+        color: $secondary-color;
+        .icon {
+          font-size: $base-font - 4;
+          margin-right: $base-margin - 25;
+        }
+        @media (max-width: $screen-md-max) {
+          font-size: $base-font - 3;
+          .icon {
+            font-size: $base-font - 5;
+          }
+        }
+      }
+    }
+  }
+}

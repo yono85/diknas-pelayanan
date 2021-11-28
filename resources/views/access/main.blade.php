@@ -35,19 +35,26 @@
 
         <!-- script -->
         <script>
-        var config = {
-            "apps":{
-                "NAME": "{{$apps['name']}}",
-                "URI":  "{{$apps['URI']}}",
-                "URL_API":  "{{$apps['URL_API']}}",
-                "COOKIE_NAME":  "{{$apps['cookie']}}"
+            var config = {
+                "apps":{
+                    "NAME": "{{$apps['name']}}",
+                    "URI":  "{{$apps['URI']}}",
+                    "URL_API":  "{{$apps['URL_API']}}",
+                    "COOKIE_NAME":  "{{$apps['cookie']}}",
+                    "TOKEN_KEY":"{{$apps['key']}}"
+                },
+                "page":{
+                    "TITLE"     :   "{{$title}}"
+                }
             }
-        }
-
         </script>
         <script src="{{$apps['URI']}}/assets/js/js10.js" type="text/javascript"></script>
-        <script src="{{$apps['URI']}}/assets/js/conf.js" type="text/javascript"></script>
         <script src="{{$apps['URI']}}/assets/js/global.js" type="text/javascript"></script>
+        <script src="{{$apps['URI']}}/assets/js/conf.js" type="text/javascript"></script>
+
+        <script>
+            checkLogin()
+        </script>
     </head>
 
     <body>
@@ -59,24 +66,33 @@
                     
 
                     <!-- sampul -->
-                    <div class="ar-sampul">
-                        <div class="inar-sampul">
-                            <div class="box-sampul">
 
-                                <div class="div">
-                                    <div class="div">
-                                        <a href="{{$apps['URI']}}">
-                                            <img src="{{$apps['logo']}}" alt="image" style="width:52px">
+
+                    <div class="ar-sampul new">
+                        
+                        
+                        <div class="nw-sampul">
+                            <div class="div">
+                                <div class="div txt-center ar-logo clr-float">
+                                    <a href="{{$apps['URI']}}">
+                                            <img src="{{$apps['logo']}}" alt="image">
                                         </a>
-                                    </div>
-                                    <div class="div text-sampul">
-                                        <span>Selamat Datang di {{$apps['name']}}</span>
-                                        <div class="div text-label">
-                                        <span>Saat ini Warga Pendidikan bisa mengajukan pelayanan berbasis online</span>
+                                    <div class="logo-text">
+                                        <div class="div">
+                                            <b>Selamat Datang di SIMPELDIK</b>
+                                        </div>
+                                        <div class="div">
+                                        <div class="div label-sub">
+                                            <span>Sistem Managemen Pelayanan Dinas Pendidikan</span>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="wal-sampul">
+                            <div class="inar-f"></div>
                         </div>
                     </div>
     

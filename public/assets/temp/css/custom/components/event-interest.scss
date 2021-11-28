@@ -1,0 +1,88 @@
+/**
+ *
+ * EventInterest
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 17 2019
+ * Category: EventsManagement
+ * Title: EventInterest styles
+ *
+ */
+
+@import "../variables.scss";
+
+.interest-section {
+  .comparison-description {
+    font-size: $base-font;
+    color: $secondary-color;
+    margin-bottom: $base-margin;
+  }
+  .comparison-detail-right {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .comparison-detail {
+    text-align: right;
+    width: 100%;
+  }
+  .comparison-graph-description {
+    font-size: $base-font;
+    color: $secondary-color;
+    margin-bottom: 0;
+  }
+  .comparison-detail-header {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: $base-padding - 20;
+  }
+  .comparison-icon {
+    margin-left: $base-margin - 10;
+    .icon {
+      font-size: $base-font + 34;
+    }
+  }
+  .comparison-graph-detail {
+    .comparison-graph-number {
+      display: block;
+      font-size: $base-font + 4;
+      font-weight: $base-font-weight + 200;
+      color: $black;
+      padding-bottom: $base-padding - 25;
+    }
+    .comparison-graph-percent {
+      color: $secondary-color;
+      font-weight: $base-font-weight;
+      font-size: $base-font + 1;
+    }
+    .comarison-graph-title {
+      font-size: $base-font;
+      color: $black;
+      font-weight: $base-font-weight;
+    }
+  }
+  .comparison-detail-left {
+    .comparison-detail {
+      text-align: left;
+    }
+    .comparison-detail-header {
+      flex-direction: row;
+    }
+    .comparison-icon {
+      margin-left: 0;
+      margin-right: $base-margin - 10;
+    }
+  }
+  .comparison-mb {
+    margin-bottom: $base-margin + 50;
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: $base-margin;
+    }
+  }
+  .graph-h {
+    @media (max-width: $screen-xs-max) {
+      margin: $base-margin - 20 0 0;
+    }
+  }
+}

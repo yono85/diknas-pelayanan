@@ -1,0 +1,33 @@
+/*
+ @Author: Mobythemes (mobythemes.com)
+ This file contains the styling for the actual theme, this
+ is the file you need to edit to change the look of the
+ theme.
+ However we used scss to make things easy to maintain, this is the compressed output, we recommend to edit the scss files and then recombile the files and add the result here.
+*/
+
+@import './custom/components/budget-analysis.scss';
+@import './custom/components/calander.scss';
+@import './custom/components/conversations.scss';
+@import './custom/components/create-account.scss';
+@import './custom/components/ecommerece-sale.scss';
+@import './custom/components/event-interest.scss';
+@import './custom/components/help-center.scss';
+@import './custom/components/invoice-view.scss';
+@import './custom/components/new-invoice.scss';
+@import './custom/components/pageview.scss';
+@import './custom/components/performance.scss';
+@import './custom/components/pricing-plan.scss';
+@import './custom/components/product-rating.scss';
+@import './custom/components/profit-ratio.scss';
+@import './custom/components/property-overview.scss';
+@import './custom/components/recently-table.scss';
+@import './custom/components/registered-property.scss';
+@import './custom/components/sales-analysis.scss';
+@import './custom/components/sales-revenue.scss';
+@import './custom/components/static-table.scss';
+@import './custom/components/table-widget.scss';
+@import './custom/components/task-list.scss';
+@import './custom/components/ticketsale.scss';
+@import './custom/components/user-profile.scss';
+@import './custom/components/watch-list.scss';

@@ -1,0 +1,46 @@
+/**
+ *
+ * RecentlyTable
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Fri Jan 03 2020
+ * Category: Pages
+ * Title: RecentlyTable styles
+ *
+ */
+
+@import "../variables.scss";
+
+ .uploaded-table {
+  padding-bottom: $base-padding;
+  .borderless td,
+  .borderless th {
+    border: none;
+  }
+  a {
+    display: inline-block;
+  }
+  .file-icon {
+    font-size: $base-font + 11;
+    margin-right: $base-margin - 14;
+    color: $black;
+    @media (max-width: $screen-xs-max) {
+      font-size: $base-font + 6;
+      margin-right: $base-margin - 24;
+    }
+  }
+  .file-title {
+    font-size: $base-font + 2;
+    color: $black;
+    font-weight: $base-font-weight + 200;
+    @media (max-width: $screen-sm-max) {
+      font-size: $base-font + 1;
+    }
+  }
+  .table-subtitle {
+    font-size: $base-font;
+    color: $secondary-color;
+  }
+}

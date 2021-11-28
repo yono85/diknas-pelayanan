@@ -1,0 +1,102 @@
+/**
+ *
+ * Pageview
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: Pageview styles
+ *
+ */
+@import "../variables.scss";
+
+ .moby__page-view {
+  .moby__card-body {
+    height: 100%;
+    min-height: 200px;
+    max-height: 520px;
+  }
+  padding: 0;
+  .spin-nested-loading {
+    position: relative;
+    .spin-container {
+      position: relative;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+    }
+  }
+  .list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-color: $secondary-color;
+    padding: $base-padding - 15 $base-padding - 10;
+    transition: all ease-in-out 0.4s;
+    border-bottom: $base-border-width $base-border-style rgb(232, 232, 232);
+    @media screen and (max-width: $screen-xxxs) {
+      padding: $base-padding - 15;
+    }
+    .list-item-meta {
+      display: flex;
+      flex: 1 1;
+      .list-item-meta-avatar {
+        margin-right: $base-margin - 10;
+        display: inline-block;
+        vertical-align: middle;
+        .icon {
+          font-size: $base-font + 8;
+        }
+      }
+      .list-item-meta-content {
+        display: inline-block;
+        vertical-align: middle;
+        h4 {
+          margin-bottom: $base-margin - 20;
+          line-height: 1.2;
+          font-size: $base-font;
+          @media (max-width: $screen-xlg-min) {
+            font-size: $base-font - 1;
+          }
+        }
+      }
+      .list-item-meta-title {
+        margin-bottom: $base-margin - 20;
+      }
+      .list-item-meta-description {
+        font-size: $base-font;
+        color: $secondary-color;
+        line-height: 1.2;
+        font-weight: $base-font-weight;
+        @media (max-width: $screen-xlg-min) {
+          font-size: $base-font - 1;
+        }
+      }
+    }
+    .moby__page-view-list {
+      text-align: right;
+      .moby__page-view-num {
+        display: block;
+        font-size: $base-font;
+        color: rgb(32, 33, 36);
+        line-height: 1.2;
+        font-weight: $base-font-weight + 200;
+        margin-bottom: $base-margin - 20;
+        @media (max-width: $screen-xlg-min) {
+          font-size: $base-font - 1;
+          margin-bottom: $base-margin - 25;
+        }
+      }
+      .moby__page-view-rating {
+        font-size: $base-font - 1;
+        color: $secondary-color;
+        line-height: 1.2;
+        font-weight: $base-font-weight;
+        @media (max-width: $screen-xlg-min) {
+          font-size: $base-font - 2;
+        }
+      }
+    }
+  }
+}

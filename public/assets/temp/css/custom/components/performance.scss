@@ -1,0 +1,80 @@
+/**
+ *
+ * Performance
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: Ecommerce
+ * Title: Performance styles
+ *
+ */
+
+@import "../variables.scss";
+
+.performance-holder {
+  .retention-holder {
+    float: left;
+  }
+  .select-with-picker {
+    .light-dropdown  {
+      .dropdown-toggle {
+        @media (max-width: $screen-xxs-max + 100) {
+          border: $base-border-width $base-border-style $border-color-base;
+          border-radius: $border-radius-base;
+          margin-bottom: $base-margin - 10;
+        }
+      }
+    }
+  }
+  .filter-btn {
+    .moby__filter-btn-holder {
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+      border-color: $border-color-base;
+      @media (max-width: $screen-xxs-max + 100) {
+        border-radius: $border-radius-base;
+        text-align: left;
+      }
+      &.filter-btn-alternative {
+        line-height: $base-line-height + 2;
+        .datepicker {
+          width: 112px;
+          border-right: 0;
+          @media (max-width: $screen-xxs-max + 100) {
+            width: 93%;
+            padding: $base-padding - 25 $base-padding - 19;
+          }
+        }
+        .moby__calander {
+          i {
+            font-size: $base-font + 2;
+            margin-left: $base-margin - 25;
+            @media (max-width: $screen-xxs-max + 100) {
+              margin-right: $base-margin - 27;
+            }
+          }
+        }
+      }
+    }
+  }
+  .report-btn {
+    .btn {
+      margin-top: $base-margin - 29;
+      @media (max-width: $screen-xxs-max + 100) {
+        margin-top: $base-margin - 10;
+      }
+      @media (max-width: $screen-xxs-max + 87) {
+        width: 100%;
+      }
+      .icon {
+        font-size: $base-font - 4;
+      }
+    }
+    &.text-right {
+      @media (max-width: $screen-xxs-max + 100) {
+        text-align: center !important;
+      }
+    }
+  }
+}

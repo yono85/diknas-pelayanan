@@ -1,0 +1,20 @@
+/**
+ *
+ * RegisteredProperty
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Thu Dec 19 2019
+ * Category: RealEstate
+ * Title: RegisteredProperty styles
+ *
+ */
+
+@import "../variables.scss";
+
+.registeredProperty {
+  .chart-holder {
+    margin: $base-margin - 10 0;
+  }
+}

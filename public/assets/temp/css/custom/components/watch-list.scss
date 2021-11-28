@@ -1,0 +1,54 @@
+/**
+ *
+ * WatchList
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 10 2019
+ * Category: Multi
+ * Title: WatchList styles
+ *
+ */
+@import "../variables.scss";
+
+.watch-list {
+  .search-input {
+    .icon {
+      line-height: $base-line-height + 10;
+    }
+  }
+  .watch-details-holder {
+    border-top: $base-border-width $base-border-style rgb(227, 232, 234);
+    height: 359.5px;
+    @media (max-width: $screen-xlg-min) {
+      height: 379.5px;
+    }
+    .moby__list-detail {
+      padding: $base-padding - 15 $base-padding - 10;
+      font-size: $base-font;
+      text-align: left;
+      color: rgba($black, .7);
+      @media (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+      @media screen and (max-width: $screen-xxxs) {
+        text-align: center !important;
+      }
+    }
+  }
+}
+.data-graph {
+  #MobyPageViewChart {
+    @media (max-width: $screen-xlg-min) {
+      min-height: 433px !important;
+      .apexcharts-canvas,
+      .apexcharts-svg {
+        height: 418px !important;
+      }
+      .apexcharts-inner {
+        transform: translate(27px, 42px) !important;
+      }
+    }
+  }
+}

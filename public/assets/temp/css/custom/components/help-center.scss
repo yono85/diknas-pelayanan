@@ -1,0 +1,66 @@
+/**
+ *
+ * HelpCenter
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 24 2019
+ * Category: Ecommerce
+ * Title: HelpCenter styles
+ *
+ */
+
+@import "../variables.scss";
+
+.help-center {
+  .moby__sub-header {
+    .sub-header-title {
+      font-size: $base-font + 10;
+      color: darken($black, 80%);
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 6;
+      }
+    }
+  }
+  .moby__help-center-sub-header {
+    .title {
+      margin-bottom: $base-margin - 20;
+      font-size: $base-font + 6;
+      color: darken($black, 80%);
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 3;
+      }
+    }
+    p {
+      font-size: $base-font;
+      color: $secondary-color;
+      margin-bottom: 0;
+      font-weight: $base-font-weight + 200;
+    }
+  }
+  .list-title {
+    margin-bottom: $base-margin - 22;
+    font-size: $base-font + 2;
+    color: darken($black, 80%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (max-width: $screen-xlg-min) {
+      font-size: $base-font + 1;
+    }
+  }
+  .help-list {
+    list-style: disc;
+    margin-left: $base-margin - 15 !important;
+    li {
+      color: $secondary-color;
+      padding-bottom: $base-padding - 22;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+    }
+  }
+}

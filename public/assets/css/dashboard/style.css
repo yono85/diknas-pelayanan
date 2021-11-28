@@ -1,3 +1,7 @@
+.moby__main-header .moby__main-nav .navbar{
+    margin-bottom: 0px !important;
+}
+
 .moby__user .dropdown .btn{
     position: relative;
     /* overflow: hidden; */
@@ -17,6 +21,48 @@
     border-radius: 50%;
     /* top: 0px;
     left: 0px; */
+}
+
+.moby__user a .icx{
+    position: absolute;
+    top: -2px;
+    left: -12px;
+    font-size: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    z-index:4;
+    text-align: center;
+    /* box-shadow: 0px 0px 7px #888; */
+    border: solid 1px;
+    box-sizing: border-box;
+    text-shadow: #111;
+    padding: 1px 2px;
+    /* padding: 3px; */
+}
+
+.moby__user a .icx[role="adm"]{
+    background-color: #fff;
+    color: red;
+    border-color: red;
+}
+
+.moby__user a .icx[role="dis"]{
+    background-color: #fff;
+    color: rgb(223, 146, 3);
+    border-color: rgb(223, 146, 3);
+}
+
+.moby__user a .icx[role="sdn"]{
+    background-color: grey;
+    color: #fff;
+    /* border-color: grey; */
+}
+
+.moby__user a .icx[role="sch"]{
+    /* background-color: #fff; */
+    color: rgb(14, 172, 14);
+    /* border-color: rgb(1, 104, 1); */
 }
 
 .moby__user .a-ft img{
@@ -141,7 +187,7 @@
   }
   
   .side-bar-header .logo img{
-    width: 45px;
+    width: 40px;
     height: 38px;
   }
   
@@ -984,6 +1030,52 @@
     color: #333 !important;
 }
 
+.atable .tr .tbody table td .td-iner a{
+    color: rgb(26, 70, 138);
+    padding-bottom: 4px;
+    font-size: 15px;
+}
+
+.atable .tr .tbody table td .td-iner a:hover{
+    text-decoration: underline;
+}
+
+.atable .tr .tbody table td .td-iner .ar-users{
+
+}
+
+.atable .tr .tbody table td .td-iner .ar-users .icmg{
+    width: 22px;
+    height: 22px;
+    float: left;
+    /* background-color: #ddd; */
+    background-image: url('/assets/images/none/user.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+
+.atable .tr .tbody table td .td-iner .ar-users .inf{
+    float: left;
+    padding-left: 10px;
+    padding-top: 0px;
+    font-size: 14px;
+}
+
+.atable .tr .tbody table td .td-iner .ar-users .inf .div{
+    margin-bottom: 0px;
+}
+
+.atable .tr .tbody table td .td-iner .ar-users .inf .label{
+    /* font-size: 10px;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: rgb(11, 153, 11);
+    padding-top: 3px; */
+}
+
 .atable .tr .tbody table td .td-iner .ar-btn-shiping{
     display: block;
 }
@@ -1241,6 +1333,14 @@ a.slide[slide="on"] .arslide{
     position: relative;
 }
 
+.atable .tr .tbody table td .td-iner ul.role li{
+    margin-bottom: 10px;
+}
+
+.atable .tr .tbody table td .td-iner ul.role li:last-child{
+    margin-bottom: 0px;
+}
+
 .atable .tr .tbody table td .td-iner ul.ls li{
     padding-left: 14px;
     box-sizing: border-box;
@@ -1337,6 +1437,10 @@ a.slide[slide="on"] .arslide{
     width: 260px;
 }
 
+.atable .tr .tbody table td.td-w230, .atable .th table td.td-w230{
+    width: 230px;
+}
+
 .atable .tr .tbody table td.td-w210, .atable .th table td.td-w210{
     width: 210px;
 }
@@ -1364,6 +1468,10 @@ a.slide[slide="on"] .arslide{
 
 .atable .tr .tbody table td.td-w70, .atable .th table td.td-w70{
     width: 70px;
+}
+
+.atable .tr .tbody table td.td-w60, .atable .th table td.td-w60{
+    width: 60px;
 }
 
 
@@ -1946,6 +2054,203 @@ a.slide[slide="on"] .arslide{
 
 
 /* end modal */
+
+
+/* NEW DASHBOARD */
+.container-new{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.container-new .inner-container-new{ 
+    display: block;
+    position: relative;
+    margin: auto;
+    padding: 15px 0px;
+}
+
+.container-new .inner-container-new.w1024{
+    width: 1024px;
+}
+
+.home-dash{
+    position: relative;
+    padding-top: 25px;
+}
+
+.home-dash .ar-carousel{
+    height: 243px;
+}
+
+.home-dash .ar-carousel .carousel-inner{
+    box-shadow: 1px 2px 10px -1px #888;
+}
+
+.home-dash .ar-carousel img{
+    height: 100%;
+}
+
+.home-dash .ar-detail{
+    position: relative;
+    margin: 40px 0px 50px;
+    box-sizing: border-box;;
+}
+
+.home-dash .ar-detail ul,.home-dash .ar-detail ul li{
+    width: 100%;
+    position: relative;
+    display: block;
+    list-style: none;
+}
+
+.home-dash .ar-detail ul li h2{
+    font-size: 20px;
+}
+
+.home-dash .ar-detail ul li p{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.home-dash .ar-detail ul li p:last-child{
+    margin-bottom: 0px;
+}
+
+.home-dash .ar-link{
+    display: block;
+    position: relative;
+    padding: 40px 0px 20px;
+}
+
+.home-dash .ar-link ul{
+    width: 100%;
+    position: relative;
+    display: block;
+    list-style: none;
+    text-align: center;
+}
+
+.home-dash .ar-link ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.home-dash .ar-link ul li:last-child{
+    margin-right: 0px;
+}
+
+.home-dash .ar-link ul li a{
+    width: 60px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.home-dash .ar-link ul li a .ic{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    /* overflow: hidden; */
+    border:4px solid rgb(200, 78, 78);
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 1px 2px 6px -1px #888;
+    padding-top: 3px;
+    /* padding: 3px; */
+}
+
+
+.home-dash .ar-link ul li a .ic .icx{
+    font-size: 24px;
+}
+
+.home-dash .ar-link ul li a .ic img{
+    width: 100%;
+    height: 100%;
+}
+
+.home-dash .ar-link ul li a .tx{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ar-carousel{
+    display: block;
+}
+
+
+.home-dash .ar-link ul li a.purple .ic{
+    border-color: purple;
+}
+
+.home-dash .ar-link ul li a.purple{
+    color: purple;
+}
+
+.home-dash .ar-link ul li a.blue .ic{
+    border-color: rgb(26, 77, 245);
+}
+
+.home-dash .ar-link ul li a.blue{
+    color: rgb(26, 77, 245);
+}
+
+.home-dash .ar-link ul li a.green .ic{
+    border-color: rgb(13, 160, 13);
+}
+
+.home-dash .ar-link ul li a.green{
+    color: rgb(13, 160, 13);
+}
+
+.home-dash .ar-link ul li a.orange .ic{
+    border-color: rgb(235, 152, 0);
+}
+
+.home-dash .ar-link ul li a.orange{
+    color: rgb(235, 152, 0);
+}
+
+.home-dash .ar-link ul li a.cocored .ic{
+    border-color: rgb(200, 78, 78);
+}
+
+.home-dash .ar-link ul li a.cocored{
+    color: rgb(200, 78, 78);
+}
+
+.home-dash .ar-link ul li a.red .ic{
+    border-color: rgb(204, 5, 5);
+}
+
+.home-dash .ar-link ul li a.red{
+    color: rgb(204, 5, 5);
+}
+
+.home-dash .ar-link ul li a.pink .ic{
+    border-color: rgb(235, 144, 159);
+}
+
+.home-dash .ar-link ul li a.pink{
+    color: rgb(235, 144, 159);
+}
+
+@media(max-width:1023px)
+{
+    .container-new .inner-container-new.w1024{
+        width: 100%;
+    }
+
+    .home-dash{
+        padding-left: 25px;
+        padding-right: 25px;
+
+    }
+}
+/* END NEW DASHBOARD */
 
 .indropdown{
     display: block;
@@ -6083,12 +6388,18 @@ a.slide[slide="on"] .arslide{
     -webkit-box-align: center;
     align-items: center;
     font-weight: normal !important;
+    margin-bottom: 0px;
 }
 
 .ddwn button label span{
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    color: #333;
+}
+
+.ddwn button:disabled label span{
+    color: #999;
 }
 
 .ddwn.open button.btn{
@@ -6218,6 +6529,7 @@ a.slide[slide="on"] .arslide{
     align-items: center;
     padding: 4px 0px !important;
     border-bottom: 0px !important;
+    margin-top: 0px;
 }
 
 .ddwn .ddwn-pg ul li:before{
@@ -6251,6 +6563,13 @@ a.slide[slide="on"] .arslide{
     background-color: #f8f8f8;
 }
 
+.ddwn .ddwn-pg ul li.empty div{
+    color: red;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 0px 15px;
+}
 
 /* home dashboard */
 .date-section .moby__filter-btn-holder .hasDatepicker{
@@ -6472,7 +6791,98 @@ a.slide[slide="on"] .arslide{
     padding-top: 20px;
 }
 
+
+
 /* end home dashboard */
+
+
+/* MODAL PROGRESS TICKET */
+.modal-progress{
+    display: block;
+}
+
+.modal-progress ul li{
+    display: block;
+    box-sizing: border-box;
+    padding-left: 25px;
+}
+
+.modal-progress ul li.top{
+    /* border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px; */
+}
+
+.modal-progress ul.child li{
+    padding-left: 0px;
+}
+
+.modal-progress .owner{
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.modal-progress .owner .img{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: -35px;
+    /* background-color: #ddd; */
+    background-image: url(/assets/images/none/user.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.modal-progress .owner .inf{
+    float: left;
+    padding-left: 0px;
+    padding-top: 0px;
+    font-size: 14px;
+}
+
+
+.modal-progress ul li p.bubble{
+    background-color: rgb(250, 246, 228);
+    box-sizing: border-box;
+    border-radius: 18px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.modal-progress ul.child li.bubble{
+    padding: 8px 15px;
+    border-radius: 26px;
+    background-color: rgb(232, 241, 253);
+    margin-bottom: 15px;
+}
+
+.modal-progress ul.child li.bubble:last-child{
+    margin-bottom: 0px;
+}
+
+.modal-progress ul.child li .arimg{
+    width: 22px;
+    height: 22px;
+    float: left;
+    /* background-color: #ddd; */
+    background-image: url(/assets/images/none/user.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.modal-progress ul.child li .arinf{
+    float: left;
+    padding-left: 8px;
+    padding-top: 0px;
+    font-size: 14px;
+}
+
+/* END MODAL PROGRESS TICKET */
 
 @media(max-width:1024px)
 {

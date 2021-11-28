@@ -1,0 +1,26 @@
+/*
+ @Author: Mobythemes (mobythemes.com)
+ This file contains the styling for the actual theme, this
+ is the file you need to edit to change the look of the
+ theme.
+ However we used scss to make things easy to maintain, this is the compressed output, we recommend to edit the scss files and then recombile the files and add the result here.
+ All files below are required to import in your app
+*/
+
+// Global styles
+@import './styles.scss';
+
+// Moby icons
+@import './moby.css';
+
+// Sidebar sturucture
+@import './custom/aside.scss';
+
+// Header structure
+@import './custom/header.scss';
+
+// Subheader structure
+@import './custom/subheader.scss';
+
+// Footer structure
+@import './custom/footer.scss';

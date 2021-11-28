@@ -1,0 +1,139 @@
+/**
+ *
+ * Ecommerce
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: EventsManagement
+ * Title: Ecommerce styles
+ *
+ */
+
+ @import "../../assets/css/custom/variables.scss";
+
+// Balance Card
+.balance {
+  .legend-list-holder {
+    .legend-list-item {
+      .amount-text {
+        @media (max-width: $screen-xlg-min) {
+          font-size: $base-font - 2;
+        }
+      }
+    }
+    &.pd-b-15 {
+      @media (max-width: $screen-lg-min + 100) {
+        padding-bottom: $base-padding - 21;
+      }
+      @media (max-width: $screen-lg-min) {
+        padding-bottom: $base-padding - 15;
+      }
+    }
+  }
+  .graph-h {
+    @media (min-width: $screen-lg-min) {
+      min-height: 311px !important;
+      .apexcharts-canvas,
+      .apexcharts-svg {
+        height: 296px !important;
+      }
+      .apexcharts-inner {
+        transform: translate(12px, 70px) !important;
+      }
+    }
+  }
+}
+
+// Online Store Conversation
+.store-conversation {
+  .legend-list-holder {
+    .legend-list-item {
+      .client-text {
+        @media (max-width: $screen-lg-min + 170) {
+          font-size: $base-font - 3;
+        }
+        @media screen and (max-width: $screen-md-max) {
+          font-size: $base-font;
+        }
+      }
+      .amount-text {
+        @media (max-width: $screen-lg-min + 170) {
+          font-size: $base-font - 3;
+        }
+        @media screen and (max-width: $screen-md-max) {
+          font-size: $base-font - 1;
+        }
+      }
+    }
+    &.legend-list-holder-alternative {
+      @media (max-width: $screen-xxs-max + 70) {
+        flex-flow: row wrap;
+      }
+      li {
+        @media (max-width: $screen-xxs-max + 70) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .graph-h {
+    @media (max-width: $screen-xxs-max) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(83.5px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(63.5px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(33.5px, 0) !important;
+        }
+      }
+    }
+  }
+}
+
+// Top Trends Card
+.top-trends {
+  .graph-h {
+    @media (min-width: $screen-xlg-min) {
+      min-height: 270px !important;
+      .apexcharts-canvas {
+        height: 270px !important;
+      }
+    }
+    @media (max-width: $screen-xxs-max) {
+      margin-bottom: $base-margin - 15;
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(40px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(20px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(-5px, 0) !important;
+        }
+      }
+    }
+  }
+}
+// Top Trends Card Ends

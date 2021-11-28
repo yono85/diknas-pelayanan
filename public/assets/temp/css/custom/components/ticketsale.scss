@@ -1,0 +1,101 @@
+/**
+ *
+ * Ticketsale
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Tue Dec 17 2019
+ * Category: EventsManagement
+ * Title: Ticketsale styles
+ *
+ */
+@import "../variables.scss";
+
+.ticket-sale {
+  #MobyTicketSaleChart {
+    @media (max-width: $screen-xlg-min) {
+      min-height: 305px !important;
+      .apexcharts-canvas,
+      .apexcharts-svg {
+        height: 305px !important;
+      }
+      .apexcharts-inner {
+        transform: translate(40px, 7px) !important;
+      }
+      .apexcharts-yaxis {
+        transform: translate(9px, -20px) !important;
+      }
+    }
+    @media (max-width: $screen-sm-max) {
+      min-height: 353px !important;
+      .apexcharts-canvas,
+      .apexcharts-svg {
+        height: 338px !important;
+      }
+      .apexcharts-inner {
+        transform: translate(42px, 30px) !important;
+      }
+      .apexcharts-yaxis {
+        transform: translate(9px, 0px) !important;
+      }
+    }
+  }
+}
+.tickets-sales-graph-detail-list {
+  display: flex;
+  width: 100%;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  overflow: hidden;
+  li {
+    width: 33.33%;
+    padding: $base-padding - 10;
+    border-top: $base-border-width $base-border-style $border-color-base;
+    border-right: $base-border-width $base-border-style $border-color-base;
+    &:nth-child(odd) {
+      background: $primary-bg-color;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+    @media screen and (max-width: $screen-md-min) {
+      padding: $base-padding - 20 $base-padding - 10;
+    }
+    @media screen and (max-width: $screen-xxs-max) {
+      padding: $base-padding - 20 $base-padding - 15;
+    }
+    @media screen and (max-width: $screen-xxxs + 55) {
+      padding: $base-padding - 20 $base-padding - 22;
+    }
+    @media screen and (max-width: $screen-xxxs) {
+      border-right: 0;
+      width: 100%;
+      padding: $base-padding - 20 $base-padding - 10;
+    }
+  }
+  .tickets-sales-number {
+    font-size: $base-font + 4;
+    font-weight: $base-font-weight + 200;
+    color: $black;
+    display: block;
+    @media screen and (max-width: $screen-xlg-min) {
+      font-size: $base-font + 2;
+    }
+    @media screen and (max-width: $screen-md-max) {
+      font-size: $base-font + 1;
+    }
+    @media screen and (max-width: $screen-xxs-max) {
+      font-size: $base-font;
+    }
+  }
+  .tickets-sales-title {
+    font-size: $base-font - 1;
+    font-weight: $base-font-weight + 200;
+    @media screen and (max-width: $screen-xxs-max) {
+      font-size: $base-font - 2;
+    }
+  }
+  @media screen and (max-width: $screen-xxxs) {
+    flex-flow: row wrap;
+  }
+}

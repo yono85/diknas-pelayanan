@@ -2,45 +2,43 @@
 
 $(document).ready(function()
 {
-
-    $('body').on('click', '.afalse', function(e)
+    $('body').on('focus', '.fcs', function()
     {
-        e.preventDefault();
+        $(this).parents('.ar-ctn').attr('role', 'true');
+    });
+
+    $('body').on('blur', '.fcs', function()
+    {
+        if( $.trim($(this).val()).length === 0 )
+        {
+            $(this).parents('.ar-ctn').attr('role', 'false');
+        }
     });
 
 
-    function CheckToken() 
+    $('body').on('click', 'button.cddwn', function(e)
     {
-        var form = $('body').find('form');
+        e.preventDefault();
+        e.stopPropagation();
+
+        dropdownNew($(this));
+
+    });
+
+    $('body').on('click', '.area-ddwn-page button', function(e)
+    {
+        e.preventDefault();
+        selectedDDWN($(this));
+
+    });
 
 
-        $.ajax({
-            type: "GET",
-            url: config.apps.URL_API + "/api/account/verification?page=" + config.apps.LEVEL,
-            headers: {
-                "Content-Type":"application/json",
-                "key":tokenu[1]
-            },
-            cache: false,
-            timeout: 18000,
-            dataType: "JSON",
-            success: function(n)
-            {
-                // console.log(n);
-                form.find('input[name="token"]').val(tokenu[1]);
-                $('body').find('.splash-dis').remove();
-            },
-            error: function(n)
-            {
-                // console.log(n);
-                var page = pageNotFound("/");
-                $('body .inner-bdyverif').html(page);
-                $('body').find('.splash-dis').remove();
-            }
-        });
-    }
+    $('body').on('click', '.cmd-upload', function(e)
+    {
+        e.preventDefault();
+        previewUpload($(this));
+    })
 
-    CheckToken();
 
 
     $('body').on('click', 'a.btn-vpass', function(e)
@@ -80,12 +78,14 @@ $(document).ready(function()
 
     $('body').on('click', '.cmd-chechkbox', function(e)
     {
+        e.preventDefault();
+
         var cmd = $(this),
         area = cmd.parents('.area-checkbox'),
         form = cmd.parents('form');
 
-        form.find('label.error').remove();
-        form.find('.br-error').removeClass('br-error');
+        area.find('label.error').remove();
+        area.find('.br-error').removeClass('br-error');
 
         if( cmd.attr('role') === 'off')
         {
@@ -117,7 +117,7 @@ $(document).ready(function()
                 required:!0,
                 normalizer:r,
                 minlength:6,
-                maxlength:12
+                maxlength:16
             },
             password:{
                 required:!0,
@@ -185,19 +185,18 @@ $(document).ready(function()
                 dataType: "JSON",
                 success: function(n)
                 {
-                    console.log(n);
-                    setCookie(config.apps.cookie_name,JSON.stringify(n.response.cookie),exp);
-                    location.href = config.apps.URL + n.response.homepage;
-                    // button.attr('role', 'off');
+                    // console.log(n);
+                    // button.attr('role','off');
+                    setCookie(config.apps.COOKIE_NAME,JSON.stringify(n.response),exp);
+                    location.href = '/dashboard'
                 },
                 error: function(n)
                 {
-                    // console.log(n);
+                    console.log(n);
                     var response = n.responseJSON;
                     if( n.status === 403 )
                     {
-
-                        form.find('input[name="'+response.focus+'"]').addClass('error');
+                        form.find('input[name="'+response.focus+'"]').addClass('br-error');
                         form.find('input[name="'+response.focus+'"]').parents('.alist').append('<label class="error">'+response.message+'</label>');
                         button.attr('role','off');
                         form.find('input[name="'+response.focus+'"]').focus();
@@ -213,5 +212,11 @@ $(document).ready(function()
 
     //
     $('body').find('input.fcs1').focus();
+
     return false;
-})
+});
+
+$(document).click(function()
+{
+    $('body').find('button.cddwn[role="on"]').click();
+});

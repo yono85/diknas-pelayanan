@@ -1,0 +1,92 @@
+/**
+ *
+ * EventManagment
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Dec 16 2019
+ * Category: Events Management
+ * Title: EventManagement styles
+ *
+ */
+@import "../../assets/css/custom/variables.scss";
+
+// Events Overview
+.events-overview-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $base-padding - 10 $base-padding - 10;
+  border-bottom: $base-border-width $base-border-style $border-color-base;
+  @media (max-width: $screen-xxs-max + 87) {
+    flex-flow: row wrap;
+  }
+  .filter-btn {
+    .moby__filter-btn-holder {
+      &.filter-btn-alternative {
+        .datepicker {
+          font-size: $base-font;
+          font-weight: $base-font-weight ;
+          padding: $base-padding - 25.5 $base-padding - 20;
+          width: 127px;
+          border-right: 0;
+        }
+        .divider {
+          color: rgba($secondary-color, .5);
+        }
+        .moby__calander {
+          i {
+            font-size: $base-font + 2;
+            margin-left: $base-margin - 25;
+          }
+        }
+      }
+      @media (max-width: $screen-xxs-max + 87) {
+        margin-bottom: $base-margin - 10;
+      }
+    }
+  }
+  .report-btn {
+    .btn {
+      margin-top: $base-margin - 29;
+      @media (max-width: $screen-xxs-max + 87) {
+        width: 100%;
+      }
+      .icon {
+        font-size: $base-font - 4;
+      }
+    }
+    @media (max-width: $screen-xxs-max + 87) {
+      width: 100%;
+    }
+  }
+}
+
+// Events Interest Comparison
+.events-interest-comparison {
+  .graph-h {
+    @media (max-width: $screen-xxs-max) {
+      margin: $base-margin - 20 0;
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(53.5px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(33.5px, 0) !important;
+        }
+      }
+    }
+    @media (max-width: $screen-xxxs) {
+      .apexcharts-canvas {
+        .apexcharts-inner {
+          transform: translate(0, 0) !important;
+        }
+      }
+    }
+  }
+}

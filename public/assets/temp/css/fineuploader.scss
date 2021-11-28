@@ -1,0 +1,29 @@
+@import "./custom/variables.scss";
+
+.trigger-uploader {
+  color: $white;
+  background-color: rgba(0, 171, 199, 1) !important;
+  font-size: $base-font !important;
+  padding: $base-padding - 29 $base-padding - 10 !important;
+  background-image: none;
+  border-color: rgba(45, 173, 194, 1) !important;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.37) inset,
+    1px 0 1px rgba(255, 255, 255, 0.07) inset, 0 1px 0 rgba(0, 0, 0, 0.36),
+	0 -2px 12px rgba(0, 0, 0, 0.08) inset !important;
+	border-radius: $border-radius-base - 2 !important;
+	width: 105px !important;
+	font-size: $base-font !important;
+}
+.fine-uploader-trigger {
+  .qq-upload-button {
+    margin-right: $base-margin - 15;
+  }
+  .buttons {
+    width: 36%;
+  }
+  .qq-uploader {
+    .qq-total-progress-bar-container {
+      width: 60%;
+    }
+  }
+}

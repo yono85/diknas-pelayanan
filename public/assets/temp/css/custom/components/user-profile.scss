@@ -1,0 +1,43 @@
+/**
+ *
+ * UserProfile
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 25 2019
+ * Category: Pages
+ * Title: UserProfile styles
+ *
+ */
+
+@import "../variables.scss";
+
+.user-profile-holder {
+  .details-list {
+    padding: $base-padding - 10 0;
+    li {
+      margin-bottom: $base-margin - 15;
+      overflow: hidden;
+      .title {
+        font-size: $base-font + 2;
+        font-weight: $base-font-weight + 200;
+        @media screen and (max-width: $screen-md-min) {
+          font-size: $base-font - 2;
+        }
+      }
+      .sub-title {
+        color: $secondary-color;
+        font-size: $base-font + 1;
+        @media screen and (max-width: $screen-md-min) {
+          font-size: $base-font - 3;
+        }
+      }
+    }
+  }
+  &.with-cover {
+    .user-avatar {
+      margin-top: $base-margin - 80;
+    }
+  }
+}

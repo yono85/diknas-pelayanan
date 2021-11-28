@@ -130,7 +130,8 @@ $(document).ready(function()
     function submitForm(form)
     {
         var form,
-        button = form.find('button.cmd-submit');
+        button = form.find('button.cmd-submit'),
+        formsend = $('body').find('#form-sendmail-resetpass');
 
         form.find('label.error').remove();
         form.find('.error').removeClass('error');
@@ -153,6 +154,7 @@ $(document).ready(function()
                 form.find('input[name="email"]').val('');
                 form.find('input[name="email"]').parent('.are-hov').attr('role', 'off');
                 $('body').find('.msgbox-success').show();
+                sendingEmail(n.response.token);
 
 
             });
@@ -190,6 +192,35 @@ $(document).ready(function()
             $(this).attr('role', 'off');
         }
     })
+
+    function sendingEmail(e)
+    {
+        var token = e;
+        var $URL = config.apps.URL_API + '/api/send/email';
+        $.ajax({
+        type: 'POST',
+        url: config.apps.URL_API + '/api/send/email',
+        timeout: 18000,
+        headers: {
+            "Content-Type": "application/json",
+            "key":config.apps.TOKEN_KEY
+        },
+        data: JSON.stringify({
+            "token":token
+        }),
+        dataType: 'JSON',
+        success: function(n)
+        {
+            console.log(n);
+        },
+        error: function (n)
+        {
+            var resp = n.responseJSON;
+
+            console.log(resp.message);
+        }
+    });
+    }
     return false;
 });
 </script>

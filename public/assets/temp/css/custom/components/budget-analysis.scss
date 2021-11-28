@@ -1,0 +1,181 @@
+/**
+ *
+ * BudgetAnalysis
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Wed Dec 18 2019
+ * Category: Ecommerce
+ * Title: BudgetAnalysis styles
+ *
+ */
+
+@import "../variables.scss";
+.budget-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $base-padding - 10 $base-padding - 10;
+  border-bottom: $base-border-width $base-border-style $border-color-base;
+  @media (max-width: $screen-xxs-max + 87) {
+    flex-flow: row wrap;
+  }
+  .filter-btn {
+    .moby__filter-btn-holder {
+      &.filter-btn-alternative {
+        .datepicker {
+          font-size: $base-font;
+          font-weight: $base-font-weight ;
+          padding: $base-padding - 25.5 $base-padding - 20;
+          width: 127px;
+          border-right: 0;
+        }
+        .divider {
+          color: rgba($secondary-color, .5);
+        }
+        .moby__calander {
+          i {
+            font-size: $base-font + 2;
+            margin-left: $base-margin - 25;
+          }
+        }
+      }
+      @media (max-width: $screen-xxs-max + 87) {
+        margin-bottom: $base-margin - 10;
+      }
+    }
+    @media (max-width: $screen-xxs-max + 87) {
+      width: 100%;
+    }
+  }
+  .report-btn {
+    .btn {
+      margin-top: $base-margin - 29;
+      @media (max-width: $screen-xxs-max + 87) {
+        width: 100%;
+      }
+      .icon {
+        font-size: $base-font - 4;
+      }
+    }
+    @media (max-width: $screen-xxs-max + 87) {
+      width: 100%;
+    }
+  }
+}
+
+.budget-analysis {
+  #MobyBudgetAnalysisChart {
+    @media (min-width: $screen-lg-min) {
+      min-height: 265px !important;
+      .apexcharts-canvas,
+      .apexcharts-svg {
+        height: 250px !important;
+      }
+      .apexcharts-inner {
+        transform: translate(49px, 50px) !important;
+      }
+      .apexcharts-yaxis {
+        transform: translate(16px, 20px) !important;
+      }
+    }
+  }
+}
+
+.budget-img {
+  img {
+    width: 100%;
+  }
+}
+
+.analysis-list-holder {
+  border-top: $base-border-width $base-border-style $border-color-base;
+  margin-left: $base-margin - 31;
+  .list-analysis {
+    overflow: hidden;
+    padding: $base-padding $base-padding - 10;
+    border-right: $base-border-width $base-border-style $border-color-base;
+    .title-border {
+      font-size: $base-font + 2;
+      margin-bottom: $base-margin - 15;
+      padding-bottom: $base-padding - 20;
+      color: $black;
+      display: block;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        border-bottom: $base-border-width + 1 $base-border-style $black;
+        @media screen and (max-width: $screen-xlg-min) {
+          width: 60px;
+        }
+      }
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 1;
+        margin-bottom: $base-margin - 20;
+      }
+    }
+    .b-danger {
+      &:after {
+        border-color: $error-color;
+      }
+    }
+    .b-primary {
+      &:after {
+        border-color: $primary-color;
+      }
+    }
+    .b-success {
+      &:after {
+        border-color: $success-color;
+      }
+    }
+    .b-warning {
+      &:after {
+        border-color: $warning-color;
+      }
+    }
+    .sub-title {
+      font-size: $base-font;
+      color: #a4b1b6;
+      display: block;
+      margin-bottom: $base-margin - 20;
+      @media screen and (max-width: $screen-xlg-min - 70) {
+        font-size: $base-font - 1;
+      }
+      @media screen and (max-width: $screen-lg-min + 100) {
+        font-size: $base-font - 2;
+      }
+      @media screen and (max-width: $screen-md-max - 1) {
+        font-size: $base-font;
+      }
+    }
+    .sub-num {
+      font-size: $base-font + 2;
+      color: $black;
+      display: inline-block;
+      line-height: 1;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 1;
+      }
+    }
+    .vertical-divider {
+      position: relative;
+      top: .6px;
+      display: inline-block;
+      height: 0.9em;
+      margin: 0 8px;
+      vertical-align: middle;
+      border-top: 0;
+      border-right: 1px solid rgba(227, 232, 234, 0.9);
+    }
+    @media (max-width: $screen-xs-max) {
+      border-right: 0;
+      border-bottom: $base-border-width $base-border-style $border-color-base;
+    }
+  }
+}

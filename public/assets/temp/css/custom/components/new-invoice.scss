@@ -1,0 +1,318 @@
+/**
+*
+* NewInvoice
+* Author: Mobythemes
+* Email: info@mobythemes.com
+* Website: mobythemes.com
+* Version: 1.0
+* Date: Thu Jan 09 2020
+* Category: Pages
+* Title: NewInvoice
+*
+*/
+
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.invoice {
+  .invoice-content-h {
+    overflow: hidden;
+    @media (max-width: $screen-sm-max) {
+      .row {
+        position: relative;
+        &.no-gutters > .col,
+        &.no-gutters > [class*="col-"] {
+          position: initial;
+        }
+      }
+    }
+  }
+  .invoice-list-btn {
+    display: none;
+    @media (max-width: $screen-sm-max) {
+      display: inline-block;
+    }
+  }
+  .new-invoice-btn {
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+  .moby__sub-header {
+    @media (max-width: 480px) {
+      &.pd-30 {
+        padding: $base-padding - 10 !important;
+      }
+    }
+  }
+  .moby__filter-btn-holder {
+    width: 100%;
+    height: 35px;
+    line-height: $base-line-height + 15;
+    padding: 0 $base-padding - 19;
+    .moby__calander {
+      i {
+        margin-right: 0;
+      }
+    }
+  }
+  .btn-h {
+    &.text-right {
+      @media (max-width: 480px) {
+        text-align: center !important;
+      }
+    }
+  }
+  .input-group {
+    .input-group-prepend {
+      .input-group-text {
+        height: 40px;
+      }
+    }
+  }
+  .dropdown {
+    &.dropdown-white-bg {
+      .dropdown-toggle {
+        line-height: $base-line-height + 15;
+        height: 35px;
+      }    
+    }
+  }
+  .invoice-list-holder {
+    height: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    @media screen and (max-width: $screen-sm-max) {
+      position: absolute;
+      width: 260px;
+      top: 0;
+      left: -200px;
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      z-index: 999;
+      @include card-shadow();
+    }
+    &.invoice-list-holder-mobile-view {
+      left: 0px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .search-input {
+    padding: $base-padding - 15 $base-padding - 10;
+    .form-control {
+      height: 40px;
+      @media screen and (max-width: $screen-md-max) {
+        height: 35px;
+      }
+    }
+    .icon {
+      line-height: $base-line-height + 20;
+      @media screen and (max-width: $screen-md-max) {
+        line-height: $base-line-height + 15;
+      }
+    }
+  }
+
+  .list-card {
+    min-height: 212px;
+    .title {
+      margin-bottom: $base-margin - 20;
+      font-size: $base-font + 3;
+      @media screen and (max-width: $screen-md-max) {
+        font-size: $base-font + 1;
+      }
+    }
+    .subtitle {
+      display: block;
+      font-size: $base-font;
+      padding-top: $base-padding - 25;
+      @media screen and (max-width: $screen-md-max) {
+        font-size: $base-font - 1;
+      }
+    }
+    .card-list {
+      li {
+        color: $secondary-color;
+        padding-bottom: $base-padding - 20;
+        font-size: $base-font + 1;
+        a {
+          color: $secondary-color;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+        .list-title,
+        .list-subtitle {
+          width: 48%;
+          display: inline-block;
+        }
+        .list-title {
+          color: $black;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+        @media screen and (max-width: $screen-md-max) {
+          font-size: $base-font - 1;
+          padding-bottom: $base-padding - 25;
+        }
+      }
+    }
+  }
+
+  .min-amount {
+    .form-control {
+      height: 40px;
+      line-height: $base-line-height + 20;
+    }
+  }
+
+  //New Invoice Card
+  .new-invoice-card {
+    li {
+      color: $secondary-color;
+    }
+    .title {
+      color: $black;
+    }
+    strong {
+      color: $black;
+    }
+  }
+
+  //New Invoice Card
+  .invoice-form {
+    margin-bottom: $base-margin;
+    .form-title {
+      font-size: $base-font + 3;
+      margin-bottom: $base-margin - 10;
+    }
+    label {
+      font-size: $base-font + 1;
+      font-weight: $base-font-weight + 200;
+      margin: 0;
+      line-height: $base-line-height + 12;
+    }
+    .form-control {
+      border-color: $border-color-base;
+    }
+  }
+
+  // Invoice-Logo
+  .invoice-logo {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    a {
+      display: block;
+      @media (max-width: 991px) {
+        max-width: 50%;
+        margin: 0 auto $base-margin;
+      }
+    }
+  }
+
+  // Invoice New Table
+  .invoice-table {
+    border-bottom: 0;
+    thead {
+      tr {
+        th {
+          border-top: 0;
+          text-transform: capitalize;
+          &:first-child {
+            width: 50%;
+            @media (max-width: $screen-xlg-min) {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      &:last-child {
+        tr {
+          td {
+            border-bottom: 0;
+          }
+        }
+      }
+      td {
+        position: relative;
+        padding: $base-padding - 20;
+        .cancel-btn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: $base-padding - 20;
+          height: 100%;
+          line-height: $base-line-height + 70;
+          background: rgb(227, 232, 234);
+          border-left: $base-border-width $base-border-style $border-color-base;
+          i {
+            &::before {
+              font-size: $base-font + 4;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+    .form-control {
+      border: 0;
+      padding: 0 !important;
+    }
+    i {
+      font-size: $base-font + 6;
+    }
+    &.sub-total {
+      border: $base-border-width $base-border-style $border-color-base;
+      thead {
+        td {
+          border-bottom-width: inherit;
+        }
+      }
+    }
+    &.view-invoice-table {
+      thead {
+        tr {
+          th {
+            &:first-child {
+              width: 60%;
+              @media (max-width: $screen-xlg-min) {
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .invoice-info-list {
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: $base-padding - 20;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  // Allow-Payment
+  .allow-payment {
+    .custom-control-label {
+      font-size: $base-font + 1;
+      font-weight: $base-font-weight + 200;
+      margin-bottom: $base-margin - 10;
+    }
+  }
+}

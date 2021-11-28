@@ -1,0 +1,213 @@
+/**
+ *
+ * Subheader
+ * Author: Mobythemes
+ * Email: info@mobythemes.com
+ * Website: mobythemes.com
+ * Version: 1.0
+ * Date: Mon Dec 02 2019
+ * Category: Multi
+ * Title: Subheader styles
+ *
+ */
+
+@import "./variables.scss";
+.moby__sub-header {
+  padding-bottom: $base-padding;
+  .breadcrumb {
+    margin-bottom: $base-margin - 25 !important;
+  }
+  .moby-right_section {
+    @media screen and (max-width: $screen-sm-max) {
+      display: flex;
+      justify-content: space-between !important;
+    }
+    .moby__calander-holder {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: $base-margin - 20;
+      flex: 1 1;
+      @media (max-width: $screen-sm-max) {
+        justify-content: space-between;
+        margin-top:  $base-margin - 15;
+      }
+      @media (max-width: $screen-xxs-max) {
+        flex-flow: row wrap;
+        justify-content: center;
+        &> * {
+          flex: 1 1 100%;
+        }
+      }
+      .moby__page-filter {
+        margin: 0;
+        .filter-list {
+          @media (max-width: $screen-sm-max) {
+            margin-right: 0;
+          }
+          li {
+            &:first-child {
+              @media (max-width: $screen-sm-max) {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        @media (max-width: $screen-xxs-max) {
+          margin-bottom: $base-margin - 15;
+        }
+      }
+      .plus-btn {
+        font-size: $base-font + 6;
+        padding: 0 $base-padding - 25;
+        line-height: $base-line-height + 12;
+        margin-left: $base-margin - 20;
+        @media screen and (max-width: $screen-xxs-max) {
+          padding: 0 $base-padding - 22.5;
+        }
+      }
+      .date-section {
+        .moby__filter-btn-holder {
+          .hasDatepicker {
+            @media (max-width: $screen-xxs) {
+              width: 79px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Moby Sub Header-2 //
+  &.moby__sub-header-alternative {
+    p {
+      font-size: $base-font;
+      margin-bottom: 0;
+      color: rgba($secondary-color, .5);
+    }
+    .moby__welcome-text {
+      margin-bottom: $base-margin - 20;
+    }
+    .sub-header-list-h {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      @media (max-width: $screen-sm-max) {
+        justify-content: space-between;
+        padding-top: $base-padding - 15;
+      }
+      @media (max-width: $screen-xxs-max + 87) {
+        flex-flow: row wrap;
+        &> * {
+          flex: 1 1 100%;
+        }
+      }
+    }
+    .sub-header-list {
+      display: flex;
+      align-items: center;
+      @media (max-width: $screen-xxs-max + 87) {
+        padding-bottom: $base-padding - 15;
+      }
+      li {
+        padding: 0 $base-padding - 10;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 7px;
+          right: 0;
+          height: 80%;
+          border-right: $base-border-width $base-border-style #ccd3d6;
+          @media screen and (max-width: $screen-xxxs) {
+            border-right: 0;
+            border-bottom: $base-border-width $base-border-style #ccd3d6;
+            width: 100%;
+          }
+        }
+        &:last-child {
+          &::after {
+            display: none;
+          }
+          @media screen and (max-width: $screen-xxxs) {
+            border-bottom: $base-border-width $base-border-style #ccd3d6;
+            margin-bottom: 0;
+          }
+        }
+        span {
+          display: block;
+        }
+        .sub-header-list-title {
+          font-size: $base-font + 1;
+          font-weight: $base-font-weight + 200;
+          color: rgba($secondary-color, .5);
+          margin-bottom: $base-margin - 20;
+          @media screen and (max-width: $screen-xlg-min) {
+            font-size: $base-font;
+          }
+          @media screen and (max-width: $screen-md-max - 1) {
+            font-size: $base-font - 1;
+          }
+          @media screen and (max-width: $screen-xxs-max) {
+            font-size: $base-font - 3;
+          }
+          @media screen and (max-width: $screen-xxxs) {
+            margin-bottom: $base-margin - 25;
+          }
+        }
+        .sub-header-list-date {
+          font-size: $base-font + 2;
+          font-weight: $base-font-weight + 200;
+          color: $black;
+          @media screen and (max-width: $screen-xlg-min) {
+            font-size: $base-font + 1;
+          }
+          @media screen and (max-width: $screen-md-max - 1) {
+            font-size: $base-font;
+          }
+          @media screen and (max-width: $screen-xxs-max) {
+            font-size: $base-font - 2;
+          }
+        }
+        .sub-header-list-text {
+          font-size: $base-font + 2;
+          font-weight: $base-font-weight + 200;
+          color: $error-color;
+          @media screen and (max-width: $screen-xlg-min) {
+            font-size: $base-font + 1;
+          }
+          @media screen and (max-width: $screen-md-max - 1) {
+            font-size: $base-font;
+          }
+          @media screen and (max-width: $screen-xxs-max) {
+            font-size: $base-font - 2;
+          }
+        }
+        @media screen and (max-width: $screen-xs-min) {
+          &:first-child {
+            padding-left: 0;
+          }
+        }
+        @media screen and (max-width: $screen-xxs-max) {
+          padding: 0 $base-padding - 20;
+          width: 33.33%;
+        }
+        @media screen and (max-width: $screen-xxxs) {
+          padding: 0 0px $base-padding - 20;
+          margin-bottom: $base-margin - 20;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: $screen-xxs-max) {
+        margin-right: 0 !important;
+        width: 100%;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: $screen-xxxs) {
+        flex-flow: row wrap;
+        justify-content: center;
+      }
+    }
+  }  
+}

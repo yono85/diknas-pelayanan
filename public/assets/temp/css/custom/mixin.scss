@@ -1,0 +1,931 @@
+@import '../custom/variables.scss';
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* @include transition(all,2s,ease-out); */
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition:    $what $time $how;
+  -ms-transition:     $what $time $how;
+  -o-transition:      $what $time $how;
+  transition:         $what $time $how;
+}
+
+// Input Placeholder Color
+@mixin placeholder-color($color: $secondary-color) {
+  input::-webkit-input-placeholder {
+    color: $color;
+  }
+  input:-moz-placeholder {
+    color: $color;
+  }
+  input::-moz-placeholder {
+    color: $color;
+  }
+  input:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// Padding
+@mixin padding($key, $value) {
+  .pd-#{$key} {
+    padding: $value;
+  }
+  .pd-t-#{$key} {
+    padding-top: $value;
+  }
+  .pd-b-#{$key} {
+    padding-bottom: $value;
+  }
+  .pd-l-#{$key} {
+    padding-left: $value;
+  }
+  .pd-r-#{$key} {
+    padding-right: $value;
+  }
+  .pd-t-b-#{$key} {
+    padding: $value 0;
+  }
+  .pd-l-r-#{$key} {
+    padding: 0 $value;
+  }
+}
+
+// Margin
+@mixin margin($key, $value) {
+  .mr-#{$key} {
+    margin: $value;
+  }
+  .mr-t-#{$key} {
+    margin-top: $value;
+  }
+  .mr-b-#{$key} {
+    margin-bottom: $value;
+  }
+  .mr-l-#{$key} {
+    margin-left: $value;
+  }
+  .mr-r-#{$key} {
+    margin-right: $value;
+  }
+  .mr-t-b-#{$key} {
+    margin: $value 0;
+  }
+  .mr-l-r-#{$key} {
+    margin: 0 $value;
+  }
+}
+
+// Border 
+@mixin border-type($key, $color: $border-color-base, $border-width: $base-border-width) {
+  @if $key == "" {
+    .border {
+      border: $border-width $base-border-style $color !important;
+    }
+    .border-top {
+      border-top: $border-width $base-border-style $color !important;
+    }
+    .border-bottom {
+      border-bottom: $border-width $base-border-style $color !important;
+    }
+    .border-left {
+      border-left: $border-width $base-border-style $color !important;
+    }
+    .border-right {
+      border-right: $border-width $base-border-style $color !important;
+    }  
+  } @else {
+    .border-#{$key} {
+      border: $border-width $base-border-style $color !important;
+    }
+    .border-top-#{$key} {
+      border-top: $border-width $base-border-style $color !important;
+    }
+    .border-bottom-#{$key} {
+      border-bottom: $border-width $base-border-style $color !important;
+    }
+    .border-left-#{$key} {
+      border-left: $border-width $base-border-style $color !important;
+    }
+    .border-right-#{$key} {
+      border-right: $border-width $base-border-style $color !important;
+    }
+  }   
+}
+
+// Stat Card Mixin
+@mixin stat-card() {
+  border: 0;
+  border-left: $base-border-width $base-border-style $border-color-base;
+  border-radius: 0px;
+  transition: all ease-in-out 0.4s;
+  overflow: hidden;
+  margin-bottom: 0 !important;
+  &:hover {
+    background: $secondary-bg-color-darker;
+    .progress {
+      &::after {
+        border-color: $white !important;
+      }
+    }
+  }
+  /** Card Head **/
+  .card-header {
+    border: 0;
+    background: transparent;
+    overflow: hidden;
+    @media screen and (max-width: $screen-md-max) {
+      padding: 0 $base-padding - 20;
+    }
+  }
+  /** /.Card Head **/
+  /** Card Extra **/
+  .moby__card-extra {
+    padding: $base-padding - 10 0;
+    width: 100%;
+    justify-content: space-between;
+    .icon {
+      font-size: $base-font + 4px;
+      cursor: pointer;
+    }
+  }
+  /** Card Extra **/
+  /** Card Boday **/
+  .card-body {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    /** Card Animate Icon **/
+    .animate-icon {
+      font-size: $base-font + 14;
+      color: rgba($secondary-color, 0.5);
+      transition: all ease-in-out 0.4s;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 10;
+      }
+      &.animate-icon-left {
+        position: absolute;
+        top: 20px;
+        left: -5px;
+      }
+      &.animate-icon-right {
+        position: absolute;
+        bottom: 25px;
+        right: -5px;
+        font-size: $base-font + 16;
+      }
+    }
+    /** /.Card Animate Icon **/
+    /** Card Body Title **/
+    .card-title {
+      font-size: $base-font + 1;
+      line-height: $base-line-height;
+      color: $black;
+      font-weight: $base-font-weight + 200;
+      margin-bottom: $base-padding - 20;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font;
+      }
+    }
+    /** /.Card Body Title **/
+    /** Card Body SubTitle **/
+    .card-sub-title {
+      font-size: $base-font + 11;
+      color: $black;
+      font-weight: $base-font-weight + 200;
+      display: block;
+      margin-bottom: $base-padding;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 6;
+      }
+    }
+    /** Card Body SubTitle **/
+  }
+  /** /.Card Body **/
+  /** Card Footer **/
+  .card-footer {
+    background: transparent;
+    border-top: 0;
+    padding: 0 $base-padding - 10 $base-padding - 10;
+    @media screen and (max-width: $screen-md-max) {
+      padding: 0 $base-padding - 20 $base-padding - 10;
+    }
+  }
+  /** /.Card Footer **/
+  /** Card Footer List **/
+  .card-footer-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      width: 50%;
+      position: relative;
+      line-height: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 85%;
+        border-right: $base-border-width $base-border-style $border-color-base;
+        @media screen and (max-width: $screen-xlg-min) {
+          left: 6px;
+          height: 80%;
+        }
+        @media screen and (max-width: $screen-lg-min + 100) {
+          left: 0px;
+        }
+      }
+      &:first-child {
+        padding-left: 0 !important;
+        &::before {
+          display: none;
+        }
+      }
+      &:last-child {
+        padding-left: $base-padding - 15;
+        @media screen and (max-width: $screen-lg-min + 100) {
+          padding-left: $base-padding - 20;
+        }
+      }
+    }
+    .card-footer-icon {
+      margin-right: $base-margin - 26;
+      font-size: $base-font + 2;
+      vertical-align: top;
+      @media screen and (max-width: $screen-xlg-min) {
+        margin-right: $base-margin - 27;
+        font-size: $base-font;
+        vertical-align: 16px;
+      }
+    }
+  }
+  /** /.Card Footer List **/
+  /** Card Footer Text **/
+  .card-footer-num {
+    font-size: $base-font + 4;
+    font-weight: $base-font-weight + 200;
+    color: $black;
+    display: inline-block;
+    @media screen and (max-width: $screen-xlg-min) {
+      font-size: $base-font + 1 ;
+    }
+  }
+  .card-footer-text {
+    display: block;
+    font-size: $base-font - 1;
+    font-weight: $base-font-weight;
+    color: $black;
+    @media screen and (max-width: $screen-xlg-min) {
+      font-size: $base-font - 2;
+    }
+  }
+  .card-footer-month {
+    display: inline-block;
+    font-size: $base-font - 1;
+    font-weight: $base-font-weight ;
+    color: $black;
+    padding-left: $base-padding - 20;
+    @media screen and (max-width: $screen-xlg-min) {
+      font-size: $base-font - 2;
+    }
+  }
+  /** /.Card Footer Text **/
+}
+
+@mixin stat-card-type($color: $black) {
+  .card-body {
+    .animate-icon {
+      color: $color;
+      opacity: .2;
+    }
+    .card-title {
+      color: $color;
+    }
+    .progress-bar {
+      border-color: $color;
+    }
+  }
+  .card-footer-list {
+    .card-footer-icon {
+      color: $color;
+    }
+  }
+  &:hover {
+    .moby__card-extra {
+      .icon {
+        color: $color;
+      }
+    }
+    .card-body {
+      .animate-icon {
+        opacity: 1;
+      }
+      .circle-progress-bar {
+        .progress-value {
+          .icon {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin re-card($color: $black) {
+  /** Card Head **/
+  .card-header {
+    border-bottom: 0;
+    background: transparent;
+    min-height: auto;
+  }
+  /** /.Card Head **/
+  /** Card Head Title **/
+  .head-title {
+    line-height: $base-line-height + 2;
+    padding: $base-padding - 16 0;
+    font-size: $base-font + 4;
+    color: $color;
+    @media screen and (max-width: $screen-xlg-min - 70) {
+      font-size: $base-font + 2;
+    }
+  }
+  /** /.Card Head Title **/
+  /** Card Extra **/
+  .moby__card-extra {
+    padding: 0;
+    justify-content: flex-end;
+    .icon {
+      cursor: pointer;
+      font-size: $base-font + 2px;
+      transition: all ease-in-out .4s;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font;
+      }
+    } 
+  }
+  /** Card Extra **/
+  /** Card Body **/
+  .card-body {
+    min-height: 100%;
+    padding: 0 $base-padding - 10 $base-padding - 5;
+    /** Card Body Title **/
+    .card-title {
+      font-size: $base-font + 4;
+      line-height: $base-line-height + 2;
+      color: $black;
+      margin-bottom: $base-margin - 25;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font + 2;
+      }
+    }
+    .subtitle {
+      font-size: $base-font;
+      line-height: $base-line-height + 2;
+      color: $secondary-color;
+      display: block;
+      margin-bottom: $base-margin - 5;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: $base-font;
+      }
+      .icon {
+        margin-right: $base-margin - 23;
+        font-size: $base-font - 3;
+        vertical-align: 1px;
+      }
+    }
+    /** Card Body Title **/
+    /** Card Progress Bar **/
+    .circle-progress-bar {
+      margin-bottom: 0;
+      .progress-bar {
+        border-color: $color;
+      }
+      .progress-value {
+        .icon {
+          color: #E5E1E1;
+          font-size: $base-font + 11;
+          &.icon-resize {
+            font-size: $base-font + 26;
+          }
+        }
+      }
+    }
+    /** Card Progress Bar Ends **/
+  }
+  /** Card Body Ends **/
+  /** Card Footer **/
+  .card-footer {
+    background: transparent;
+    border-top: 0;
+    padding: 0 $base-padding - 10 $base-padding - 15;
+    /** Card Footer List **/
+    .card-footer-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &> * {
+        flex: 1 1;
+      }
+      li {
+        position: relative;
+        line-height: 20px;
+      }
+    }
+    /** /.Card Footer List **/
+    /** Card Footer Text **/
+    .card-footer-icon {
+      margin-right: $base-margin - 23;
+      font-size: $base-font - 2;
+      vertical-align: 1px;
+      @media screen and (max-width: $screen-xlg-min) {
+        margin-right: $base-margin - 25;
+      }
+    }
+    .card-footer-text {
+      font-size: $base-font;
+      color: $secondary-color;
+      display: inline-block;
+      @media screen and (max-width: $screen-xlg-min) {
+        font-size: $base-font - 1;
+      }
+    }
+    /** Card Footer Text **/
+  }
+  /** /.Card Footer **/
+}
+
+@mixin re-widget-alternative($color: $black) {
+  .ant-card-head {
+    padding: 0 $base-padding - 10;
+    @media (max-width: $screen-xlg-min) {
+      padding: 0 $base-padding - 15;
+    }
+  }
+  .head-title {
+    padding: $base-padding - 15 0 $base-padding - 20;
+    color: $black;
+  }
+  .moby__card-extra {
+    .icon {
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+  .card-body {
+    padding: 0 $base-padding - 10 $base-padding - 15;
+    @media (max-width: $screen-xlg-min) {
+      padding: 0 $base-padding - 15 $base-padding - 15;
+    }
+    .card-title {
+      font-size: $base-font + 2;
+      margin-bottom: $base-margin - 25;
+      color: $color;
+      @media screen and (max-width: $screen-xlg-min - 70) {
+        font-size: $base-font;
+      }
+    }
+    .subtitle {
+      font-size: $base-font;
+      margin-bottom: 0;
+      .icon {
+        color: $secondary-color;
+        font-size: $base-font - 5;
+        margin-right: $base-margin - 23;
+      }
+    }
+  }
+}
+
+// Meetup Card
+@mixin meetup-card-type($color: $black) {
+  .card-body {
+    .avatar {
+      background: $color;
+      color: $white;
+      border-color: darken($color, 15%);
+    }
+    .btn-outline {
+      color: $color;
+      border-color: darken($color, 15%);
+      &:hover {
+        background: $color;
+        color: $white;
+      }
+    }
+  }
+  .user-profile {
+    .user-avatar {
+      background: $color;
+      color: $white;
+    }
+  }
+  .footer-actions {
+    li {
+      .link {
+        &:hover {
+          background: $color;
+          color: $white;
+        }
+      }
+    }
+  }
+} 
+
+// Profile Overview Card 
+@mixin profile-overview-card($color: $black) {
+  .user-profile {
+    .user-avatar {
+      background: $color;
+      color: $white;
+    }
+  }
+  .footer-actions {
+    li {
+      .link {
+        &:hover {
+          background: $color;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Overlay 
+@mixin overlay($bg-color: rgba(0,0,0,0.3)) {
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg-color;
+  }
+}
+
+// Breadcrumb 
+@mixin breadcrumb-color($color: $black, $text: $secondary-color) {
+  padding: 0;
+  margin-bottom: $base-margin - 15;
+  background-color: transparent;
+  border-radius: 0;
+  .breadcrumb-item {
+    font-weight: $base-font-weight + 200;
+    & + .breadcrumb-item {
+      padding-left: 0;
+      &::before {
+        font-weight: $base-font-weight ;
+        display: inline-block;
+        padding: 0 $base-padding - 20;
+        color: rgba(32, 33, 36, 0.5);
+        content: "/";
+      }
+      &:hover {
+        &::before {
+          text-decoration: underline;
+          text-decoration: none;
+        }
+      }
+    }
+    a {
+      color: $text;
+      .icon {
+        color: $text;
+      }
+      &:hover {
+        color: $color;
+        .icon {
+          color: $color;
+        }
+      }
+    }
+    &.active {
+      color: $color;
+      .icon {
+        color: $color;
+      }
+    }
+  }
+}
+
+@mixin breadcrumb-separator($key) {
+  .breadcrumb-item {
+    & + .breadcrumb-item {
+      &:before {
+        content: "#{$key}";
+      }
+    }
+  }
+}
+
+// Pagination
+@mixin pagination($color: $black, $hover-color: $white, $bg-color: $primary-color) {
+  .page-item {
+    .page-link {
+      font-size: $base-font;
+      padding: 0 $base-padding - 20;
+      text-align: center;
+      height: 32px;
+      line-height: $base-line-height + 12;
+      color: $color;
+      border-color: $border-color-base;
+      .icon {
+        color: $color;
+      }
+      &:hover {
+        background-color: $bg-color;
+        border-color: $bg-color;
+        color: $hover-color;
+        .icon {
+          color: $hover-color;
+        }
+      }
+    }
+    &.active {
+      .page-link {
+        background-color: $bg-color;
+        border-color: $bg-color;
+        color: $hover-color;
+        .icon {
+          color: $hover-color;
+        }
+      }
+    }
+  }
+}
+
+@mixin pagination-solid($bg-color: $primary-bg-color, $hover-bg-color: $primary-color) {
+  .page-item {
+    .page-link {
+      background-color: $bg-color;
+      &:hover {
+        background-color: $hover-bg-color;
+      }
+    }
+    &.active {
+      .page-link {
+        background-color: $hover-bg-color;
+      }
+    }
+  }
+}
+
+// Tabs
+@mixin tabs-color($color: $black) {
+  .tag {
+    color: $color;
+  }
+  .dropdown {
+    .dropdown-toggle {
+      &[aria-expanded="true"] {
+        color: $color !important;
+      }
+    }
+    &.show {
+      .dropdown-toggle {
+        border: 0 !important;
+      }
+    }
+  }
+  .nav-link {
+    &.active,
+    &:hover {
+      color: $color;
+      border-bottom-color: $color;
+      .tag {
+        background: $color;
+        color: $white;
+        border-color: darken($color, 10%);
+      }
+    }
+  }
+}
+
+@mixin tabs-filled-color($color: $primary-color) {
+  .dropdown {
+    .dropdown-toggle {
+      &[aria-expanded="true"] {
+        color: $white !important;
+      }
+      &:after {
+        top: 18px;
+      }
+    }
+    &.show {
+      .dropdown-toggle {
+        background: $color !important;
+        color: $white !important;
+        border-color: darken($color, 10%) !important;
+      }
+    }
+  }
+  .nav-link {
+    height: 40px;
+    line-height: $base-line-height + 20;
+    padding: 0 $base-padding - 14;
+    border-radius: $border-radius-base $border-radius-base 0 0;
+    border: $base-border-width $base-border-style $border-color-base;
+    border-bottom-width: 0 !important;
+    margin-right: $base-margin - 25;
+    background: $primary-bg-color;
+    color: $black;
+    &.active,
+    &:hover {
+      background: $color;
+      color: $white;
+      border-color: darken($color, 10%);
+      margin-bottom: 0;
+      .icon {
+        color: $white;
+      }
+    }
+    @media (max-width: $screen-lg-min) {
+      padding: 0 $base-padding - 18;
+    }
+  }
+}
+
+// Alert
+@mixin alert-color($bg-color: $primary-color) {
+  color: $black;
+  background-color: lighten($bg-color, 25%);
+  border-color: lighten($bg-color, 5%);
+  hr {
+    border-top-color: lighten($bg-color, 5%);
+  }
+  .alert-link {
+    color: $black;
+  }
+}
+
+@mixin alert-color-filled($bg-color: $primary-color) {
+  color: $white;
+  background-color: $bg-color;
+  border-color: darken($bg-color, 10%);
+  hr {
+    border-top-color: darken($bg-color, 10%);
+  }
+  .alert-link {
+    color: $white;
+  }
+}
+
+@mixin alert-color-outline($border-color: $primary-color) {
+  color: $secondary-color;
+  background-color: transparent;
+  border-color: $border-color;
+  hr {
+    border-top-color: $border-color;
+  }
+  .alert-link {
+    color: $secondary-color;
+  }
+}
+
+// Radios
+@mixin circle-radio-color($border-color: $primary-color) {
+  input[type="radio"]:checked {
+    & + label {
+      &:after {
+        border: $base-border-width + 3 $base-border-style $border-color;
+      }
+    }
+  }
+}
+
+@mixin filled-radio-color($bg-color: $primary-bg-color, $color: $black) {
+  input[type="radio"]:checked {
+    & + label {
+      border-color: darken($bg-color, 10%);
+      background-color: $bg-color;
+      color: $color;
+    }
+  }
+}
+
+@mixin dot-radio-color($bg-color: $primary-color) {
+  .radio-btn {
+    input[type="radio"]:checked {
+      & + label {
+        &:after {
+          background-color: $bg-color !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin border-top-radio($color: $primary-color) {
+  .radio-btn {
+    input[type="radio"]:checked {
+      & + label {
+        color: $color;
+        &::after {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}
+
+// Checkboxes 
+@mixin checkbox-color($color: $primary-color) {
+  .checkbox-input {
+    + label {
+      &:before {
+        content: "";
+        border-color: $color;
+      }
+    }
+    &:checked {
+      + label {
+        &:after {
+          background: $white;
+          box-shadow: 2px 0 0 $white, 4px 0 0 $white, 4px -2px 0 $white, 4px -4px 0 $white, 4px -6px 0 $white, 4px -8px 0 $white;
+        }
+        &:before {
+          content: "";
+          border-color: transparent;
+          background: $color;
+        }
+      }
+    }
+  }
+}
+
+// Button Filled
+@mixin filled-botton-color($color: $black, $text: $white, $type: "default") {
+  background: $color !important;
+  color: $text !important;
+  .icon,
+  .anticon {
+    color: $text !important;
+  }
+  &:hover {
+    opacity: .7;
+  }
+}
+
+// Button Box Shadow
+@mixin button-shadow($color: rgba(0,0,0,.3)) {
+  box-shadow: 0 7px 17px -6px $color;
+  transition: all ease-in-out .6s;
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// Card Box Shadow
+@mixin card-shadow($color: rgba(0,0,0,.05)) {
+  box-shadow: 0 4px 6px 0 rgba($color, .05), 0 1px 20px 0 rgba($color, .05), 0px 1px 11px 0px rgba($color, .05);
+}
+
+// Badge
+@mixin Badge($bg-color: $secondary-bg-color-darker, $color: rgba($black, .7), $border-color: $border-color-base) {
+  display: inline-block;
+  font-size: $base-font - 2;
+  font-weight: $base-font-weight;
+  padding: 0 $base-padding - 23;
+  border-radius: $border-radius-base;
+  line-height: $base-line-height;
+  color: $color;
+  background: lighten($bg-color, 12%);
+  border: $base-border-width $base-border-style darken($border-color, 15%);
+  transition: all ease-in-out .3s;
+}
+
+@mixin badge-outline($color: $black) {
+  border-color: $color;
+  color: $color;
+  &:hover {
+    background-color: rgba($color, .1);
+  }
+}

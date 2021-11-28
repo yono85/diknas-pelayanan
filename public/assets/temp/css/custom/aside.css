@@ -1,0 +1,191 @@
+/**
+*
+* Theme: Aside
+* Author: Mobythemes
+* Website: MobythemesCom
+* Version: 1.0
+* Date: Thu Nov 28 2019
+* Category: 
+* Title: Aside styles
+*
+*/
+/*************** 
+Moby Theme Variables 
+****************/
+/***********************
+  Global variables
+***********************/
+/***********************
+  Media Queries
+***********************/
+.moby__aside-holder {
+  height: 100%; }
+  .moby__aside-holder .side-bar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1px solid #e3e8ea;
+    border-bottom: 1px solid #e3e8ea;
+    padding: 0 10px 0 15px;
+    background: #fff;
+    height: 75px;
+    width: 100%;
+    overflow: hidden; }
+    @media (max-width: 767px) {
+      .moby__aside-holder .side-bar-header {
+        height: 64px; } }
+    .moby__aside-holder .side-bar-header .side-menu-text {
+      font-weight: 600;
+      color: #202124;
+      font-size: 15px; }
+    .moby__aside-holder .side-bar-header .logo {
+      display: block; }
+      .moby__aside-holder .side-bar-header .logo .icon-logo {
+        font-size: 31px !important;
+        line-height: 100px; }
+    .moby__aside-holder .side-bar-header .drawer-icon {
+      padding: 0 2px;
+      vertical-align: -1px; }
+      .moby__aside-holder .side-bar-header .drawer-icon.icon {
+        cursor: pointer;
+        font-size: 22px; }
+        .moby__aside-holder .side-bar-header .drawer-icon.icon:hover {
+          color: #202124 !important; }
+    .moby__aside-holder .side-bar-header .menu-icon {
+      display: none; }
+      .moby__aside-holder .side-bar-header .menu-icon .icon {
+        cursor: pointer;
+        font-size: 22px; }
+        .moby__aside-holder .side-bar-header .menu-icon .icon:hover {
+          color: #202124 !important; }
+  .moby__aside-holder .moby__side-bar {
+    z-index: 999999; }
+    .moby__aside-holder .moby__side-bar .moby__drawer-menu {
+      width: 100%;
+      height: 100%;
+      height: calc(100% - 75px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-right: 1px solid #e3e8ea;
+      background: #f5f7f7;
+      padding-top: 20px; }
+      @media (max-width: 767px) {
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu {
+          height: calc(100% - 60px); } }
+      .moby__aside-holder .moby__side-bar .moby__drawer-menu li {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0; }
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li a,
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed {
+          text-decoration: none;
+          font-size: 13px;
+          color: #202124;
+          font-weight: 400;
+          padding: 0 15px;
+          line-height: 50px !important;
+          display: block;
+          width: 100%;
+          position: relative;
+          font-weight: 600; }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li a:hover,
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed:hover {
+            color: #689df6; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a:hover .icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed:hover .icon {
+              color: #689df6; }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li a .icon,
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed .icon {
+            margin-right: 15px;
+            font-size: 16px;
+            color: #202124; }
+            @media (min-width: 1441px) {
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li a .icon,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed .icon {
+                font-size: 18px; } }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li a .arrow-icon,
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed .arrow-icon {
+            position: absolute;
+            top: 22px;
+            right: 19px;
+            font-size: 8px;
+            color: #202124;
+            margin-right: 0;
+            transform: rotate(0deg); }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li a[aria-expanded="true"],
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed[aria-expanded="true"] {
+            color: #689df6 !important; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a[aria-expanded="true"] .arrow-icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed[aria-expanded="true"] .arrow-icon {
+              transform: rotate(180deg); }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a[aria-expanded="true"] .icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed[aria-expanded="true"] .icon {
+              color: #689df6 !important; }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li a.active,
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed.active {
+            color: #689df6; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a.active .icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed.active .icon {
+              color: #689df6; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a.active[aria-expanded="true"] .arrow-icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed.active[aria-expanded="true"] .arrow-icon {
+              transform: rotate(0deg); }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a.active[aria-expanded="false"] .arrow-icon,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed.active[aria-expanded="false"] .arrow-icon {
+              transform: rotate(180deg); }
+          @media (min-width: 1441px) {
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li a,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsed {
+              font-size: 15px; } }
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li,
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li {
+          margin: 0; }
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a,
+          .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a {
+            padding-left: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(32, 33, 36, 0.7);
+            position: relative; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a:before,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a:before {
+              content: "";
+              position: absolute;
+              top: 21px;
+              left: 50px;
+              width: 7px;
+              height: 7px;
+              background: rgba(150, 165, 171, 0.6);
+              border-radius: 50%; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a:hover,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a:hover {
+              color: #689df6; }
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a:hover .icon,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a:hover .icon {
+                color: #689df6; }
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a:hover:before,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a:hover:before {
+                background: #689df6; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a span,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a span {
+              margin-left: 15px; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a[data-toggle="collapse"]:before,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a[data-toggle="collapse"]:before {
+              display: none; }
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a.active,
+            .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a.active {
+              color: #689df6; }
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a.active .icon,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a.active .icon {
+                color: #689df6; }
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a.active:before,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a.active:before {
+                background: #689df6; }
+            @media (min-width: 1441px) {
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse ul li a,
+              .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing ul li a {
+                font-size: 14px; } }
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapse .collapse,
+        .moby__aside-holder .moby__side-bar .moby__drawer-menu li .collapsing .collapse {
+          padding-left: 15px; }
