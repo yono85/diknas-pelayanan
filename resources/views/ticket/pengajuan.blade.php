@@ -449,12 +449,12 @@ function createTempTable(e,w)
         listx = listx.replace('{date}', item.date);
         listx = listx.replace('{kode}', item.kode);
         listx = listx.replace('{user_name}', item.user_name);
-        listx = listx.replace('{noid}', item.type);
+        // listx = listx.replace('{noid}', item.type);
         listx = listx.replace('{user_company}', item.user_company);
         listx = listx.replace('{detail}', item.detail);
         listx = listx.replace('{bidang}', item.bidang);
-        listx = listx.replace('{seksi}', (item.seksi === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span>'+item.seksi+'</span>'));
-        listx = listx.replace('{pelayanan}', (item.pelayanan === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span>'+item.pelayanan+'</span>'));
+        listx = listx.replace('{seksi}', (item.seksi === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span class="lbl">'+item.seksi+'</span>'));
+        listx = listx.replace('{pelayanan}', (item.pelayanan === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span class="lbl">'+item.pelayanan+'</span>'));
         listx = listx.replace('{status}', ( item.progress === 0 ? '<li  class="waiting"><span>WAITING</span></li>' : ( item.progress === 1 ? '<li  class="progress"><span>PROGRESS</span></li>' : '<li  class="done"><span>DONE</span></li>') ) );
         
         if( item.replay !== "")
@@ -463,9 +463,9 @@ function createTempTable(e,w)
             $.each(item.replay, function(x,y)
             {
                 rep += '<li>';
-                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="ic sli_icon-check"></span><b class="up-txt">'+y.type+'</b></div>';
+                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="up-txt">'+y.type+'</span></div>';
 
-                    rep += '<div class="div pd-l15"><span>'+y.user_name+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
+                    rep += '<div class="div"><span class="ic flaticon2-right-arrow fsize8"></span><span>'+y.user+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
                 rep += '</li>';
             });
         }

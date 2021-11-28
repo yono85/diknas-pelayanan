@@ -454,9 +454,9 @@ function createTempTable(e,w)
             $.each(item.replay, function(x,y)
             {
                 rep += '<li>';
-                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="ic sli_icon-check"></span><b class="up-txt">'+y.type+'</b></div>';
+                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="up-txt">'+y.type+'</span></div>';
 
-                    rep += '<div class="div"><span>'+y.user+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
+                    rep += '<div class="div"><span class="ic flaticon2-right-arrow fsize8"></span><span>'+y.user+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
                 rep += '</li>';
             });
         }
@@ -883,10 +883,7 @@ $(document).ready(function()
             $t.success(function(n)
             {
                 var rsp = n.response;
-                console.log(rsp);
-
-
-                area.find(".form-register").attr('aria-load', 'false');
+                // console.log(rsp);
                 
                 area.find(".user_name").html(rsp.user_name);
                 // area.find(".user_type").html(rsp.user_type);
@@ -931,6 +928,7 @@ $(document).ready(function()
                     area.find("#form-replay").removeClass('hide');
                 }
 
+                area.find(".form-register").attr('aria-load', 'false');
                 cmd.attr("role", "off");
             });
             $t.error(function(n)
