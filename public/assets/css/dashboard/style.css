@@ -6808,9 +6808,9 @@ a.slide[slide="on"] .arslide{
 }
 
 .modal-progress ul li.top{
-    /* border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
-    margin-bottom: 15px; */
+    margin-bottom: 25px;
 }
 
 .modal-progress ul.child li{
@@ -6848,8 +6848,8 @@ a.slide[slide="on"] .arslide{
     background-color: rgb(250, 246, 228);
     box-sizing: border-box;
     border-radius: 18px;
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 10px 12px;
+    font-size: 16px;
 }
 
 .modal-progress ul.child li.bubble{
@@ -6880,6 +6880,34 @@ a.slide[slide="on"] .arslide{
     padding-left: 8px;
     padding-top: 0px;
     font-size: 14px;
+}
+
+.modal-progress ul li .ar-post{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.modal-progress ul li .ar-post textarea.send{
+    float: left;
+    width: calc(100% - 75px) !important;
+    height: 70px !important;
+}
+
+.modal-progress ul li .ar-post button{
+    float: right;
+    width: 70px;
+    margin-left: 5px;
+    height: 40px;
+    /* background-color: transparent; */
+    border: 0px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.modal-progress ul li .ar-post .ar-upload{
+    width: calc(100% - 75px) !important;
+    -moz-width: calc(100% - 75px) !important;
+    padding-top: 3px;
 }
 
 /* END MODAL PROGRESS TICKET */

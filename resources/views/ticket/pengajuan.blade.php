@@ -274,7 +274,7 @@
                             <div class="td-iner disvis">
                                 <div class="div">
                                     <div class="dropleft">
-                                        <button type="button" class="btn btn-primary nobr grey s11 color-black cmd-view-detail" role="off" data-toggle="" aria-haspopup="" aria-expanded="" data-classModal="modal-view-ticket-user">
+                                        <button type="button" class="btn btn-primary nobr grey s11 color-black cmd-view-detail" role="off" data-toggle="" aria-haspopup="" aria-expanded="" data-classModal="modal-view-ticket-user" dataid="{id}">
                                             <span class="sli_icon-eye"></span>
                                         </button>
                                     </div>
@@ -291,10 +291,15 @@
 
 <!-- area modal -->
 
-<div class="modal modal-area">
+<!-- <div class="modal modal-area show">
     <div class="inar black modal-progress">
         <div class="boxid modal-box reg-area animate-TopToBottom" role="true">
-            <div class="form-register black ">
+            <div class="form-register black " aria-load="false">
+                
+                <div class="load txt-center">
+                    <img src="/assets/svg/loading.blue.svg" alt="loading">
+                </div>
+
                 <div class="main-reg">
                     <div class="inmod">
                         <div class="div">
@@ -306,11 +311,7 @@
                                     <b>Progress Tiket</b>
                                 </div>
                                 <div class="div">
-                                    <h3>
-                                        <span>Bidang Anggaran</span>
-                                        <span class="dot w6 brc"></span>
-                                        <span>Seksi Pelaksanaan</span>
-                                    </h3>
+                                    <h3></h3>
                                 </div>
                             </div>
                             <div class="div">
@@ -339,16 +340,20 @@
                                         <div class="div">
                                             <p class="bubble">Mengajukan permintaan untuk listing gaji bulan oktober 2021</p>
                                         </div>
+                                        <div class="div fsize12">
+                                            <span class="lbl">#Pelayanan</span>
+                                        </div>
                                     </li>
-                                    <li class="fsize11">
+                                    <li class="fsize11 hide">
                                         <b>STATUS:</b>
                                     </li>
                                     <li>
                                         <ul class="child">
-                                            <li class="fsize10 bubble dis-in-block hide">
+                                            <li class="fsize10 bubble dis-in-block">
+                                                <span class="ic sli_icon-ban"></span>
                                                 <span>NO PROGRESS</span>
                                             </li>
-                                            <li class="bubble">
+                                            <li class="bubble hide">
                                                 <div class="div clr-float">
                                                     <div class="fl-left color-orange fsize10">
                                                         <span class="ic sli_icon-clock"></span>
@@ -364,7 +369,7 @@
                                                 </div>
                                             </li>
 
-                                            <li class="bubble">
+                                            <li class="bubble hide">
                                                 <div class="div clr-float">
                                                     <div class="fl-left color-green fsize10">
                                                         <span class="ic sli_icon-clock"></span>
@@ -383,7 +388,34 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        form post
+                                        <form action="/api/ticket/replay/create" enctype="multipart/form-data" novalidate="novalidate" id="form-replay" class="pd-b0">
+                                            <div class="div">
+                                                <div class="div clr-float">
+                                                    <div class="div ar-post">
+                                                        <div class="div clr-float">
+                                                            <textarea name="" class="send" placeholder="Ketikan detail tanggapan..."></textarea>
+                                                            <button class="btn green is-loading" role="off">
+                                                                <span class="sli_icon-paper-plane"></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="div">
+                                                            <div class="div ar-content ar-upload area-upload" role="false">
+                                                                <a href="#" role="off" class="cmd-upload is-loading-new blue w32 fcs pd-tb3" aria-data="false">
+                                                                    <span class="ic fas flaticon-attachment"></span>
+                                                                    <div class="ar-label">
+                                                                        <div class="div">
+                                                                            <span class="label-upload">Lampirkan berkas (ukuran maks: 2MB)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="file" name="file" class="hide" accept="application/pdf">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        
+                                            </div>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -393,7 +425,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 @include('component.media')
 
@@ -413,6 +445,7 @@ function createTempTable(e,w)
     $.each(rsp.list,function(i,item)
     {    
         var listx = temp;
+        listx = listx.replace('{id}', item.id);
         listx = listx.replace('{date}', item.date);
         listx = listx.replace('{kode}', item.kode);
         listx = listx.replace('{user_name}', item.user_name);
@@ -849,23 +882,53 @@ $(document).ready(function()
 
             area.html("");
             area.append(content.html());
-            area.find("form").attr("id", "form-ticket");
-            area.find("input[name='type']").val('new');
-            area.find("input[name='user_id']").val(getaccount().id);
-            area.find("input[name='company_id']").val(getaccount().company_id);
-            area.find("input[name='level']").val(getaccount().level);
-            //
-            var $URL = '/api/data/ticket/getbidang?level=' + getaccount().level + '&set=' + getaccount().set_bidang;
+
+            // area.find("form").attr("id", "form-view-ticket");
+            area.find(".form-register").attr('aria-load', 'true');
+
+            // //
+            var $URL = '/api/ticket/show?id=' + cmd.attr("dataid");
             var $t = FormSendingNew("","GET","key","",$URL);
             $t.success(function(n)
             {
                 var rsp = n.response;
-                var list = '';
-                $.each(rsp, function(i, item)
-                {
-                    list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get="" class="cmd-select-bidang" data-sub="'+item.sub+'"><span>'+item.name+'</span></button></li>';
-                });
-                area.find(".area-select-bidang ul").html(list);
+                // console.log(rsp);
+
+
+                area.find(".form-register").attr('aria-load', 'false');
+                
+                area.find(".user_name").html(rsp.user_name);
+                // area.find(".user_type").html(rsp.user_type);
+                area.find(".user_company").html(rsp.user_company);
+                area.find(".date").html(rsp.date);
+                area.find(".detail").html(rsp.detail);
+                area.find(".pelayanan").html(rsp.pelayanan);
+
+                // if( rsp.replay === "")
+                // {
+                //     area.find("replay").html('<li class="fsize10 bubble dis-in-block"><span class="ic sli_icon-ban"></span><span>NO PROGRESS</span></li>');
+                // }
+                // else
+                // {
+                    var rep = '';
+                    $.each(rsp.replay, function(i, item)
+                    {
+                        rep += '<li class="bubble hide">';
+                            rep += '<div class="div clr-float">';
+                                rep +='<div class="fl-left color-'+item.color+' fsize10"><span class="ic sli_icon-clock"></span><span class="up-text">'+item.type+'</span></div>';
+                                rep += '<div class="fl-right txt-right fsize11"><span>'+item.date+'</span></div>';
+                            rep += '</div>';
+    
+                            rep + '<div class="div clr-float"><div class="arimg br-rds50p"></div><div class="arinf">'+item.name+'</div></div>';
+                        rep += '</li>';
+                    });
+
+                    area.find("replay").html(rep);
+                // }
+
+                // form replay
+                // area.find("#form-replay").addClass( rsp.status === 2 ? "hide" : "" );
+
                 cmd.attr("role", "off");
             });
             $t.error(function(n)

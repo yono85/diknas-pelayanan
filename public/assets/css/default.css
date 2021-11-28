@@ -631,6 +631,10 @@ button.rds4{
     border-bottom-right-radius: 12px !important;
 }
 
+.br-rds23{
+    border-radius: 23px;
+}
+
 .br-rds50p{
     border-radius: 50%;
 }
@@ -1407,10 +1411,20 @@ label.error:before, span.error:before{
     padding-bottom: 0px !important;
 }
 
+.pd-tb3{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+
 .pd-tb10{
     padding-top: 10px !important;
     padding-bottom: 10px !important;
 }
+
+.pd-t10{
+    padding-top: 10px !important;
+}
+
 
 .pd-b0{
     padding-bottom: 0px !important;
