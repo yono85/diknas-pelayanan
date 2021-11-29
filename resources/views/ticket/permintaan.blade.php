@@ -379,7 +379,7 @@ $(document).ready(function()
             area.find("input[name='company_id']").val(getaccount().company_id);
             area.find("input[name='level']").val(getaccount().level);
             //
-            var $URL = '/api/data/ticket/getbidang?level=' + getaccount().level + '&set=' + getaccount().pelayanan;
+            var $URL = '/api/data/ticket/getbidang?level=' + getaccount().level + '&set=' + getaccount().set_bidang;
             var $t = FormSendingNew("","GET","key","",$URL);
             $t.success(function(n)
             {
