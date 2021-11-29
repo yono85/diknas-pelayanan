@@ -130,7 +130,7 @@ function exeTable(e)
     var $URL = config.apps.URL_API + form.attr('action') + '?' + form.serialize();
     var $t = FormSending("","GET","key","",$URL);
 
-    console.log($URL);
+    // console.log($URL);
     $t.success(function(n)
     {
         var rsp = n.response;
@@ -173,12 +173,12 @@ function exeTable(e)
         body.html(list);
         table.attr('aria-load','false');
 
-        console.log(rsp);
+        // console.log(rsp);
         
     });
     $t.error(function(n)
     {
-        // console.log(n);
+        console.log(n);
         console.log('no table');
         var rsp = n.responseJSON;
 

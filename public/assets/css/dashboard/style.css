@@ -6850,18 +6850,44 @@ a.slide[slide="on"] .arslide{
     border-radius: 18px;
     padding: 10px 12px;
     font-size: 16px;
+    color: #444;
+}
+
+.modal-progress ul li .dt-bubble{
+    background-color: #fff;
+    border-radius: 23px;
+    padding: 1px 10px;
+    font-size: 8px;
+    top: 4px;
+    z-index: 2;
+    right: 5px;
+    position: absolute;
+    box-shadow: 1px 2px 4px -1px #eee;
 }
 
 .modal-progress ul.child li.bubble{
-    padding: 8px 15px;
-    border-radius: 26px;
-    background-color: rgb(232, 241, 253);
     margin-bottom: 15px;
+    margin-top: 25px;
 }
+
 
 .modal-progress ul.child li.bubble:last-child{
     margin-bottom: 0px;
 }
+
+.modal-progress ul.child li.bubble .inar-bubble{
+    /* padding: 8px 12px; */
+    border-radius: 26px;
+    /* background-color: rgb(245, 249, 255); */
+    display: inline-block;
+}
+
+.modal-progress ul.child li.bubble .sts{
+    position: absolute;
+    top: -18px;
+    left: 0px;
+}
+
 
 .modal-progress ul.child li .arimg{
     width: 22px;
@@ -6880,6 +6906,24 @@ a.slide[slide="on"] .arslide{
     padding-left: 8px;
     padding-top: 0px;
     font-size: 14px;
+    color: #666;
+}
+
+.modal-progress ul.child li .arinf .bubble-txt{
+    display: inline-block;
+    padding-top: 0px;
+}
+
+.modal-progress ul.child li .arinf .bubble-txt p{
+    /* background-color: #fff; */
+    background-color: rgb(250, 246, 228);
+    padding: 10px 12px;
+    border-radius: 23px;
+    color: #333;
+}
+
+.modal-progress ul.child li .arinf a{
+    color: red;
 }
 
 .modal-progress ul li .ar-post{

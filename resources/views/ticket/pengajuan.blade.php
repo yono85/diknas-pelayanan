@@ -10,7 +10,7 @@
                 <div class="div head-tables">
                     <div class="div clr-float">
 
-                        <form action="/api/ticket/pengajuan/table" id="form-table" aria-temp="temp-table-pengajuan">
+                        <form action="/api/ticket/table/pengajuan" id="form-table" aria-temp="temp-table-pengajuan">
 
 
                             <button class="submit hide" role="off">submit</button>
@@ -90,6 +90,9 @@
                                 </div>
                             </div>
 
+                            <input type="hidden" name="level" value="">
+                            <input type="hidden" name="user_id" value="">
+                            <input type="hidden" name="bidang" value="">
                             <input type="hidden" name="paging" value="1">
                             <input type="hidden" name="sort_name" value="desc">
 
@@ -218,8 +221,6 @@
                                             <b>{user_name}</b>
                                         </div>
                                         <div class="div fsize11 up-txt">
-                                            <span class="label">({noid})</span>
-                                            <span class="dot w6 brc"></span>
                                             <span class="color-green">{user_company}</span>
                                         </div>
                                     </div>
@@ -435,6 +436,11 @@
 @section('script')
 <script>
 
+//
+$("#form-table input[name='level']").val(getaccount().level);
+$("#form-table input[name='user_id']").val(getaccount().id);
+$("#form-table input[name='bidang']").val(getaccount().bidang);
+
 function createTempTable(e,w)
 {
     var rsp= e,
@@ -463,9 +469,9 @@ function createTempTable(e,w)
             $.each(item.replay, function(x,y)
             {
                 rep += '<li>';
-                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="up-txt">'+y.type+'</span></div>';
+                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="up-txt">'+y.type+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
 
-                    rep += '<div class="div"><span class="ic flaticon2-right-arrow fsize8"></span><span>'+y.user+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
+                    rep += '<div class="div"><span class="ic flaticon2-right-arrow fsize8"></span><span>'+y.user+'</span></div>';
                 rep += '</li>';
             });
         }
@@ -514,7 +520,7 @@ $(document).ready(function()
             area.find("input[name='company_id']").val(getaccount().company_id);
             area.find("input[name='level']").val(getaccount().level);
             //
-            var $URL = '/api/data/ticket/getbidang?level=' + getaccount().level + '&set=' + getaccount().set_bidang;
+            var $URL = '/api/data/ticket/getbidang?level=' + getaccount().level + '&set=' + getaccount().pelayanan;
             var $t = FormSendingNew("","GET","key","",$URL);
             $t.success(function(n)
             {
@@ -892,10 +898,10 @@ $(document).ready(function()
             $t.success(function(n)
             {
                 var rsp = n.response;
-                // console.log(rsp);
+                console.log(rsp);
 
 
-                area.find(".form-register").attr('aria-load', 'false');
+                
                 
                 area.find(".user_name").html(rsp.user_name);
                 // area.find(".user_type").html(rsp.user_type);
@@ -904,31 +910,34 @@ $(document).ready(function()
                 area.find(".detail").html(rsp.detail);
                 area.find(".pelayanan").html(rsp.pelayanan);
 
-                // if( rsp.replay === "")
-                // {
-                //     area.find("replay").html('<li class="fsize10 bubble dis-in-block"><span class="ic sli_icon-ban"></span><span>NO PROGRESS</span></li>');
-                // }
-                // else
-                // {
-                    var rep = '';
-                    $.each(rsp.replay, function(i, item)
-                    {
-                        rep += '<li class="bubble hide">';
-                            rep += '<div class="div clr-float">';
-                                rep +='<div class="fl-left color-'+item.color+' fsize10"><span class="ic sli_icon-clock"></span><span class="up-text">'+item.type+'</span></div>';
-                                rep += '<div class="fl-right txt-right fsize11"><span>'+item.date+'</span></div>';
-                            rep += '</div>';
+
+                var rep = '';
+                $.each(rsp.replay, function(i, item)
+                {
+                    rep += '<li class="bubble">';
+                        
+                        rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
+
+                        rep += '<div class="inar-bubble">';
     
-                            rep + '<div class="div clr-float"><div class="arimg br-rds50p"></div><div class="arinf">'+item.name+'</div></div>';
-                        rep += '</li>';
-                    });
+                                rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
+                                    rep += '<div class="arinf">';
+                                        rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
 
-                    area.find("replay").html(rep);
-                // }
+                                        rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
+                                        
+                                        rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
 
-                // form replay
-                // area.find("#form-replay").addClass( rsp.status === 2 ? "hide" : "" );
+                                    rep += '</div>';
+                                rep += '</div>';
+                        rep += '</div>';
+                    rep += '</li>';
 
+                });
+
+                area.find(".replay").html(rep);
+
+                area.find(".form-register").attr('aria-load', 'false');
                 cmd.attr("role", "off");
             });
             $t.error(function(n)

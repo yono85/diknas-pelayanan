@@ -2,6 +2,8 @@
 // info login account
 infologin( getCookie(config.apps.COOKIE_NAME) );
 
+console.log(getCookie(config.apps.COOKIE_NAME));
+
 $(document).ready(function()
 {
 
@@ -907,7 +909,7 @@ function getNotification()
 {
     var $URL = config.apps.URL_NOTIFY;
     $URL += getaccount().level > 0 ? '/api/notification/admin' : '/api/notification/user';
-    $URL += '?level=' + getaccount().level + '&slevel=' + getaccount().sublevel + '&id=' + getaccount().id + '&compid=' + getaccount().config.company_id + '&pg=' + notifPg;
+    $URL += '?level=' + getaccount().level + '&slevel=' + getaccount().bidang + '&id=' + getaccount().id + '&compid=' + getaccount().config.company_id + '&pg=' + notifPg;
 
     
     // e = data, t = metode, k = type header auth, w = type bundle
@@ -977,7 +979,7 @@ function runGetNotification()
 {
     var $URL = config.apps.URL_NOTIFY;
     $URL += getaccount().level > 0 ? '/api/notification/admin' : '/api/notification/user';
-    $URL += '?level=' + getaccount().level + '&slevel=' + getaccount().sublevel + '&id=' + getaccount().id + '&compid=' + getaccount().config.company_id + '&pg=' + notifPg;
+    $URL += '?level=' + getaccount().level + '&slevel=' + getaccount().bidang + '&id=' + getaccount().id + '&compid=' + getaccount().config.company_id + '&pg=' + notifPg;
 
     
     // e = data, t = metode, k = type header auth, w = type bundle

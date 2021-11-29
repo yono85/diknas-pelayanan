@@ -198,18 +198,17 @@
                                                     </div>
                                                     <div class="div">
                                                         <p class="bubble detail">...</p>
+                                                        <span class="dt-bubble date"></span>
                                                     </div>
                                                     <div class="div fsize12 txt-right">
                                                         #<span class="lbl pelayanan">Pelayanan</span>
-                                                        <span class="dot w6 brc"></span>
-                                                        <span class="date"></span>
                                                     </div>
                                                 </li>
                                                 <li class="fsize11 hide">
                                                     <b>STATUS:</b>
                                                 </li>
                                                 <li>
-                                                    <ul class="child replay">
+                                                    <ul class="child replay pd-b10">
                                                         <li class="fsize10 bubble dis-in-block">
                                                             <span class="ic sli_icon-ban"></span>
                                                             <span>NO PROGRESS</span>
@@ -309,11 +308,10 @@
                                                     </div>
                                                     <div class="div">
                                                         <p class="bubble detail">...</p>
+                                                        <span class="dt-bubble date"></span>
                                                     </div>
                                                     <div class="div fsize12 txt-right">
                                                         #<span class="lbl pelayanan">Pelayanan</span>
-                                                        <span class="dot w6 brc"></span>
-                                                        <span class="date"></span>
                                                     </div>
                                                 </li>
                                                 <li class="fsize11 hide">
@@ -327,6 +325,40 @@
                                                                 <span>Progress</span>
                                                             </button>
                                                         </li> -->
+
+                                                        <!-- 
+                                                            <li class="bubble">
+                        
+                                                            <div class="div ">
+                                                                <div class="sts color-green fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">DONE</span></div>
+                                                            </div>
+
+                                                            <div class="inar-bubble">
+                                        
+                                                                <div class="div clr-float"><div class="arimg br-rds50p"></div>
+                                                                    <div class="arinf">
+                                                                    <div class="div">
+                                                                            <span>User</span>
+                                                                            <span class="dot w6 brc"></span>
+                                                                            <span class="fsize10">01/01/2021</span>
+                                                                        </div>
+                                                                        <div class="div">
+                                                                            <div class="bubble-txt">
+                                                                                <p>TEst ersdfda adfaf adfa faf afdsaf</p>
+                                                                                <div class="div clr-float">
+                                                                                    <a href="#" class="fl-right fsize10">
+                                                                                        <span class="sli_icon-arrow-down"></span>
+                                                                                        <span class="fsize9">DOWNLOAD</span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    -->
 
                                                     </ul>
                                                 </li>
