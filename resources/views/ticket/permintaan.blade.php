@@ -832,7 +832,7 @@ $(document).ready(function()
 
         var cmd = $(this),
         area = cmd.parent("li"),
-        modal = cmd.parents(".area-modal"),
+        modal = cmd.parents(".modal-area"),
         form = area.find("form");
 
         if( cmd.attr("role") === "off")
@@ -844,8 +844,34 @@ $(document).ready(function()
             {
                 
                 console.log(n);
-                loadtable();
-                
+                loadTable();
+
+                //
+                var rep = '';
+                $.each(n.list, function(i, item)
+                {
+                    rep += '<li class="bubble">';
+                    
+                        rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
+
+                        rep += '<div class="inar-bubble">';
+    
+                                rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
+                                    rep += '<div class="arinf">';
+                                        rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
+
+                                        rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
+                                        
+                                        rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
+
+                                    rep += '</div>';
+                                rep += '</div>';
+                        rep += '</div>';
+                    rep += '</li>';
+                });
+                modal.find("ul.child").html(rep);
+                modal.find(".area-replay form").removeClass("hide");
+
             });
             $t.error(function(n)
             {
@@ -870,7 +896,8 @@ $(document).ready(function()
 
         var form = $(this),
         cmd = form.find("button.cmd-submit"),
-        text = form.find("textarea[name='text']");
+        text = form.find("textarea[name='text']")
+        modal = form.parents(".modal-area");
 
         if( cmd.attr("role") === "off")
         {
@@ -892,6 +919,31 @@ $(document).ready(function()
             $t.success(function(n)
             {
                 console.log(n);
+                var rep = '';
+                $.each(n.list, function(i, item)
+                {
+                    rep += '<li class="bubble">';
+                    
+                        rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
+
+                        rep += '<div class="inar-bubble">';
+    
+                                rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
+                                    rep += '<div class="arinf">';
+                                        rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
+
+                                        rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
+                                        
+                                        rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
+
+                                    rep += '</div>';
+                                rep += '</div>';
+                        rep += '</div>';
+                    rep += '</li>';
+                });
+                modal.find("ul.child").html(rep);
+                modal.find(".area-replay form").addClass("hide");
+                loadTable();
             });
             $t.error(function(n)
             {
