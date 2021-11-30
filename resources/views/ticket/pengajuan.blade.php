@@ -241,7 +241,7 @@
                             <div class="td-iner">
                                 <div class="div">
                                     <span class="ic flaticon-suitcase fsize11"></span>
-                                    <b>{bidang}</b>
+                                    <span>{bidang}</span>
                                 </div>
                                 <div class="div">
                                     {seksi}

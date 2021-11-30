@@ -842,7 +842,10 @@ $(document).ready(function()
             var $t = FormSendingNew(form,"POST","key","","");
             $t.success(function(n)
             {
+                
                 console.log(n);
+                loadtable();
+                
             });
             $t.error(function(n)
             {

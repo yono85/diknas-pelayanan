@@ -590,11 +590,25 @@ function selectedDDWN(n)
         //     buttonScd.find('input').val('');
         //     buttonScd.removeClass('hide');
 
+
+
         if( button.attr('data-modal') !== '')
         {
+
             //call function
-            eval(button.attr('data-get') + '(button)');
+            if( button.attr('data-get') !== '')
+            {
+                eval(button.attr('data-get') + '(button)');
+            }
+            else
+            {
+                $("body").find("."+button.attr("data-modal")).addClass("hide");
+                $("body").find("."+button.attr("data-modal") +" ul").html("");
+
+            }
+
         }
+
 
         if( button.attr('data-src') === 'true')
         {

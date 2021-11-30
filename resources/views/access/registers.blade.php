@@ -657,7 +657,7 @@
                                                             <!-- </div> -->
                                                         </div>
 
-                                                        <div class="div ar-ctn hide area-subpelayanan">
+                                                        <div class="div ar-ctn hide area-seksi">
                                                             <!-- <div class="in-arctn"> -->
                                                                 <div class="ddwn area-ddwn ar-content keep">
                                                                     <button class="btn br-rds8 cddwn fcs" role="off" disabled="disabled">
@@ -758,6 +758,7 @@
                                                 </div>
                                             </div>
 
+                                            <input type="hidden" name="subbidang" value="">
                                             <input type="hidden" name="company_id" value="1000001">
                                             <input type="hidden" name="level" value="1">
                                         </form>
@@ -963,10 +964,10 @@
             {
                 var cmd = e,
                 modal = $('body').find('.modal-area'),
-                area = modal.find('.area-subpelayanan');
+                area = modal.find('.area-seksi');
 
                 area.find('input.value-dropdown').val('');
-                area.find('button.cddwn label span').html('Pilih Pelayanan');
+                area.find('button.cddwn label span').html('Pilih Seksi');
                 area.find('button.cddwn').attr('disabled','disabled');
                 area.removeClass('hide');
 
@@ -1019,7 +1020,7 @@
                         $.each(n.response, function(i,item)
                         {
                             li += '<li aria-selected="false">';
-                                li += '<button role="off" dataid="'+item.id+'" data-modal="area-sublevel" data-modal-label="Pilih Pelayanan" data-get="'+(item.sub === 0 ? '' : 'getPelayananSelected')+'" data-src="false"><span>'+item.name+'</span></button>';
+                                li += '<button role="off" dataid="'+item.id+'" data-modal="area-seksi" data-modal-label="Pilih Seksi" data-get="'+(item.sub === 0 ? '' : 'getPelayananSelected')+'" data-src="false" datasub="'+item.sub+'" class="cmd-set-bidang"><span>'+item.name+'</span></button>';
                             li += '</li>';
                         });
 
@@ -1034,6 +1035,16 @@
                     
                 });
 
+                $("body").on("click", ".cmd-set-bidang", function()
+                {
+                    var cmd = $(this),
+                    form = cmd.parents("form");
+
+                    form.find("input[name='subbidang']").val(cmd.attr("datasub"));
+                });
+
+
+                //
                 $('body').on('click', '.cmd-modal-regsch', function(e)
                 {
                     e.preventDefault();
@@ -1094,6 +1105,7 @@
                     var form = $(this),
                     bidang = form.find('input[name="bidang_selected"]'),
                     pelayanan = form.find('input[name="pelayanan_selected"]'),
+                    subbidang = form.find('input[name="subbidang"]'),
                     status = form.find('input[name="status_selected"]'),
                     file = form.find('input[name="file"]');
                     
@@ -1104,10 +1116,10 @@
                         bidang.parents('.ar-content').find('.fcs').addClass('br-error');
                     }
     
-                    if( pelayanan.val() === '' )
+                    if( pelayanan.val() === '' && subbidang.val() === "1" )
                     {
                         pelayanan.parents('.ar-content').find('span.error').remove();
-                        pelayanan.parents('.ar-content').append('<span class="error">Harap pilih Pelayanan</span>');
+                        pelayanan.parents('.ar-content').append('<span class="error">Harap pilih Seksi</span>');
                         pelayanan.parents('.ar-content').find('.fcs').addClass('br-error');
                     }
 
@@ -1174,9 +1186,10 @@
                     bidang = form.find('input[name="bidang_selected"]'),
                     status = form.find('input[name="status_selected"]'),
                     pelayanan = form.find('input[name="pelayanan_selected"]'),
+                    subbidang = form.find('input[name="subbidang"]'),
                     file = form.find('input[name="file"]');
 
-                    if( bidang.val() === '' || pelayanan.val() === '' || status.val() === '' || file.val() === '' )
+                    if( bidang.val() === '' || pelayanan.val() === '' && subbidang.val() === "1" || status.val() === '' || file.val() === '' )
                     {
                         return;
                     }
