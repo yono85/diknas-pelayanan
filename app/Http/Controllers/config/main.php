@@ -37,6 +37,7 @@ class main extends Controller
             'URL_STORAGE'       =>  env('URL_STORAGE'),
             'cookie'            =>  env('APP_COOKIE'),
             'created_date'        =>  '&copy;' . (date('Y', time()) === '2021' ? '2021' : '2021 - ' . date('Y', time())),
+            'created'           =>  'SIMPELDIK &copy; ' . (date('Y', time()) === '2021' ? '2021' : '2021 - ' . date('Y', time())),
         ];
 
         return $data;

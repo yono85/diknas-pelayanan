@@ -155,7 +155,7 @@ function FormSending(e,t,k,w,u)
         headers: k === "key" ? $h : ( k === 'token' ? $hx : $hs),
         timeout: 18000,
         cache: false,
-        data: t === "GET" ? "" : formdatasend(e),
+        data: t === "GET" ? "" : (w === "" ? {e} : formdatasend(e)),
         dataType: 'JSON'
     };
 

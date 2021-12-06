@@ -68,13 +68,14 @@
         <script src="{{$apps['URI']}}/assets/js/conf.js" type="text/javascript"></script>
        
         <script>
-            checkLogout();
+            checkLogout();  
         </script>
     </head>
 
     <body>
 
         
+
         <div class="moby__aside-structure moby__theme_ui classic">
 
             <!-- ASIDE -->
@@ -98,6 +99,14 @@
 
         @include('dashboard.component.media')
 
+        <script>
+            
+            if( getaccount().verify === 0)
+            {
+                $("body").prepend('<div class="area-verify" aria-role="false"><div class="inar bck"><div class="modalx"><div class="inarx"><div class="div txt-center fsize42 ar-ic"><span class="sli_icon-clock"></span></div><div class="div inf"><p class="fsize16">Halo <span class="up-txt">'+getaccount().name+'</span>, <br> Saat ini akun Anda sedang ditinjau oleh Admin untuk dilakukan verifikasi berkas.</p></div><div class="div txt-center area-btn-verify"><button class="btn orange is-loading br-rds23 cmd-check-verify" role="off"><span>Cek Verifikasi</span></button></div><div class="div"><form action="/api/account/login-verify-admin" id="form-loginx"><input type="hidden" name="email" value=""><div class="div area-login clr-float"><input type="password" name="password" placeholder="Masukan Password Anda" class=""><button role="off" class="btn green submit cmd-loginx is-loading"><span>Login</span></button></div></form></div></div></div></div></div>');
+
+            }
+        </script>
         <!-- AREA MODAL SHOW -->
         <div id="area-modal-show" class="fix-area-modal"></div>
 
@@ -113,6 +122,8 @@
         <script src="{{$apps['URI']}}/assets/js/dashboard/dropdown-search/bootstrap-select.min.js"></script>
         <script src="{{$apps['URI']}}/assets/temp/scripts/custom.js"></script>
         <!-- End Custom Scripts -->
+
+
     </body>
 
 

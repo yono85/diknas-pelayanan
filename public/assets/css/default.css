@@ -1381,6 +1381,18 @@ label.error:before, span.error:before{
     font-size: 24px !important;
 }
 
+.fsize28{
+    font-size: 28px !important;
+}
+
+.fsize32{
+    font-size: 32px !important;
+}
+
+.fsize42{
+    font-size: 42px !important;
+}
+
 .form-control{
     box-shadow: none !important;
 }

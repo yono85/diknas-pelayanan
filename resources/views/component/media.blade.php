@@ -409,15 +409,18 @@
             </div>
         </div>
 
+        
+
     </div>
 
 
 </div>
 
 <script>
+
+
 $(document).ready(function()
 {
-
     $('body').on('click', '.close-modal', function(e)
     {
         e.preventDefault();

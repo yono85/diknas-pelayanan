@@ -2,10 +2,11 @@
 // info login account
 infologin( getCookie(config.apps.COOKIE_NAME) );
 
-console.log(getCookie(config.apps.COOKIE_NAME));
+// console.log(getCookie(config.apps.COOKIE_NAME));
 
 $(document).ready(function()
 {
+
 
     //logout
     $("body").on("click", ".account-signout", function(e)
@@ -31,7 +32,91 @@ $(document).ready(function()
     });
 
 
+    $("body").on("click", ".cmd-check-verify", function(e)
+    {
+        e.preventDefault();
+        var cmd = $(this),
+        area = cmd.parents(".area-verify");
 
+        if( cmd.attr("role") === "off")
+        {
+            cmd.attr("role", "on");
+            $.ajax({
+                type: "GET",
+                url: config.apps.URL_API + '/api/account/check-verify-admin?token=' + getaccount().key,
+                headers: {
+                    "Content-Type":"application/json",
+                    "key":getaccount().key
+                },
+                cache: false,
+                timeout: 18000,
+                dataType: "JSON",
+                success: function(n)
+                {
+                    console.log(n);
+                    area.find("form input[name='email']").val(n.response.email);
+                    area.attr("aria-role", "true");
+                    area.find("form input[name='password']").focus();
+                    
+                },
+                error: function(n)
+                {
+                    console.log(n);
+                    cmd.attr("role", "off");
+                    flagnotif("error", n.responseJSON.message);
+                }
+            })
+        }
+    });
+
+    $("#form-loginx").submit(function()
+    {
+        var form = $(this),
+        cmd = form.find("button.cmd-loginx");
+
+        if( cmd.attr("role") === "off")
+        {
+            cmd.attr("role", "on");
+            form.find("span.error").remove();
+            form.find(".br-error").removeClass("br-error");
+
+            $.ajax({
+                type: "POST",
+                url: config.apps.URL_API + form.attr("action"),
+                headers: {
+                    "Content-Type":"application/json",
+                    "key":getaccount().key
+                },
+                cache: false,
+                timeout: 18000,
+                data: formdatasend(form),
+                dataType: "JSON",
+                success: function(n)
+                {
+                    console.log(n);
+                    deleteCookies();
+                    setCookie(config.apps.COOKIE_NAME,JSON.stringify(n.response),1);
+                    infologin(n.response);
+                    window.location.href = "/dashboard";
+                },
+                error: function(n)
+                {
+                    console.log(n);
+                    form.find("input[name='password']").addClass("br-error");
+                    form.append("<span class='error'>"+n.responseJSON.message+"</span>");
+                    cmd.attr("role", "off");
+                }
+            });
+            
+        }
+        return false;
+    });
+
+    $("body").on("click", "#form-loginx button.cmd-loginx",function(e)
+    {
+        e.preventDefault();
+        $(this).parents("form").submit();
+    });
 
 
     return false;
@@ -1109,7 +1194,6 @@ function startTimerCHToken()
        
        var token = getToken();
         getRefreshCookie(token);
-
    }
 
    
