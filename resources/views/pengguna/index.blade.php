@@ -10,11 +10,20 @@
                 <div class="div head-tables">
                     <div class="div clr-float">
 
-                        <form action="/api/ticket/table/permintaan" id="form-table" aria-temp="temp-table-pengajuan">
+                        <form action="/api/pengguna/table" id="form-table" aria-temp="temp-table-pengajuan">
 
 
                             <button class="submit hide" role="off">submit</button>
                             <div class="fl-right w100px">
+
+                                <div class="fl-right oarea-ddwn-hd oar-ddwn">
+                                    <button class="btn green btn-r cmdNewModal" role="off" data-type="" data-widget="modal-create-task" aria-dropdown="true" data-classModal="modal-superadmin">
+                                        <span class="ic fa flaticon2-add-1"></span>
+                                        <span>Admin</span>
+                                    </button>
+                                </div>
+
+                                <div class="bts"></div>
 
                                 <div class="fl-right oarea-ddwn-hd oar-ddwn ar-fil ar-ddwn-fix dot-notif l red  area-filter" aria-role="false">
 
@@ -47,10 +56,7 @@
                                                                         <button role="off" data-modal="" data-src="false"  dataid="0" ><span>Waiting</span></button>
                                                                     </li>
                                                                     <li aria-selected="false">
-                                                                        <button role="off" data-modal="" data-src="false" dataid="1" ><span>Progress</span></button>
-                                                                    </li>
-                                                                    <li aria-selected="false">
-                                                                        <button role="off" data-modal="" data-src="false" dataid="2" ><span>Done</span></button>
+                                                                        <button role="off" data-modal="" data-src="false" dataid="1" ><span>Done</span></button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -84,7 +90,6 @@
                             <input type="hidden" name="level" value="">
                             <input type="hidden" name="user_id" value="">
                             <input type="hidden" name="bidang" value="">
-                            <input type="hidden" name="seksi" value="">
                             <input type="hidden" name="paging" value="1">
                             <input type="hidden" name="sort_name" value="desc">
 
@@ -115,16 +120,10 @@
                                                         </a>
                                                     </div>
                                                 </td>
-                                                <td class="td-w230">
+                                                <td class="td-w280">
                                                     <div class="td-iner">
                                                         <span class="ic far fa-address-card"></span>
-                                                        <span>TO</span>
-                                                    </div>
-                                                </td>
-                                                <td class="td-w230">
-                                                    <div class="td-iner">
-                                                        <span class="ic far fa-address-card"></span>
-                                                        <span>STATUS</span>
+                                                        <span>LEVEL</span>
                                                     </div>
                                                 </td>
                                                 <td class="td-center td-w70">
@@ -180,9 +179,6 @@
         <div class="thr">
             <div class="div clr-float">
                 <div class="spc">
-                    <span class="txt11">#<b>{kode}</b></span>
-                </div>
-                <div class="spc">
                     <div class="role">
                         <ul>
                             <!-- <li  class="waiting">
@@ -197,11 +193,6 @@
                     <span class="label fa flaticon-calendar-with-a-clock-time-tools"></span>
                     <span class="date">{date}</span>
                 </div>
-
-                <div class="spcr wh-m-520 {sts_admin}">
-                    <span class="label sli_icon-user"></span>
-                    <span class="date">{admin}</span>
-                </div>
             </div>
         </div>
 
@@ -215,67 +206,33 @@
                                     <div class="icmg br-rds50p"></div>
                                     <div class="inf">
                                         <div class="div">
-                                            <b>{user_name}</b>
+                                            <b>{name}</b>
                                         </div>
-                                        <div class="div fsize11 up-txt">
-                                            <!-- <span class="label">({noid})</span>
-                                            <span class="dot w6 brc"></span> -->
-                                            <span class="color-green">{user_company}</span>
+                                        <div class="div">
+                                            <span class="fsize10 up-txt lbl">{email}</span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="div">
-                                    <div class="div label">
-                                        <span class="bubble">
-                                            <span class="inbubble" title="{title_detail}">{detail}</span>
-                                        </span>
-                                    </div>
-                                </div>
-
                                 
                             </div>
                         </td>
-                        <td class="td-w230 wh-m-520">
+                        <td class="td-w280 wh-m-520">
                             <div class="td-iner">
                                 <div class="div">
                                     <span class="ic flaticon-suitcase fsize11"></span>
-                                    <span>{bidang}</span>
+                                    <span>{level}</span>
                                 </div>
-                                <div class="div">
-                                    {seksi}
+                                <div class="div fsize10">
+                                    <span class="fsize10 up-txt lbl">{company}</span>
                                 </div>
-                                <div class="div">
-                                    {pelayanan}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="td-w230 wh-m-520">
-                            <div class="td-iner">
-                                <ul class="role">
-                                    {replays}
-                                    <!-- 
-                                    <li>
-                                        <div class="div fsize10 color-orange">
-                                            <span class="ic sli_icon-clock"></span>
-                                            <b class="up-txt">PROGRESS</b>
-                                        </div>
-                                        <div class="div pd-l15">
-                                            <span>Yono Cahyono</span>
-                                            <span class="dot w6 brc"></span>
-                                            <span class="label">1h lalu</span>
-                                        </div>
-                                    </li>
-                                -->
-                                </ul>
                             </div>
                         </td>
                         <td class="td-center td-w70">
                             <div class="td-iner disvis">
                                 <div class="div">
                                     <div class="dropleft">
-                                        <button type="button" class="btn btn-primary nobr grey s11 color-black cmd-view-detail" role="off" data-toggle="" aria-haspopup="" aria-expanded="" data-classModal="modal-view-replay-tiket" dataid="{id}">
-                                            <span class="sli_icon-eye"></span>
+                                        <button type="button" class="btn btn-primary nobr grey s11 color-black cmd-view-detail" role="off" data-toggle="" aria-haspopup="" aria-expanded="" data-classModal="modal-view-verify" dataid="{id}">
+                                            <span class="sli_icon-pencil"></span>
                                         </button>
                                     </div>
                                 </div>
@@ -291,6 +248,141 @@
 
 <!-- area modal -->
 
+<!-- <div class="modal modal-area show">
+    <div class="inar black modal-progress">
+        <div class="boxid modal-box reg-area animate-TopToBottom" role="true">
+            <div class="form-register black " aria-load="false">
+                
+                <div class="load txt-center">
+                    <img src="/assets/svg/loading.blue.svg" alt="loading">
+                </div>
+
+                <div class="main-reg">
+                    <div class="inmod">
+                        <div class="div">
+                            <a href="#" class="close close-modal" role="off">
+                                <span class="fas flaticon2-cross"></span>
+                            </a>
+                            <div class="div ttl">
+                                <div class="div">
+                                    <b>Progress Tiket</b>
+                                </div>
+                                <div class="div">
+                                    <h3></h3>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <ul>
+                                    <li class="top pd-b15">
+                                        <div class="div owner">
+                                            <div class="div clr-float">
+                                                <div class="fl-left">
+                                                    <div class="img br-rds50p"></div>
+                                                    <div class="inf">
+                                                        <div class="div">
+                                                            <b>User</b>
+                                                        </div>
+                                                        <div class="div up-txt fsize10">
+                                                            <span class="lbl">78787887</span>
+                                                            <span class="dot w6 brc"></span>
+                                                            <span class="color-green">smpn 180 jakarta</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="fl-right txt-right fsize11">
+                                                    <span>1j lalu</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div">
+                                            <p class="bubble">Mengajukan permintaan untuk listing gaji bulan oktober 2021</p>
+                                        </div>
+                                        <div class="div fsize12">
+                                            <span class="lbl">#Pelayanan</span>
+                                        </div>
+                                    </li>
+                                    <li class="fsize11 hide">
+                                        <b>STATUS:</b>
+                                    </li>
+                                    <li>
+                                        <ul class="child">
+                                            <li class="fsize10 bubble dis-in-block">
+                                                <span class="ic sli_icon-ban"></span>
+                                                <span>NO PROGRESS</span>
+                                            </li>
+                                            <li class="bubble hide">
+                                                <div class="div clr-float">
+                                                    <div class="fl-left color-orange fsize10">
+                                                        <span class="ic sli_icon-clock"></span>
+                                                        PROGRESS
+                                                    </div>
+                                                    <div class="fl-right txt-right fsize11">
+                                                        <span>1j lalu</span>
+                                                    </div>
+                                                </div>
+                                                <div class="div clr-float">
+                                                    <div class="arimg br-rds50p"></div>
+                                                    <div class="arinf">Yono Cahyono</div>
+                                                </div>
+                                            </li>
+
+                                            <li class="bubble hide">
+                                                <div class="div clr-float">
+                                                    <div class="fl-left color-green fsize10">
+                                                        <span class="ic sli_icon-clock"></span>
+                                                        <span>DONE</span>
+                                                    </div>
+                                                    <div class="fl-right txt-right fsize11">
+                                                        <span>1j lalu</span>
+                                                    </div>
+                                                </div>
+                                                <div class="div clr-float">
+                                                    <div class="arimg br-rds50p"></div>
+                                                    <div class="arinf">Yono Cahyono</div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <form action="/api/ticket/replay/create" enctype="multipart/form-data" novalidate="novalidate" id="form-replay" class="pd-b0">
+                                            <div class="div">
+                                                <div class="div clr-float">
+                                                    <div class="div ar-post">
+                                                        <div class="div clr-float">
+                                                            <textarea name="" class="send" placeholder="Ketikan detail tanggapan..."></textarea>
+                                                            <button class="btn green is-loading" role="off">
+                                                                <span class="sli_icon-paper-plane"></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="div">
+                                                            <div class="div ar-content ar-upload area-upload" role="false">
+                                                                <a href="#" role="off" class="cmd-upload is-loading-new blue w32 fcs pd-tb3" aria-data="false">
+                                                                    <span class="ic fas flaticon-attachment"></span>
+                                                                    <div class="ar-label">
+                                                                        <div class="div">
+                                                                            <span class="label-upload">Lampirkan berkas (ukuran maks: 2MB)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="file" name="file" class="hide" accept="application/pdf">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 
 @include('component.media')
 
@@ -299,11 +391,11 @@
 
 @section('script')
 <script>
+
 //
 $("#form-table input[name='level']").val(getaccount().level);
 $("#form-table input[name='user_id']").val(getaccount().id);
 $("#form-table input[name='bidang']").val(getaccount().bidang);
-$("#form-table input[name='seksi']").val(getaccount().seksi);
 
 function createTempTable(e,w)
 {
@@ -311,41 +403,19 @@ function createTempTable(e,w)
     temp = w;
 
     console.log(rsp);
+
     var list = '';
     $.each(rsp.list,function(i,item)
     {    
         var listx = temp;
         listx = listx.replace('{id}', item.id);
         listx = listx.replace('{date}', item.date);
-        listx = listx.replace('{kode}', item.kode);
-        listx = listx.replace('{user_name}', item.user_name);
-        listx = listx.replace('{sts_admin}', item.admin === "" ? 'hide' : '');
-        listx = listx.replace('{admin}', item.admin);
-        listx = listx.replace('{user_company}', item.user_company);
-        listx = listx.replace('{detail}', item.detail);
-        listx = listx.replace('{bidang}', item.bidang);
-        listx = listx.replace('{seksi}', (item.seksi === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span class="lbl">'+item.seksi+'</span>'));
-        listx = listx.replace('{pelayanan}', (item.pelayanan === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span class="lbl">'+item.pelayanan+'</span>'));
-        listx = listx.replace('{status}', ( item.progress === 0 ? '<li  class="waiting"><span>WAITING</span></li>' : ( item.progress === 1 ? '<li  class="progress"><span>PROGRESS</span></li>' : '<li  class="done"><span>DONE</span></li>') ) );
-        
-        if( item.replay !== "")
-        {
-            var rep = '';
-            $.each(item.replay, function(x,y)
-            {
-                rep += '<li>';
-                    rep += '<div class="div fsize10 color-'+y.color+'"><span class="up-txt">'+y.type+'</span><span class="dot w6 brc"></span><span class="label">'+y.date+'</span></div>';
-
-                    rep += '<div class="div"><span class="ic flaticon2-right-arrow fsize8"></span><span>'+y.user+'</span></div>';
-                rep += '</li>';
-            });
-        }
-        else
-        {
-            rep = '<div class="div fsize11 label">NO PROGRESS...</div>';
-        }
-
-        listx = listx.replace('{replays}', rep);
+        listx = listx.replace('{name}', item.name);
+        // listx = listx.replace('{noid}', item.type);
+        listx = listx.replace('{email}', item.email);
+        listx = listx.replace('{level}', item.level_name);
+        listx = listx.replace('{company}', item.company);
+        listx = listx.replace('{status}', ( item.verify === 0 ? '<li  class="waiting"><span>WAITING</span></li>' : '<li  class="done"><span>DONE</span></li>') );
 
         list += listx;
     });
@@ -365,7 +435,7 @@ $(document).ready(function()
     }
     //END TABLE
 
-    //
+    //MODAL NEW PENGGUNA
     $(".cmdNewModal").click(function(e)
     {
         e.preventDefault();
@@ -379,7 +449,7 @@ $(document).ready(function()
 
             area.html("");
             area.append(content.html());
-            area.find("form").attr("id", "form-ticket");
+            area.find("form").attr("id", "form-cadmin");
             area.find("input[name='type']").val('new');
             area.find("input[name='user_id']").val(getaccount().id);
             area.find("input[name='company_id']").val(getaccount().company_id);
@@ -408,6 +478,58 @@ $(document).ready(function()
         }
     });
 
+    // SELECT LEVEL
+    $("body").on("click", "#area-modal-show .cmd-select-level", function(e)
+    {
+        e.preventDefault();
+        var cmd = $(this),
+        area = $("body").find("#area-modal-show"),
+        form = cmd.parents("form");
+
+
+        if(cmd.attr("role") === "off" )
+        {
+            cmd.attr("role","on");
+
+            //
+            area.find(".area-select-second button.btn label span").html("Pilih Bidang");
+            area.find(".area-select-second").addClass("hide");
+            area.find(".area-select-second button.btn").attr("disabled","disabled");
+            area.find(".area-select-second input.value-dropdown").val("");
+            area.find(".area-select-second").find("span.error").remove();
+            area.find(".area-select-second button.btn").removeClass("br-error");
+
+            //open sub level
+            if( cmd.attr("dataid") === "1")
+            {
+                var $URL = '/api/data/getbidang?level=1';
+                var $t = FormSendingNew("","GET","key","",$URL);
+                $t.success(function(n)
+                {
+                    var rsp = n.response;
+                    // console.log(rsp);
+
+                    var list = '';
+                    $.each(rsp, function(i, item)
+                    {
+                        list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get="" class="cmd-select-bidang" data-sub="'+item.sub+'"><span>'+item.name+'</span></button></li>';
+                    });
+                    area.find(".area-select-bidang ul").html(list);
+                    area.find(".area-select-bidang button.btn").removeAttr("disabled");
+                    area.find(".area-select-bidang").removeClass("hide");
+
+                });
+                $t.error(function(n)
+                {
+                    console.log(n);
+                });
+            }
+
+            cmd.attr("role", "off");
+        }
+    });
+
+    //SELECT BIDANG
     $("body").on("click", "#area-modal-show .cmd-select-bidang", function(e)
     {
         e.preventDefault();
@@ -476,57 +598,57 @@ $(document).ready(function()
         }
     });
 
+    //select seksi
+    // $("body").on("click", "#area-modal-show .cmd-select-seksi", function(e)
+    // {
+    //     e.preventDefault();
+    //     var cmd = $(this),
+    //     area = $("body").find("#area-modal-show"),
+    //     form = cmd.parents("form"),
+    //     $URL = 'bidang=' + form.find("input[name='bidang_selected']").val() + '&sub=' + cmd.attr("dataid");
 
-    $("body").on("click", "#area-modal-show .cmd-select-seksi", function(e)
-    {
-        e.preventDefault();
-        var cmd = $(this),
-        area = $("body").find("#area-modal-show"),
-        form = cmd.parents("form"),
-        $URL = 'bidang=' + form.find("input[name='bidang_selected']").val() + '&sub=' + cmd.attr("dataid");
 
+    //     if(cmd.attr("role") === "off")
+    //     {
+    //         cmd.attr("role","on");
+    //         callPelayanan($URL,$(this));
+    //         cmd.attr("role", "off");
+    //     }
+    // });
 
-        if(cmd.attr("role") === "off")
-        {
-            cmd.attr("role","on");
-            callPelayanan($URL,$(this));
-            cmd.attr("role", "off");
-        }
-    });
+    // function callPelayanan(e,w)
+    // {
 
-    function callPelayanan(e,w)
-    {
+    //     var cmd = w,
+    //     area = $("body").find("#area-modal-show"),
+    //     form = cmd.parents("form");
 
-        var cmd = w,
-        area = $("body").find("#area-modal-show"),
-        form = cmd.parents("form");
+    //     area.find(".area-select-pelayanan button.btn label span").html("Pilih Pelayanan");
+    //     area.find(".area-select-pelayanan").addClass("hide");
+    //     area.find(".area-select-pelayanan button.btn").attr("disabled","disabled");
 
-        area.find(".area-select-pelayanan button.btn label span").html("Pilih Pelayanan");
-        area.find(".area-select-pelayanan").addClass("hide");
-        area.find(".area-select-pelayanan button.btn").attr("disabled","disabled");
+    //     var $URL = '/api/data/subpelayanan?' + e;
+    //     var $t = FormSendingNew("","GET","key","",$URL);
+    //     $t.success(function(n)
+    //     {
+    //         var rsp = n.response;
+    //         // console.log(n);
+    //         var list = '';
+    //         $.each(rsp, function(i, item)
+    //         {
+    //             list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get=""><span>'+item.name+'</span></button></li>';
+    //         });
+    //         area.find(".area-select-pelayanan ul").html(list);
+    //         area.find(".area-select-pelayanan button.btn").removeAttr("disabled");
+    //         area.find(".area-select-pelayanan").removeClass("hide");
 
-        var $URL = '/api/data/subpelayanan?' + e;
-        var $t = FormSendingNew("","GET","key","",$URL);
-        $t.success(function(n)
-        {
-            var rsp = n.response;
-            // console.log(n);
-            var list = '';
-            $.each(rsp, function(i, item)
-            {
-                list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get=""><span>'+item.name+'</span></button></li>';
-            });
-            area.find(".area-select-pelayanan ul").html(list);
-            area.find(".area-select-pelayanan button.btn").removeAttr("disabled");
-            area.find(".area-select-pelayanan").removeClass("hide");
+    //     });
+    //     $t.error(function(n)
+    //     {
+    //         console.log(n);
+    //     });
 
-        });
-        $t.error(function(n)
-        {
-            console.log(n);
-        });
-
-    }
+    // }
 
     //MENU FILTER
     $('body').on('click', '.cmd-ddwn-hd', function(e)
@@ -642,16 +764,38 @@ $(document).ready(function()
 
 
     //
-    $("body").on("submit", "#form-ticket", function(e)
+    $("body").on("submit", "#form-cadmin", function(e)
     {
         var form = $(this),
         area = form.parents(".modal-area.show"),
+        name = form.find("input[name='name']"),
+        email = form.find("input[name='email']"),
+        level = form.find("input[name='level_selected']"),
         bidang = form.find("input[name='bidang_selected']"),
         subbidang = form.find("input[name='subbidang']"),
         seksi = form.find("input[name='seksi_selected']"),
-        text = form.find("textarea[name='text']"),
-        pelayanan = form.find("input[name='pelayanan_selected']"),
         cmd = form.find("button.submit");
+
+        if( $.trim(name.val()).length < 3 )
+        {
+            name.parents('.ar-content').find('span.error').remove();
+            name.parents('.ar-content').append('<span class="error">Isi nama sekurangnya 3 karakter</span>');
+            name.addClass('br-error');
+        }
+
+        if( !validateEmail(email.val()) )
+        {
+            email.parents('.ar-content').find('span.error').remove();
+            email.parents('.ar-content').append('<span class="error">Harao gunakan email valid</span>');
+            email.addClass('br-error');
+        }
+
+        if( level.val() === "")
+        {
+            level.parents('.ar-content').find('span.error').remove();
+            level.parents('.ar-content').append('<span class="error">Harap pilih Level</span>');
+            level.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
 
         if( bidang.val() === '')
         {
@@ -667,21 +811,8 @@ $(document).ready(function()
             seksi.parents('.ar-content').find('.fcs').addClass('br-error');
         }
 
-        if( pelayanan.val() === '')
-        {
-            pelayanan.parents('.ar-content').find('span.error').remove();
-            pelayanan.parents('.ar-content').append('<span class="error">Harap pilih Pelayanan</span>');
-            pelayanan.parents('.ar-content').find('.fcs').addClass('br-error');
-        }
 
-        if( $.trim(text.val()).length  < 11)
-        {
-            text.parents('.ar-content').find('span.error').remove();
-            text.parents('.ar-content').append('<span class="error">Harap isikan detail pengajuan sekurangnya 10 karakter</span>');
-            text.parents('.ar-content').find('.fcs').addClass('br-error');
-        }
-
-        if( bidang.val() === "" || subbidang.val() === '1' && seksi.val() === "" || pelayanan.val() === '' || $.trim(text.val()).length < 11 )
+        if( $.trim(name.val()).length < 3 || !validateEmail(email.val()) || level.val() === "" || level.val() === "1" && bidang.val() === "" || level.val() === "1" && subbidang.val() === '1' && seksi.val() === "")
         {
             return false;
         }
@@ -695,47 +826,64 @@ $(document).ready(function()
             $t.success(function(n)
             {
                 // console.log(n);
+                senderEmailToken(n.response.token);
+                clearForm(form)
                 loadTable();
-                area.find("a.close-modal").click();
+                cmd.attr("role","off");
                 flagnotif("success", n.message);
             });
             $t.error(function(n)
             {
-            //     console.log(n);
+                // console.log(n);
                 cmd.attr("role","off");
                 flagnotif("error", n.responseJSON.message);
-            })
-
-            
-            
+            });
         }
-
 
         return false;
     });
 
+
+    function clearForm(e)
+    {
+        var form = e;
+        
+        form.find(".empty").val("");
+        form.find(".zero").val("0");
+        form.find(".area-select-level button.btn label span").html("Pilih Level");
+        form.find(".area-select-second").addClass("hide");
+    }
+
+    $("body").on("keyup", "#form-cadmin input[name='name']", function()
+    {
+
+        $(this).removeClass("br-error");
+        $(this).parents(".ar-content").find("span.error").remove();
+        if( $.trim( $(this).val() ).length < 3 )
+        {
+            $(this).addClass("br-error");
+            $(this).parents(".ar-content").append('<span class="error">Isi nama sekurangnya 3 karakter</span>');
+        }
+    });
+
+    $("body").on("keyup", "#form-cadmin input[name='email']", function()
+    {
+
+        $(this).removeClass("br-error");
+        $(this).parents(".ar-content").find("span.error").remove();
+        if( !validateEmail( $(this).val() ) )
+        {
+            $(this).addClass("br-error");
+            $(this).parents(".ar-content").append('<span class="error">Harao gunakan email valid</span>');
+        }
+    });
+
     //button submit
-    $("body").on("click", "#form-ticket button.submit", function(e)
+    $("body").on("click", "#form-cadmin button.submit", function(e)
     {
         e.preventDefault();
         var form = $(this).parents("form");
         form.submit();
-    });
-
-    //keyup text
-    $("body").on("keyup", "#form-ticket textarea[name='text']", function()
-    {
-        if($.trim($(this).val()).length > 10)
-        {
-            $(this).parents('.ar-content').find('span.error').remove();
-            $(this).removeClass("br-error");
-        }
-        else
-        {
-            $(this).parents('.ar-content').find('span.error').remove();
-            $(this).parents('.ar-content').append('<span class="error">Harap isikan detail pengajuan sekurangnya 10 karakter</span>');
-            $(this).parents('.ar-content').find('.fcs').addClass('br-error');
-        }
     });
 
 
@@ -757,66 +905,20 @@ $(document).ready(function()
             // area.find("form").attr("id", "form-view-ticket");
             area.find(".form-register").attr('aria-load', 'true');
 
+            // area.find(".form-register").attr('aria-load', 'false');
             // //
-            var $URL = '/api/ticket/show?id=' + cmd.attr("dataid");
+            var $URL = '/api/account/view-verify-admin?id=' + cmd.attr("dataid");
             var $t = FormSendingNew("","GET","key","",$URL);
             $t.success(function(n)
             {
                 var rsp = n.response;
-                // console.log(rsp);
-                
-                area.find(".user_name").html(rsp.user_name);
-                // area.find(".user_type").html(rsp.user_type);
-                area.find(".user_company").html(rsp.user_company);
-                area.find(".date").html(rsp.date);
-                area.find(".detail").html(rsp.detail);
-                area.find(".pelayanan").html(rsp.pelayanan);
+                console.log(rsp);
 
-                if( rsp.status === 0 )
-                {
-                    rep = '<li class="text-right"><button class="btn orange is-loading br-rds23 w50p cmd-progress" role="off"><span>Proses Tiket</span></button><form class="hide" action="/api/ticket/progress"><input name="user_id" value="'+getaccount().id+'" /> <input name="ticket_id" value="'+rsp.id+'" /></form></li>';
-                }
-                else
-                {
-
-                    var rep = '';
-                    $.each(rsp.replay, function(i, item)
-                    {
-                        rep += '<li class="bubble">';
-                        
-                            rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
-
-                            rep += '<div class="inar-bubble">';
-        
-                                    rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
-                                        rep += '<div class="arinf">';
-                                            rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
-
-                                            rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
-                                            
-                                            rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
-
-                                        rep += '</div>';
-                                    rep += '</div>';
-                            rep += '</div>';
-                        rep += '</li>';
-                    });
-                }
-
-                area.find(".replay").html(rep);
-                area.find("#form-replay input[name='user_id']").val(getaccount().id);
-                area.find("#form-replay input[name='ticket_id']").val(rsp.id);
-            
-
-                // form replay
-                if( rsp.status === 0 || rsp.status === 2)
-                {
-                    area.find("#form-replay").addClass('hide');
-                }
-                else
-                {
-                    area.find("#form-replay").removeClass('hide');
-                }
+                area.find("form").attr("id", "form-verify_admin");
+                area.find("input[name='user_id']").val(rsp.id);
+                area.find(".user_name").html(rsp.name);
+                area.find(".company_name").html(rsp.company_name);
+                area.find(".area-view-pdf").html('<iframe src="'+rsp.url_file+'" frameborder="0" ></iframe>');
 
                 area.find(".form-register").attr('aria-load', 'false');
                 cmd.attr("role", "off");
@@ -832,133 +934,51 @@ $(document).ready(function()
     });
 
 
-    $("body").on("click", "button.cmd-progress", function(e)
+    //VERIFY ADMIN
+    $("body").on("submit", "#form-verify_admin", function()
     {
-        e.preventDefault();
-
-        var cmd = $(this),
-        area = cmd.parent("li"),
-        modal = cmd.parents(".modal-area"),
-        form = area.find("form");
-
-        if( cmd.attr("role") === "off")
-        {
-            cmd.attr("role", "on");
-
-            var $t = FormSendingNew(form,"POST","key","","");
-            $t.success(function(n)
-            {
-                
-                console.log(n);
-                loadTable();
-
-                //
-                var rep = '';
-                $.each(n.list, function(i, item)
-                {
-                    rep += '<li class="bubble">';
-                    
-                        rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
-
-                        rep += '<div class="inar-bubble">';
-    
-                                rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
-                                    rep += '<div class="arinf">';
-                                        rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
-
-                                        rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
-                                        
-                                        rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
-
-                                    rep += '</div>';
-                                rep += '</div>';
-                        rep += '</div>';
-                    rep += '</li>';
-                });
-                modal.find("ul.child").html(rep);
-                modal.find(".area-replay form").removeClass("hide");
-
-            });
-            $t.error(function(n)
-            {
-                console.log(n);
-            });
-
-        }
-    });
-
-
-    //
-    $("body").on("submit", "#form-replay button.cmd-submit", function(e)
-    {
-        e.preventDefault();
-
-        $(this).parents("form").submit();
-    })
-
-    //submit replay post
-    $("body").on("submit", "#form-replay", function()
-    {
-
         var form = $(this),
-        cmd = form.find("button.cmd-submit"),
-        text = form.find("textarea[name='text']")
-        modal = form.parents(".modal-area");
+        modal = form.parents(".modal-box"),
+        cmd = form.find("button.submit");
 
         if( cmd.attr("role") === "off")
         {
             cmd.attr("role", "on");
-            form.find(".br-error").removeClass("br-error");
-            form.find("span.error").remove();
-
-            if( $.trim(text.val()).length < 10 )
-            {
-                text.parents(".ar-content").prepend("<span class='error'>Harap isikan sekurangnya 10 karakter</span>");
-                text.addClass('br-error');
-
-                cmd.attr("role", "off");
-                return false;
-            }
-
-
-            var $t = FormSendingNew(form,"POST","key","file","");
-            $t.success(function(n)
-            {
-                console.log(n);
-                var rep = '';
-                $.each(n.list, function(i, item)
+            $.ajax({
+                url: config.apps.URL_API + form.attr("action"),
+                type: "POST",
+                headers:{
+                    "Content-Type":"application/json",
+                    "key": getaccount().key
+                },
+                cache:false,
+                timeout: 18000,
+                data: formdatasend(form),
+                dataType: "JSON",
+                success: function(n)
                 {
-                    rep += '<li class="bubble">';
-                    
-                        rep += '<div class="div "><div class="sts color-'+item.color+' fsize9"><span class="ic sli_icon-check"></span><span class="up-txt">'+item.type+'</span></div></div>';
+                    console.log(n);
 
-                        rep += '<div class="inar-bubble">';
-    
-                                rep += '<div class="div clr-float"><div class="arimg br-rds50p"></div>';
-                                    rep += '<div class="arinf">';
-                                        rep += '<div class="div"><span>'+item.user+'</span><span class="dot w6 brc"></span><span class="fsize10">'+item.date+'</span></div>';
-
-                                        rep += item.detail === '' ? '' : '<div class="bubble-txt"><p>'+item.detail+'</p></div>';
-                                        
-                                        rep += item.url === '' ? '' :'<div class="div txt-right"><a href="'+item.url+'" class="fsize10" target="_blank"><span class="ic sli_icon-arrow-down"></span><span class="fsize9">DOWNLOAD</span></a></div>';
-
-                                    rep += '</div>';
-                                rep += '</div>';
-                        rep += '</div>';
-                    rep += '</li>';
-                });
-                modal.find("ul.child").html(rep);
-                modal.find(".area-replay form").addClass("hide");
-                loadTable();
-            });
-            $t.error(function(n)
-            {
-                console.log(n);
-            });
+                    loadTable();
+                    modal.find("button.close-modal").click();
+                    flagnotif("success", n.message);
+                },
+                error: function(n)
+                {
+                    console.log(n);
+                    flagnotif("error", "Terjadi kesalahan tidak diketahui");
+                }
+            })
         }
-
         return false;
     });
+
+    $("body").on("click", "#form-verify_admin button.submit", function(e)
+    {
+        e.preventDefault();
+        $(this).parents("form").submit();
+    });
+
     
 return false;
 });

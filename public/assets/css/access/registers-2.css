@@ -63,6 +63,10 @@
     display: block;
 }
 
+.boxid.reg-area .form-register.w720{
+    width: 720px;
+}
+
 .boxid.reg-area .form-register .load{
     position: absolute;
     box-sizing: border-box;
@@ -89,13 +93,24 @@
     margin-bottom: 20px;
 }
 
-.boxid.reg-area a.close{
+.boxid.reg-area .form-register form .inar-form.w520auto{
+    margin: auto auto;
+    width: 520px;
+}
+
+.boxid.reg-area .form-register a.close{
     position: absolute;
     top: -15px;
     right: -20px;
     z-index: 1;
     color: #bbb;
     font-size: 12px;
+}
+
+.boxid.reg-area .form-register.w720 a.close{
+    right: 25px;
+    top: -25px;
+    /* top: 0px; */
 }
 
 .boxid.reg-area a.close:hover{
@@ -113,7 +128,9 @@
     display: block;
     width: 100%;
     position: relative;
+    box-sizing: border-box;
 }
+
 
 .boxid.reg-area .form-register .main-reg .inmod .ttl{
     font-size: 12px;
@@ -128,6 +145,88 @@
     color: #555;
     font-size: 16px;
     font-weight: normal;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend{
+    display: block;
+    margin-bottom: 10px;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend:last-child{
+    margin-bottom: 0px;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .hd-legend{
+    display: block;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .hd-legend a{
+    display: block;
+    padding: 10px 5px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: bold;
+    background-color: #ebebeb;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .hd-legend a .plus, .boxid.reg-area .form-register .main-reg .inmod .legend .hd-legend a .min{
+    display: none;
+}
+.boxid.reg-area .form-register .main-reg .inmod .legend[aria-role="off"] .hd-legend a .plus{
+    display: inline-block;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend[aria-role="on"] .hd-legend a .min{
+    display: inline-block;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .hd-legend a .ic{
+    position: absolute;
+    border-radius: 50%;
+    right: 0px;
+    top: 2px;
+    font-size: 10px;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .inr-legend{
+    display: block;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend .inr-legend .box-legend{
+    padding: 30px 35px;
+    box-sizing: border-box;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend[aria-role="on"] .inr-legend{
+    animation: openH .2s;
+}
+
+.boxid.reg-area .form-register .main-reg .inmod .legend[aria-role="off"] .inr-legend{
+    overflow-y: hidden;
+    animation: closeH .2s;
+    height: 0px;
+}
+
+@keyframes openH {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes closeH {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0px;
+    }
 }
 
 .boxid.reg-area .form-register .main-reg .inmod .ar-ctn{
@@ -152,7 +251,7 @@
     position: absolute;
     top: 8px;
     left: 20px;
-    color: #aaa;
+    color: #888;
     font-size: 11px;
 }
 
@@ -317,6 +416,18 @@
     color: rgb(18, 180, 18);
 }
 
+.area-view-pdf{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 560px;
+}
+
+.area-view-pdf iframe{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
 
 /* dropdown selected */
 .ddwn{

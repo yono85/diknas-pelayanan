@@ -125,11 +125,12 @@ function formdatasend(e)
 //u = URL
 function FormSending(e,t,k,w,u)
 {
-    var $url = config.apps.URL_API +  (w === "form" ? e.attr('action') : e);
+    // var $url = config.apps.URL_API +  (w === "form" ? e.attr('action') : u);
     var $url = u;
     var $key = typeof getaccount() === 'undefined' ? config.apps.TOKEN_KEY : getaccount().key;
     var $token = typeof getaccount() === 'undefined' ? config.apps.TOKEN_KEY : getToken();
     
+
     var $h = {
         "Content-Type": "application/json",
         "key": $key
@@ -141,6 +142,7 @@ function FormSending(e,t,k,w,u)
     $hs = {
         "Content-Type":"application/json",
     };
+
     var $g = {
         type: 'GET',
         url: $url,
@@ -530,6 +532,29 @@ function validateEmail(email) {
 }
 
 
+async function senderEmailToken(e)
+{
+    $.ajax({
+        url: config.apps.URL_API + "/api/send/email",
+        type: "POST",
+        headers: {
+            "Content-Type":"application/json",
+            "key":getaccount().key
+        },
+        cache: false,
+        timeout: 18000,
+        data: JSON.stringify({"token":e}),
+        dataType: "JSOn",
+        success: function(n)
+        {
+            console.log(n);
+        },
+        error: function(n)
+        {
+            console.log(n);
+        }
+    })
+}
 
 // dropdwon src new
 function dropdownNew(n)
@@ -553,7 +578,7 @@ function dropdownNew(n)
         setTimeout(function(){
             area.find('.inhd').addClass('br-green-f');
             // area.find('.ddwn-tsrc').val('');
-            area.find('.ddwn-tsrc').focus();
+            area.find('.tsrc').focus();
         }, 200);
         
     }
@@ -740,6 +765,11 @@ function splashDisplayIcon()
     
     $('body').find('.splash-dis').remove();
     $('body').append(content);
+}
+
+function hideSplash()
+{
+    $('body').find('.splash-dis').remove();
 }
 
 function vspassword(e)

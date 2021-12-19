@@ -74,8 +74,7 @@
 
     <body>
 
-        
-
+    
         <div class="moby__aside-structure moby__theme_ui classic">
 
             <!-- ASIDE -->
@@ -107,8 +106,14 @@
 
             }
         </script>
+        
         <!-- AREA MODAL SHOW -->
-        <div id="area-modal-show" class="fix-area-modal"></div>
+        <div id="area-modal-show" class="fix-area-modal">
+            <!-- iner modal show -->
+            
+            <!-- end iner modal show -->
+        </div>
+
 
         <!-- Java Script -->
         <script src="{{$apps['URI']}}/assets/js/tables.js" type="text/javascript"></script>

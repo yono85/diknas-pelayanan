@@ -1413,6 +1413,10 @@ label.error:before, span.error:before{
     margin-bottom: 0px !important;
 }
 
+.mg-r10{
+    margin-right: 10px !important;
+}
+
 .pd0{
     padding: 0px !important;
 }
@@ -1435,6 +1439,10 @@ label.error:before, span.error:before{
 
 .pd-t10{
     padding-top: 10px !important;
+}
+
+.pd-t25{
+    padding-top: 25px !important;
 }
 
 
@@ -1498,11 +1506,11 @@ label.error:before, span.error:before{
 }
 
 .pd-l10{
-    padding-left: 10px;
+    padding-left: 10px !important;
 }
 
 .pd-l15{
-    padding-left: 15px;
+    padding-left: 15px !important;
 }
 
 .pd-null{
@@ -1521,6 +1529,10 @@ label.error:before, span.error:before{
 
 .ovw-fix{
     overflow: unset !important;
+}
+
+.position-rel{
+    position: relative !important;
 }
 
 .icfs10{

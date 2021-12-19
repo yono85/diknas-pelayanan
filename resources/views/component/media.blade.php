@@ -150,6 +150,269 @@
             </div>
         </div>
 
+        <!-- MODAL FORM TICKET VISIT -->
+        <div class="modal-form-ticket-visit">
+            <div class="modal modal-area show">
+                <div class="inar black">
+                    <div class="boxid modal-box reg-area animate-TopToBottom" role="true">
+                        <div class="form-register black w720">
+                            <div class="main-reg">
+                                <div class="inmod">
+                                    <div class="div">
+                                        <a href="#" class="close close-modal" role="off" style="right:-25px; top: -10px">
+                                            <span class="fas flaticon2-cross"></span>
+                                        </a>
+                                        <div class="div ttl">
+                                            <div class="div">
+                                                <b>Buat Tiket</b>
+                                            </div>
+                                            <div class="div">
+                                                <h3>Pengajuan Tiket Home Visit</h3>
+                                            </div>
+                                        </div>
+                                        <div class="div">
+                                            <form action="/api/ticket/visit/create"  enctype="multipart/form-data" novalidate="novalidate" id="">
+                                                <div class="inar-form w520auto">
+                                                    <div class="div">
+
+                                                        <div class="legend area-legend" aria-role="on">
+                                                            <div class="hd-legend">
+                                                                <a href="#" class="cmd-role-legend" role="on">
+                                                                    <div class="div">
+                                                                        <span class="sli_icon-user"></span>
+                                                                        <span>Penghadap</span>
+                                                                        <span class="ic">
+                                                                            <span class="fa flaticon2-plus fsize10 plus"></span>
+                                                                            <span class="fa flaticon2-line fsize10 min"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="inr-legend">
+                                                                <div class="div box-legend">
+            
+
+                                                                    <div class="div ar-ctn ar-content" role="false">
+                                                                        <div class="in-arctn">
+                                                                            <span class="label">NAMA</span>
+                                                                            <input type="text" name="visit_name" class="txt fcs" maxlength="100">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="div ar-ctn ar-content" role="false">
+                                                                        <div class="in-arctn">
+                                                                            <span class="label">NIK</span>
+                                                                            <input type="text" name="visit_nik" class="txt fcs number" maxlength="20">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="div ar-ctn ar-content" role="false">
+                                                                        <div class="in-arctn">
+                                                                            <span class="label">NO HP</span>
+                                                                            <input type="text" name="visit_hp" class="txt fcs number" maxlength="14">
+                                                                        </div>
+                                                                    </div>
+        
+                                                                    <div class="div ar-ctn ar-content mg-b0" role="false">
+                                                                        <div class="">
+                                                                            <textarea name="visit_address" class="fcs" placeholder="Alamat Lengkap" maxlength="150"></textarea>
+                                                                        </div>
+                                                                    </div>
+                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="legend area-legend" aria-role="on">
+                                                            <div class="hd-legend">
+                                                                <a href="#" class="cmd-role-legend" role="on">
+                                                                    <div class="div">
+                                                                        <span class="sli_icon-home"></span>
+                                                                        <span>Data Sekolah</span>
+                                                                        <span class="ic">
+                                                                            <span class="fa flaticon2-plus fsize10 plus"></span>
+                                                                            <span class="fa flaticon2-line fsize10 min"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="inr-legend">
+                                                                <div class="div box-legend">
+            
+
+                                                                    <div class="div ar-ctn area-select-sch">
+                                                                        <div class="in-arctn">
+                                                                            <div class="ddwn area-ddwn ar-content keep" aria-load="false" >
+                                                                                <button class="btn br-rds8 cddwn fcs" role="off" >
+                                                                                    <label><span class="fsize14 color-black">Pilih Sekolah</span></label>
+                                                                                </button>
+                
+                                                                                <div class="ddwn-pg area-ddwn-page">
+                                                                                    <div class="ddwn-header">
+                                                                                        <div class="inhd">
+                                                                                            <button height="auto" type="button"></button>
+                                                                                            <input type="text" placeholder="Cari Sekolah" class="tsrc ddwn-tsrc-get" data-timer="1000" data-eval="getListSekolah">
+                                                                                            <div class="load-src"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <ul>
+                                                                                        <!-- list -->
+                                                                                    </ul>
+                                                                                </div>
+                
+                                                                                <input type="hidden" class="value-dropdown txt-def-empty" name="school_id" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="div ar-ctn ar-content" role="false">
+                                                                        <div class="in-arctn">
+                                                                            <span class="label">NO SURAT</span>
+                                                                            <input type="text" name="nosurat" class="txt fcs" maxlength="20">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="div ar-ctn ar-content" role="false">
+                                                                        <div class="in-arctn">
+                                                                            <span class="label">TANGGAL SURAT</span>
+                                                                            <input type="date" name="tglsurat" class="txt fcs" maxlength="14" >
+                                                                        </div>
+                                                                    </div>
+        
+                                                                    <div class="div ar-ctn ar-content mg-b0" role="false">
+                                                                        <div class="">
+                                                                            <textarea name="isisurat" class="fcs" placeholder="Isi Surat" maxlength="150"></textarea>
+                                                                        </div>
+                                                                    </div>
+                    
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="legend area-legend" aria-role="on">
+                                                            <div class="hd-legend">
+                                                                <a href="#" class="cmd-role-legend" role="on">
+                                                                    <div class="div">
+                                                                        <span class="sli_icon-user"></span>
+                                                                        <span>Admin TL</span>
+                                                                        <span class="ic">
+                                                                            <span class="fa flaticon2-plus fsize10 plus"></span>
+                                                                            <span class="fa flaticon2-line fsize10 min"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="inr-legend">
+                                                                <div class="div box-legend">
+            
+                                                                    <div class="div ar-ctn area-select-bidang">
+                                                                        <div class="in-arctn">
+                                                                            <div class="ddwn area-ddwn ar-content keep">
+                                                                                <button class="btn br-rds8 cddwn fcs" role="off" >
+                                                                                    <label><span class="fsize14 color-black">Pilih Bidang</span></label>
+                                                                                </button>
+                    
+                                                                                <div class="ddwn-pg area-ddwn-page">
+                                                                                    
+                                                                                    <ul>
+                                                                                        <!-- <li aria-selected="false">
+                                                                                            <button role="off" dataid="10001" data-modal="" data-modal-label="" data-get=""><span>Guru</span></button>
+                                                                                        </li> -->
+                                                                                    </ul>
+                                                                                </div>
+                    
+                                                                                <input type="hidden" class="value-dropdown txt-def-empty" name="bidang_selected" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                    
+                                                                    <div class="div ar-ctn area-select-seksi hide">
+                                                                        <!-- <div class="in-arctn"> -->
+                    
+                                                                            <div class="ddwn area-ddwn ar-content keep">
+                    
+                                                                                <button class="btn br-rds8 cddwn fcs" disabled="disabled" role="off">
+                                                                                    <label><span class="fsize14 color-black">Pilih Pelayanan</span></label>
+                                                                                </button>
+                    
+                                                                                <div class="ddwn-pg area-ddwn-page">
+                                                                                    <ul>
+                                                                                        <!-- list -->
+                                                                                        <li aria-selected="false">
+                                                                                            <button role="off" dataid="1" data-modal="" data-modal-label="" data-get="" class="cmd-status"><span>PNS</span></button>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                    
+                                                                                <input type="hidden" class="value-dropdown" name="seksi_selected" value="">
+                    
+                                                                            </div>
+                    
+                                                                            <!-- labelerror -->
+                                                                        <!-- </div> -->
+                                                                    </div>
+        
+                                                                    <div class="div ar-ctn area-select-pelayanan hide">
+                                                                        <!-- <div class="in-arctn"> -->
+                    
+                                                                            <div class="ddwn area-ddwn ar-content keep">
+                    
+                                                                                <button class="btn br-rds8 cddwn fcs" disabled="disabled" role="off">
+                                                                                    <label><span class="fsize14 color-black">Pilih Pelayanan</span></label>
+                                                                                </button>
+                    
+                                                                                <div class="ddwn-pg area-ddwn-page">
+                                                                                    <ul>
+                                                                                        <!-- list -->
+                                                                                        <li aria-selected="false">
+                                                                                            <button role="off" dataid="1" data-modal="" data-modal-label="" data-get="" class="cmd-status"><span>PNS</span></button>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                    
+                                                                                <input type="hidden" class="value-dropdown" name="pelayanan_selected" value="">
+                    
+                                                                            </div>
+                    
+                                                                            <!-- labelerror -->
+                                                                        <!-- </div> -->
+                                                                    </div>
+        
+                                                                    <div class="div ar-ctn ar-content mg-b0" role="false">
+                                                                        <div class="">
+                                                                            <textarea name="text" class="fcs" placeholder="Tuliskan detail pengajuan tiket..."></textarea>
+                                                                        </div>
+                                                                    </div>
+                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="div fot">
+                                                        <button class="submit btn blue is-loading" role="off">
+                                                            <span>Buat Tiket</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="type" value="">
+                                                <input type="hidden" name="user_id" value="">
+                                                <input type="hidden" name="company_id" value="">
+                                                <input type="hidden" name="level" value="">
+                                                <input type="hidden" name="subbidang" value="0">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MODAL VIEW TICKET USER -->
         <div class="modal-view-ticket-user">
             <div class="modal modal-area show">
@@ -409,7 +672,215 @@
             </div>
         </div>
 
+        <!-- MODAL SUPER ADMIN -->
+        <div class="modal-superadmin">
+            <div class="modal modal-area show">
+                <div class="inar black">
+                    <div class="boxid modal-box reg-area animate-TopToBottom" role="true">
+                        <div class="form-register black">
+                            <div class="main-reg">
+                                <div class="inmod">
+                                    <div class="div">
+                                        <a href="#" class="close close-modal" role="off">
+                                            <span class="fas flaticon2-cross"></span>
+                                        </a>
+                                        <div class="div ttl">
+                                            <div class="div">
+                                                <b>Admin</b>
+                                            </div>
+                                            <div class="div">
+                                                <h3>Tambah akun Level Admin</h3>
+                                            </div>
+                                        </div>
+                                        <div class="div">
+                                            <form action="/api/pengguna/create-admin"  novalidate="novalidate" id="">
+                                                <div class="div">
+                                                    <div class="div">
+                                                        <div class="div">
+
+                                                            <div class="div ar-ctn ar-content" role="false">
+                                                                <div class="">
+                                                                    <div class="div">
+                                                                        <span class="label fsize10">NAMA LENGKAP</span>
+                                                                    </div>
+                                                                    <input type="text" name="name" class="txt empty">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="div ar-ctn ar-content" role="false">
+                                                                <div class="">
+                                                                    <div class="div">
+                                                                        <span class="label fsize10">ALAMAT EMAIL</span>
+                                                                    </div>
+                                                                    <input type="text" name="email" class="txt empty">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="div">
+                                                                <div class="bts">
+                                                                    <span>LEVEL</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="div ar-ctn area-select-level">
+                                                                <!-- <div class="in-arctn"> -->
+
+                                                                    <div class="ddwn area-ddwn ar-content keep">
+
+                                                                        <button class="btn br-rds8 cddwn fcs" role="off">
+                                                                            <label><span class="fsize14 color-black">Pilih Level</span></label>
+                                                                        </button>
         
+                                                                        <div class="ddwn-pg area-ddwn-page">
+                                                                            <ul>
+                                                                                <!-- list -->
+                                                                                <li aria-selected="false">
+                                                                                    <button role="off" dataid="9" data-modal="" data-modal-label="" data-get="" class="cmd-select-level"><span>Super Admin</span></button>
+                                                                                </li>
+                                                                                <li aria-selected="false">
+                                                                                    <button role="off" dataid="1" data-modal="" data-modal-label="" data-get="" class="cmd-select-level"><span>Admin TL</span></button>
+                                                                                </li>
+                                                                                <li aria-selected="false">
+                                                                                    <button role="off" dataid="4" data-modal="" data-modal-label="" data-get="" class="cmd-select-level"><span>Teller</span></button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+        
+                                                                        <input type="hidden" class="value-dropdown empty" name="level_selected" value="">
+
+                                                                    </div>
+
+                                                                    <!-- labelerror -->
+                                                                <!-- </div> -->
+                                                            </div>
+
+                                                            <div class="div ar-ctn hide area-select-bidang area-select-second">
+
+                                                                <div class="ddwn area-ddwn ar-content keep">
+
+                                                                    <button class="btn br-rds8 cddwn fcs" role="off" disabled="disabled">
+                                                                        <label><span class="fsize14 color-black">Pilih Bidang</span></label>
+                                                                    </button>
+    
+                                                                    <div class="ddwn-pg area-ddwn-page">
+                                                                        <ul>
+                                                                            <!-- list -->
+                                                                        </ul>
+                                                                    </div>
+    
+                                                                    <input type="hidden" class="value-dropdown empty" name="bidang_selected" value="">
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="div ar-ctn hide area-select-seksi area-select-second">
+                                                            <!-- <div class="in-arctn"> -->
+                                                                <div class="ddwn area-ddwn ar-content keep">
+                                                                    <button class="btn br-rds8 cddwn fcs" role="off" disabled="disabled">
+                                                                        <label><span class="fsize14 color-black">Pilih Seksi</span></label>
+                                                                    </button>
+    
+                                                                    <div class="ddwn-pg area-ddwn-page">
+                                                                        <ul>
+                                                                            <!-- list -->
+                                                                        </ul>
+                                                                    </div>
+    
+                                                                    <input type="hidden" class="value-dropdown txt-def-empty" name="seksi_selected empty" value="">
+                                                                </div>
+                                                            <!-- </div> -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="div fot">
+                                                        <button class="submit btn blue is-loading" role="off">
+                                                            <span>Buat Akun</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="user_id" value="">
+                                                <input type="hidden" name="subbidang zero" value="0">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL VIEW VERIFY USER -->
+        <div class="modal-view-verify">
+            <div class="modal modal-area show">
+                <div class="inar black modal-progress">
+                    <div class="boxid modal-box reg-area animate-TopToBottom" role="true">
+                        <div class="form-register black w720 pd0" aria-load="false">
+                            
+                            <div class="load txt-center">
+                                <img src="/assets/svg/loading.blue.svg" alt="loading">
+                            </div>
+
+                            <div class="main-reg pd-t25">
+                                <div class="inmod">
+                                    <div class="div">
+                                        <div class="div ttl hide">
+                                            <div class="div">
+                                                <b>Verifikasi Akun</b>
+                                            </div>
+                                            <div class="div">
+                                                <h3></h3>
+                                            </div>
+                                        </div>
+                                        <div class="div">
+                                            <form action="/api/account/verify-cek-file" >
+                                                <ul>
+                                                    <li class="top pd-lr30 mg-b0">
+                                                        <div class="div owner">
+                                                            <div class="div clr-float">
+                                                                <div class="fl-left">
+                                                                    <div class="img br-rds50p fl-left position-rel" style="left:0px"></div>
+                                                                    <div class="inf pd-l10">
+                                                                        <div class="div">
+                                                                            <b class="user_name">{user_name}</b>
+                                                                        </div>
+                                                                        <div class="div up-txt fsize10">
+                                                                            <span class="color-green company_name">{company}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fl-right">
+                                                                        <button class="fl-right green btn is-loading submit" role="off">
+                                                                            <span>Verifikasi</span>
+                                                                        </button>
+
+                                                                        <input type="hidden" name="account_id" value="" >
+                                                                        <button class="btn fl-right mg-r10 br-rds8 no-br close-modal br-ou-none" role="off">
+                                                                            <span>Batal</span>
+                                                                        </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <input type="hidden" name="user_id" value="">
+                                            </form>
+                                        </div>
+                                        <div class="div">
+                                            <div class="area-view-pdf">
+                                                <!-- area preview  -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -432,6 +903,26 @@ $(document).ready(function()
         e.preventDefault();
         closeAlert($(this));
     });
+
+    $("body").on("click", ".cmd-role-legend", function(e)
+    {
+        e.preventDefault();
+        
+
+        var cmd = $(this),
+        area = cmd.parents(".area-legend");
+
+        if( cmd.attr("role") === "off")
+        {
+            cmd.attr("role", "on");
+            area.attr("aria-role", "on");
+        }
+        else
+        {
+            cmd.attr("role", "off");
+            area.attr("aria-role", "off");
+        }
+    })
 
     return false;
 });

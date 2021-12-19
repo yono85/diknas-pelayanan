@@ -21,21 +21,21 @@
                                 <div class="carousel-item active br-rds8 h100p">
                                     <img src="/assets/images/background/carousel/banner-new1.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5 class="text-white">All Herbindo</h5>
-                                        <p>Dokumentasi Owner, Direksi dan seluruh jajaran karyawan</p>
+                                        <h5 class="text-white"></h5>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="carousel-item br-rds8 h100p">
                                     <img src="/assets/images/background/carousel/banner-new2.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5 class="text-white">Owner dan Direksi</h5>
+                                        <h5 class="text-white"></h5>
                                         <p></p>
                                     </div>
                                 </div>
                                 <div class="carousel-item br-rds8 h100p">
                                     <img src="/assets/images/background/carousel/banner-new1.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5 class="text-white">Formulator</h5>
+                                        <h5 class="text-white"></h5>
                                         <p></p>
                                     </div>
                                 </div>

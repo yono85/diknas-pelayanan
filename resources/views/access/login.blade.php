@@ -147,11 +147,9 @@ $(document).ready(function()
             form.attr('role', 'true');
 
             var $URL = form.attr('action');
-            var $t = FormSending(form,"POST","","",$URL);
-
+            var $t = FormSending(form,"POST","key","form",$URL);
             $t.success(function(n)
             {
-
                 // console.log(n);
                 setCookie(config.apps.COOKIE_NAME,JSON.stringify(n.response),exp);
                 location.href = "/dashboard";
@@ -159,7 +157,7 @@ $(document).ready(function()
             $t.error(function(n)
             {
                 var resp = n.responseJSON;
-                console.log(resp);
+                // console.log(n);
                 if(n.status === 500 || n.status === 401 )
                 {
                     //

@@ -24,6 +24,7 @@ Route::get('/registers/success', $root . '\access\index@registerSuccess');
 Route::get('/registers/verification', $root . '\access\index@verification');
 Route::get('/resetpassword', $root . '\access\index@pagechangepassword');
 
+
 Route::get('/registers2', function()
 {
     return view('access.registers2');
@@ -36,7 +37,14 @@ Route::group(['prefix' => '/dashboard'], function() use ($root)
 {
     Route::get('/', $root . '\dashboard\index@main');
 
+    // pengguna
+    Route::get('/pengguna', $root . '\pengguna\index@main');
+
+    //TIKET VISIT
+    Route::get('/tiket-visit', $root . '\ticket\index@visit');
+    Route::get('/tiket/print', $root . '\ticket\index@print');
 });
+
 
 //TICKET
 Route::group(['prefix' => '/dashboard/ticket'], function() use ($root)

@@ -38,5 +38,32 @@ class index extends Controller
         return view('ticket.pengajuan')->with($data);
     }
 
+
+    //VISIT
+    public function visit(Request $request)
+    {
+        $Config = new Config;
+
+        //
+        $data = [
+            'apps'          =>  $Config->apps(),
+            'title'         =>  'Tiket Visit | ' . $Config->apps()['name']
+        ];
+
+        return view('ticket.visit')->with($data);
+    }
     
+    //print
+    public function print(Request $request)
+    {
+        $Config = new Config;
+
+        //
+        $data = [
+            'apps'          =>  $Config->apps(),
+            'title'         =>  'Print Tiket | ' . $Config->apps()['name']
+        ];
+
+        return view('print.ticket')->with($data);
+    }
 }

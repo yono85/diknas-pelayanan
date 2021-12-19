@@ -1163,6 +1163,7 @@
 
 .atable .tr .tbody table td .td-iner .dropdown .dropdown-menu a:hover{
     color: #111;
+    text-decoration: none;
 }
 
 .atable .tr .tbody table td .td-iner .dropdown .dropdown-menu a .ic{
@@ -1432,6 +1433,11 @@ a.slide[slide="on"] .arslide{
 .atable .tr .tbody table td.td-right, .atable .th table td.td-right{
     text-align: right;
 }
+
+.atable .tr .tbody table td.td-w280, .atable .th table td.td-w280{
+    width: 280px;
+}
+
 
 .atable .tr .tbody table td.td-w260, .atable .th table td.td-w260{
     width: 260px;

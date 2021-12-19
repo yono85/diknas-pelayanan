@@ -119,6 +119,7 @@ function exeTable(e)
     table = form.parents('.tables'),
     body = table.find('.atable.table-body'),
     head = table.find('.table-header'),
+    legend = table.find(".tables-legend"),
     footer = table.find('.foot-tables');
 
     //template
@@ -169,6 +170,7 @@ function exeTable(e)
         footer.find('.cpageoff').html(countpage);
         footer.find('.cpage').html(paging);
         footer.removeClass('hide');
+        legend.removeClass("hide");
         head.removeClass('hide');
         body.html(list);
         table.attr('aria-load','false');
@@ -183,8 +185,10 @@ function exeTable(e)
         var rsp = n.responseJSON;
 
         table.attr('aria-load','false');
+
         var list = tableempty(rsp.message);
         body.html(list);
+        legend.addClass("hide");
         head.addClass('hide');
         // body.addClass('hide');
         footer.addClass('hide');

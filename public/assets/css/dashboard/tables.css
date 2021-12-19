@@ -266,6 +266,31 @@
     display: block;
 }
 
+.body-tables .tables-legend{
+    width: 100%;
+}
+
+.body-tables .tables-legend ul{
+    float: right;
+}
+
+.body-tables .tables-legend ul li{
+    float: left;
+    background-color: #fff;
+    color:orangered;
+    padding: 5px 6px 3px;
+    border-radius: 3px;
+    font-size: 10px;
+    line-height: 100%;
+    margin-bottom: 15px;
+    margin-right: 6px;
+    border: 1px solid orangered;
+}
+
+.body-tables .tables-legend ul li:last-child{
+    margin-right: 0px;
+}
+
 .body-tables .in-head{
     display: block;
     width: 100%;

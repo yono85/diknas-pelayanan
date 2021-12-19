@@ -10,11 +10,20 @@
                 <div class="div head-tables">
                     <div class="div clr-float">
 
-                        <form action="/api/ticket/table/permintaan" id="form-table" aria-temp="temp-table-pengajuan">
+                        <form action="/api/ticket/table/visit" id="form-table" aria-temp="temp-table-pengajuan">
 
 
                             <button class="submit hide" role="off">submit</button>
                             <div class="fl-right w100px">
+
+                                <div class="fl-right oarea-ddwn-hd oar-ddwn">
+                                    <button class="btn green btn-r cmdNewModal" role="off" data-type="" data-widget="modal-create-task" aria-dropdown="true" data-classModal="modal-form-ticket-visit">
+                                        <span class="ic fa flaticon2-add-1"></span>
+                                        <span>Baru</span>
+                                    </button>
+                                </div>
+
+                                <div class="bts"></div>
 
                                 <div class="fl-right oarea-ddwn-hd oar-ddwn ar-fil ar-ddwn-fix dot-notif l red  area-filter" aria-role="false">
 
@@ -31,6 +40,39 @@
                                                         <span class="fa flaticon-interface-6"></span>
                                                         <span>OPTION FILTER</span>
                                                     </b>
+                                                </li>
+                                                <li>
+                                                    <div class="div">
+                                                        <div class="ddwn area-ddwn keep area-selected-teller">
+                                                            <button class="btn br-rds8 cddwn" role="off">
+                                                                <label><span class="fsize14 color-black">Semua Teller</span></label>
+                                                            </button>
+                                                            <div class="ddwn-pg area-ddwn-page">
+                                                                <div class="ddwn-header">
+                                                                    <div class="inhd">
+                                                                        <button height="auto" type="button"></button>
+                                                                        <input type="text" placeholder="Cari Teller" class="tsrc keep ddwn-tsrc" data-timer="1000" data-eval="">
+                                                                        <div class="load-src"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <ul>
+                                                                    <li aria-selected="false">
+                                                                        <button role="off" data-modal="" data-src="false" dataid="-1" ><span>Semua Teller</span></button>
+                                                                    </li>
+                                                                    <li aria-selected="false">
+                                                                        <button role="off" data-modal="" data-src="false"  dataid="0" ><span>Waiting</span></button>
+                                                                    </li>
+                                                                    <li aria-selected="false">
+                                                                        <button role="off" data-modal="" data-src="false" dataid="1" ><span>Progress</span></button>
+                                                                    </li>
+                                                                    <li aria-selected="false">
+                                                                        <button role="off" data-modal="" data-src="false" dataid="2" ><span>Done</span></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <input type="hidden" class="value-dropdown" name="selected_teller" value="-1">
+                                                        </div>
+                                                    </div>
                                                 </li>
                                                 <li>
                                                     <div class="div">
@@ -96,6 +138,22 @@
                 <!-- body -->
                 <div class="body-tables">
                     <div class="ar-body-table">
+
+                        <div class="div">
+                            <div class="tables-legend up-txt clr-float">
+                                <ul>
+                                    <li>
+                                        <span class="ic">DONE:</span><b>0</b>
+                                    </li>
+                                    <li>
+                                        <span class="ic">PROGRESS:</span><b>0</b>
+                                    </li>
+                                    <li>
+                                        <span class="ic">WAITING:</span><b>0</b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="div wh-m-520">
                             <div class="atable table-header">
@@ -198,9 +256,9 @@
                     <span class="date">{date}</span>
                 </div>
 
-                <div class="spcr wh-m-520 {sts_admin}">
+                <div class="spcr wh-m-520">
                     <span class="label sli_icon-user"></span>
-                    <span class="date">{admin}</span>
+                    <span class="date">{user_name}</span>
                 </div>
             </div>
         </div>
@@ -215,12 +273,12 @@
                                     <div class="icmg br-rds50p"></div>
                                     <div class="inf">
                                         <div class="div">
-                                            <b>{user_name}</b>
+                                            <b>{name}</b>
                                         </div>
                                         <div class="div fsize11 up-txt">
                                             <!-- <span class="label">({noid})</span>
                                             <span class="dot w6 brc"></span> -->
-                                            <span class="color-green">{user_company}</span>
+                                            <span class="color-green">{school}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -273,10 +331,31 @@
                         <td class="td-center td-w70">
                             <div class="td-iner disvis">
                                 <div class="div">
-                                    <div class="dropleft">
-                                        <button type="button" class="btn btn-primary nobr grey s11 color-black cmd-view-detail" role="off" data-toggle="" aria-haspopup="" aria-expanded="" data-classModal="modal-view-replay-tiket" dataid="{id}">
-                                            <span class="sli_icon-eye"></span>
+                                    <div class="dropdown dropleft">
+
+                                        <button type="button" class="btn btn-primary nobr grey s11 main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="fas fa-ellipsis-v"></span>
                                         </button>
+
+                                        <div class="dropdown-menu" x-placement="left-start" style="position: absolute; transform: translate3d(-150px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+
+                                            <a class="dropdown-item cmd-modal " href="{url_print}" role="off" target="_blank">
+                                                <span>Print</span><span class="ic sli_icon-printer"></span>
+                                            </a>
+                                            
+                                            <div class="dropdown-divider"></div>
+
+                                            <a class="dropdown-item afalse cmd-modal color-orange cmd-view-detail" href="#" role="off" dataid="{id}" data-classModal="modal-view-replay-tiket">
+                                                <span>Proses</span><span class="ic sli_icon-pencil"></span>
+                                            </a>
+
+                                            <!-- <div class="dropdown-divider"></div> -->
+
+                                            <!-- <a class="dropdown-item color-red cmd-delete" href="#" role="off">
+                                                <span>Hapus</span><span class="ic sli_icon-trash"></span>
+                                            </a> -->
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -305,12 +384,62 @@ $("#form-table input[name='user_id']").val(getaccount().id);
 $("#form-table input[name='bidang']").val(getaccount().bidang);
 $("#form-table input[name='seksi']").val(getaccount().seksi);
 
+async function getListTeller()
+{
+
+    var area = $("#form-table").find(".area-selected-teller");
+    
+    if( getaccount().level === 9 )
+    {
+        
+        var $URL = "/api/data/teller/list?id="+getaccount().id+"&level=" + getaccount().level;
+        var $t = FormSendingNew("","GET","key","",$URL);
+        $t.success(function(n)
+        {
+            // console.log(n);
+            var rsp = n.response;
+
+            var list = '<li aria-selected="false"><button role="off" dataid="-1" data-modal="" data-modal-label="" data-get="" class="cmd-select-teller" data-sub=""><span>Semua Teller</span></button></li>';
+            $.each(rsp.list, function(i, item)
+            {
+                list += '<li aria-selected="false"><button role="off" dataid="'+item.id+'" data-modal="" data-modal-label="" data-get="" class="cmd-select-teller" data-sub=""><span>'+item.name+'</span></button></li>';
+            });
+            area.find("ul").html(list);
+        });
+        $t.error(function(n)
+        {
+            console.log(n);
+            area.find("button.btn").attr("disabled", "disabled");
+            area.find("button.btn label span").html("Semua Teller");
+            area.find(".value-dropdown").val("-1");
+        });
+        return;
+    }
+
+    area.find("button.btn").attr("disabled", "disabled");
+    area.find("button.btn label span").html(getaccount().name);
+    area.find(".value-dropdown").val(getaccount().id);
+}
+
+getListTeller();
+
+
 function createTempTable(e,w)
 {
+    console.log(e);
+    
     var rsp= e,
     temp = w;
+    
+    var res = e.result;
+    var resli = "";
+    $.each(res, function(i,item)
+    {
+        resli += '<li><span class="ic up-txt">'+i+':</span><b>'+item+'</b></li>';
+    });
 
-    console.log(rsp);
+    $("body").find(".tables-legend ul").html(resli);
+    
     var list = '';
     $.each(rsp.list,function(i,item)
     {    
@@ -319,9 +448,9 @@ function createTempTable(e,w)
         listx = listx.replace('{date}', item.date);
         listx = listx.replace('{kode}', item.kode);
         listx = listx.replace('{user_name}', item.user_name);
-        listx = listx.replace('{sts_admin}', item.admin === "" ? 'hide' : '');
-        listx = listx.replace('{admin}', item.admin);
-        listx = listx.replace('{user_company}', item.user_company);
+        listx = listx.replace('{url_print}', "/dashboard/tiket/print?token=" + item.token);
+        listx = listx.replace('{name}', item.visit.name);
+        listx = listx.replace('{school}', item.school.name);
         listx = listx.replace('{detail}', item.detail);
         listx = listx.replace('{bidang}', item.bidang);
         listx = listx.replace('{seksi}', (item.seksi === null ? "" : '<span class="ic flaticon2-right-arrow fsize8"></span><span class="lbl">'+item.seksi+'</span>'));
@@ -379,7 +508,7 @@ $(document).ready(function()
 
             area.html("");
             area.append(content.html());
-            area.find("form").attr("id", "form-ticket");
+            area.find("form").attr("id", "form-ticket-visit");
             area.find("input[name='type']").val('new');
             area.find("input[name='user_id']").val(getaccount().id);
             area.find("input[name='company_id']").val(getaccount().company_id);
@@ -455,9 +584,6 @@ $(document).ready(function()
                     area.find(".area-select-seksi ul").html(list);
                     area.find(".area-select-seksi button.btn").removeAttr("disabled");
                     area.find(".area-select-seksi").removeClass("hide");
-
-                    
-
 
                 });
                 $t.error(function(n)
@@ -642,10 +768,20 @@ $(document).ready(function()
 
 
     //
-    $("body").on("submit", "#form-ticket", function(e)
+    $("body").on("submit", "#form-ticket-visit", function(e)
     {
         var form = $(this),
         area = form.parents(".modal-area.show"),
+        vname = form.find("input[name='visit_name']"),
+        vnik = form.find("input[name='visit_nik']"),
+        vhp = form.find("input[name='visit_hp']"),
+        vaddress = form.find("textarea[name='visit_address']"),
+        //SEKOLAH
+        sch = form.find("input[name='school_id']"),
+        tglsurat = form.find("input[name='tglsurat']"),
+        nosurat = form.find("input[name='nosurat']"),
+        isisurat = form.find("textarea[name='isisurat']"),
+        //ADMIN TL
         bidang = form.find("input[name='bidang_selected']"),
         subbidang = form.find("input[name='subbidang']"),
         seksi = form.find("input[name='seksi_selected']"),
@@ -653,6 +789,68 @@ $(document).ready(function()
         pelayanan = form.find("input[name='pelayanan_selected']"),
         cmd = form.find("button.submit");
 
+        form.find("span.error").remove();
+        form.find(".br-error").removeClass("br-error");
+        
+        // PENGHADAP
+        if( $.trim(vname.val()).length < 3)
+        {
+            vname.parents('.ar-content').find('span.error').remove();
+            vname.parents('.ar-content').append('<span class="error">Isi Nama sekurang nya 3 karakter</span>');
+            vname.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( $.trim(vnik.val()).length < 16)
+        {
+            vnik.parents('.ar-content').find('span.error').remove();
+            vnik.parents('.ar-content').append('<span class="error">Isi NIK sekurangnya 16 karakter</span>');
+            vnik.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( $.trim(vhp.val()).length < 9)
+        {
+            vhp.parents('.ar-content').find('span.error').remove();
+            vhp.parents('.ar-content').append('<span class="error">Isi nomor HP dengan benar</span>');
+            vhp.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( $.trim(vaddress.val()).length < 10)
+        {
+            vaddress.parents('.ar-content').find('span.error').remove();
+            vaddress.parents('.ar-content').append('<span class="error">Isi Alamat lengkap sekurangnya 10 karakter</span>');
+            vaddress.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        // SCHOOL
+        if( sch.val() === '')
+        {
+            sch.parents('.ar-content').find('span.error').remove();
+            sch.parents('.ar-content').append('<span class="error">Harap pilih Sekolah</span>');
+            sch.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( $.trim(nosurat.val()) === '')
+        {
+            nosurat.parents('.ar-content').find('span.error').remove();
+            nosurat.parents('.ar-content').append('<span class="error">Isi nomor Surat</span>');
+            nosurat.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( !isDate(tglsurat.val()))
+        {
+            tglsurat.parents('.ar-content').find('span.error').remove();
+            tglsurat.parents('.ar-content').append('<span class="error">Harap tentukan tanggal surat</span>');
+            tglsurat.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        if( $.trim(isisurat.val()) === '')
+        {
+            isisurat.parents('.ar-content').find('span.error').remove();
+            isisurat.parents('.ar-content').append('<span class="error">Isikan isi surat</span>');
+            isisurat.parents('.ar-content').find('.fcs').addClass('br-error');
+        }
+
+        //ADMIN TL
         if( bidang.val() === '')
         {
             bidang.parents('.ar-content').find('span.error').remove();
@@ -681,7 +879,7 @@ $(document).ready(function()
             text.parents('.ar-content').find('.fcs').addClass('br-error');
         }
 
-        if( bidang.val() === "" || subbidang.val() === '1' && seksi.val() === "" || pelayanan.val() === '' || $.trim(text.val()).length < 11 )
+        if( $.trim(vname.val()).length < 3 || $.trim(vnik.val()).length < 16 || $.trim(vhp.val()).length < 9 || $.trim(vaddress.val()).length < 10 || sch.val() === "" || $.trim(nosurat.val()) === "" || !isDate(tglsurat.val()) || $.trim(isisurat.val()) === '' || bidang.val() === "" || subbidang.val() === '1' && seksi.val() === "" || pelayanan.val() === '' || $.trim(text.val()).length < 11 )
         {
             return false;
         }
@@ -694,14 +892,14 @@ $(document).ready(function()
             
             $t.success(function(n)
             {
-                // console.log(n);
+                console.log(n);
                 loadTable();
                 area.find("a.close-modal").click();
                 flagnotif("success", n.message);
             });
             $t.error(function(n)
             {
-            //     console.log(n);
+                console.log(n);
                 cmd.attr("role","off");
                 flagnotif("error", n.responseJSON.message);
             })
@@ -713,6 +911,27 @@ $(document).ready(function()
 
         return false;
     });
+
+    function parseDMY(value) {
+        // var date = value.split("/");
+        // var d = parseInt(date[0], 10),
+        //     m = parseInt(date[1], 10),
+        //     y = parseInt(date[2], 10);
+        // // return new Date(y, m - 1, d);
+        
+        console.log(value);
+    }
+
+    function isDate(w)
+    {
+        var date_regex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+
+        if (!(date_regex.test(w))) {
+            return false;
+        }
+        return true;
+        
+    }
 
     //button submit
     $("body").on("click", "#form-ticket button.submit", function(e)
@@ -958,6 +1177,19 @@ $(document).ready(function()
         }
 
         return false;
+    });
+
+
+
+    //FORM
+    $('body').on('keyup', '.ddwn-tsrc-get', function()
+    {
+        srcDdwnGet($(this));
+    });
+
+    $('body').on('keydown', '.ddwn-tsrc-get', function()
+    {
+        stopSrcDdwnGet();
     });
     
 return false;
