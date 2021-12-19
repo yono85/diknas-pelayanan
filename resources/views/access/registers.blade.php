@@ -145,7 +145,7 @@
                                                                                             <div class="elementor-widget-wrap">
 
 
-                                                                                                <div class="elementor-element elementor-element-4d849a5 elementor-widget__width-auto elementor-widget elementor-widget-tm-button animated edumallFadeInUp" data-id="4d849a5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-button.default">
+                                                                                                <div class="elementor-element elementor-element-4d849a5 elementor-widget__width-auto elementor-widget elementor-widget-tm-button animated edumallFadeInUp hide" data-id="4d849a5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-button.default">
                                                                                                     <div class="elementor-widget-container">
                                                                                                         <div class="tm-button-wrapper">
                                                                                                             <a href="#" class="cmd-modal-regdinas tm-button-link tm-button style-flat tm-button-xl" role="off" data-modal="modal-register-dinas">
@@ -174,7 +174,7 @@
                                                                                                         <div class="tm-button-wrapper">
                                                                                                             <a href="#" class="cmd-modal-regsch tm-button-link tm-button style-flat tm-button-xl" role="off" data-modal="modal-register-sch">
                                                                                                                 <div class="button-content-wrapper">
-                                                                                                                    <span class="button-text">Sekolah</span>
+                                                                                                                    <span class="button-text">Warga Sekolah</span>
                                                                                                                 </div>
                                                                                                             </a>
                                                                                                         </div>
