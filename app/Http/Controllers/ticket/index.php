@@ -66,4 +66,18 @@ class index extends Controller
 
         return view('print.ticket')->with($data);
     }
+
+    //
+    public function tracking(Request $request)
+    {
+        $Config = new Config;
+
+        //
+        $data = [
+            'apps'          =>  $Config->apps(),
+            'title'         =>  'Tracking Tiket | ' . $Config->apps()['name']
+        ];
+
+        return view('ticket.tracking')->with($data);
+    }
 }

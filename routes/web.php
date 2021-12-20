@@ -23,7 +23,7 @@ Route::get('/registers', $root . '\access\index@register');
 Route::get('/registers/success', $root . '\access\index@registerSuccess');
 Route::get('/registers/verification', $root . '\access\index@verification');
 Route::get('/resetpassword', $root . '\access\index@pagechangepassword');
-
+Route::get('/tracking', $root . '\ticket\index@tracking');
 
 Route::get('/registers2', function()
 {

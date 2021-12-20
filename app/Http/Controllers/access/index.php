@@ -156,7 +156,7 @@ class index extends Controller
         ];
 
 
-        dd($data);
+        // dd($data);
         return view('access.registers-success')->with($data);
     }
 
