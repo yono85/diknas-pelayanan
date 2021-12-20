@@ -5,7 +5,13 @@
 	    <link rel="profile" href="https://gmpg.org/xfn/11">
 		<title>Buat Akun Simpeldik</title>
 
-	    <meta name="robots" content="max-image-preview:large">
+        <meta name="robots" content="max-image-preview:large">
+        
+        <!-- icon -->
+        <link rel="icon" href="{{$apps['favicon']}}" sizes="32x32">
+        <link rel="icon" href="{{$apps['favicon']}}" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="{{$apps['favicon']}}">
+        <meta name="msapplication-TileImage" content="{{$apps['favicon']}}">
         
         <link href="{{$apps['URI']}}/assets/css/default.css" rel="stylesheet" />
         <link href="{{$apps['URI']}}/assets/css/access/registers.css" rel="stylesheet" />  
