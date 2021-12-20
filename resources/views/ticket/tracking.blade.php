@@ -32,16 +32,6 @@
         </script>
 
         <script src="{{$apps['URI']}}/assets/js/js10.js" type="text/javascript"></script>
-        <script src="{{$apps['URI']}}/assets/js/conf.js" type="text/javascript"></script>
-        <script src="{{$apps['URI']}}/assets/js/global.js" type="text/javascript"></script>
-
-        <script src="{{$apps['URI']}}/assets/js/data.js" type="text/javascript"></script>
-        <script src="{{$apps['URI']}}/assets/js/access/registers.js" type="text/javascript"></script>
-
-        <script>
-            checkLogin();
-        </script>
-
     </head>
 
     <body data-rsssl="1" class="bp-nouveau page-template-default page page-id-5386 wp-embed-responsive theme-edumall pmpro-body-has-access woocommerce-js desktop edumall-light-scheme mobile-menu-push-to-left woocommerce header-sticky-both wide page-has-no-sidebar title-bar-none elementor-default elementor-kit-47 elementor-page elementor-page-5386 js e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit loaded mobile-menu" data-site-width="1200px" data-content-width="1200" data-font="Gordita Helvetica, Arial, sans-serif" data-header-sticky-height="53" id="__mpp-uploader-id-0" data-elementor-device-mode="desktop">
@@ -61,83 +51,96 @@
                                             <div class="elementor-section-wrap">
                                                 <section class="elementor-section elementor-top-section elementor-element elementor-element-a26c369 elementor-section-content-middle elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch background-fix" data-id="a26c369" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                                     <div class="elementor-container elementor-column-gap-extended">
-                                                        <div class="elementor-row">
-                                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-df408e3" data-id="df408e3" data-element_type="column">
-                                                                <div class="elementor-column-wrap elementor-element-populated">
-                                                                    <div class="elementor-widget-wrap">
-                                                                        <div class="elementor-element elementor-element-214b63f elementor-widget elementor-widget-tm-heading animated edumallFadeInUp" data-id="214b63f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-heading.default">
-                                                                            <div class="elementor-widget-container">
-                                                                                <div class="tm-modern-heading">
-                                                                                    <div class="heading-primary-wrap">
-                                                                                        <h2 class="heading-primary elementor-heading-title">Buat Akun SIMPELDIK</h2>
-                                                                                    </div>
-                                                                                </div>
+                                                        
+                                                        <!-- tarcking -->
+                                                        <div class="ar-track">
+                                                            <div class="inr-track">
+                                                                <div class="box-track">
+                                                                    <div class="head">
+                                                                        <div class="div clr-float">
+                                                                            <div class="lg">
+                                                                                <img src="{{$apps['favicon']}}" alt="">
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="elementor-element elementor-element-af0be41 elementor-widget elementor-widget-tm-heading animated edumallFadeInUp" data-id="af0be41" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-heading.default">
-                                                                            <div class="elementor-widget-container">
-                                                                                <div class="tm-modern-heading">
-                                                                                    <div class="heading-primary-wrap">
-                                                                                        <h3 class="heading-primary elementor-heading-title">Tentukan Anda sebagai...</h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <section class="elementor-section elementor-inner-section elementor-element elementor-element-ad815e0 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="ad815e0" data-element_type="section">
-                                                                            <div class="elementor-container elementor-column-gap-extended">
-                                                                                <div class="elementor-row">
-                                                                                    <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-0340f60" data-id="0340f60" data-element_type="column">
-                                                                                        <div class="elementor-column-wrap elementor-element-populated">
-                                                                                            <div class="elementor-widget-wrap">
-
-
-                                                                                                <div class="elementor-element elementor-element-4d849a5 elementor-widget__width-auto elementor-widget elementor-widget-tm-button animated edumallFadeInUp hide" data-id="4d849a5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-button.default">
-                                                                                                    <div class="elementor-widget-container">
-                                                                                                        <div class="tm-button-wrapper">
-                                                                                                            <a href="#" class="cmd-modal-regdinas tm-button-link tm-button style-flat tm-button-xl" role="off" data-modal="modal-register-dinas">
-                                                                                                                <div class="button-content-wrapper">
-                                                                                                                    <span class="button-text">Admin Disdik</span>
-                                                                                                                </div>
-                                                                                                            </a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div class="elementor-element elementor-element-4d849a5 elementor-widget__width-auto elementor-widget elementor-widget-tm-button animated edumallFadeInUp hide" data-id="4d849a5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-button.default">
-                                                                                                    <div class="elementor-widget-container">
-                                                                                                        <div class="tm-button-wrapper">
-                                                                                                            <a href="#" class="cmd-open-modal tm-button-link tm-button style-flat tm-button-xl" role="off">
-                                                                                                                <div class="button-content-wrapper">
-                                                                                                                    <span class="button-text">Admin Sudin</span>
-                                                                                                                </div>
-                                                                                                            </a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div class="elementor-element elementor-element-4d849a5 elementor-widget__width-auto elementor-widget elementor-widget-tm-button animated edumallFadeInUp" data-id="4d849a5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;edumallFadeInUp&quot;}" data-widget_type="tm-button.default">
-                                                                                                    <div class="elementor-widget-container">
-                                                                                                        <div class="tm-button-wrapper">
-                                                                                                            <a href="#" class="cmd-modal-regsch tm-button-link tm-button style-flat tm-button-xl" role="off" data-modal="modal-register-sch">
-                                                                                                                <div class="button-content-wrapper">
-                                                                                                                    <span class="button-text">Warga Sekolah</span>
-                                                                                                                </div>
-                                                                                                            </a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
+                                                                            <div class="tx">
+                                                                                <div class="tbl">
+                                                                                    <div class="intbl">
+                                                                                        <div class="div">
+                                                                                            <div class="div">
+                                                                                                Tracking Tiket Anda
+                                                                                            </div>
+                                                                                            <div class="div">
+                                                                                                <span class="lbl fsize12">
+                                                                                                    Nomor Tiket diberikan oleh Teller
+                                                                                                </span>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </section>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bdy">
+                                                                        <form action="/api/ticket/tracking" id="form-check-tracking">
 
+                                                                            <div class="div">
+                                                                                <div class="div ar-content">
+                                                                                    <input type="text" maxlength="50" placeholder="Masukan nomor tiket" name="ticket">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="div">
+                                                                                <button class="btn is-loading" role="off">Tracking Tiket</button>
+                                                                            </div>
+                                                                        
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="fot">
+                                                                        <ul class="area-list-tracking">
+                                                                            <li>
+                                                                                <div class="div">
+                                                                                    <div class="div">
+                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
+                                                                                        <b class="fsize12">19/12/2021 09.20</b>
+                                                                                    </div>
+                                                                                    <div class="div inf">
+                                                                                        <span>HUSDF9123: Pengajuan Tiket</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="div">
+                                                                                    <div class="div">
+                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
+                                                                                        <b class="fsize12">19/12/2021 10.20</b>
+                                                                                    </div>
+                                                                                    <div class="div inf">
+                                                                                    
+                                                                                        <span>Diproses oleh Admin</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="div">
+                                                                                    <div class="div">
+                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
+                                                                                        <b class="fsize12">19/12/2021 10.31</b>
+                                                                                    </div>
+                                                                                    <div class="div inf">
+                                                                                        <div class="div">
+                                                                                            <span>Selesai oleh Admin</span>
+                                                                                        </div>
+                                                                                        <div class="div">
+                                                                                            <a href="#">Link Download Berkas</a>
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <!-- end tracking -->
                                                     </div>
                                                 </section>
                                             </div>
@@ -398,7 +401,91 @@
 
     </body>
 
-    <script src="{{$apps['URI']}}/assets/js/jquery-1.12.4.min.js"></script>
-    <script src="{{$apps['URI']}}/assets/js/dashboard/jquery.validate.js"></script>
-    <script src="{{$apps['URI']}}/assets/js/validate-custome.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+
+            $("#form-check-tracking").submit(function()
+            {
+                var form = $(this),
+                cmd = form.find("button.btn"),
+                ticket = form.find("input[name='ticket']"),
+                area = $(".area-list-tracking");
+
+                if( cmd.attr("role") === "off")
+                {
+                    cmd.attr("role", "on");
+                    
+                    form.find("span.error").remove();
+                    form.find(".br-error").removeClass("br-error");
+                    
+
+                    //
+                    if( $.trim( ticket.val() ) === "")
+                    {
+
+                        ticket.parent(".ar-content").append("<span class='error'>Harap isi kolom ticket</span>");
+                        ticket.addClass("br-error");
+                        cmd.attr("role", "off");
+                        ticket.focus();
+                        return false;
+                    }
+
+                    //
+                    area.html("");
+                    $.ajax({
+                        type: "POST",
+                        url: config.apps.URL_API + form.attr("action"),
+                        headers: {
+                            "Content-Type":"application/json",
+                            "key":config.apps.KEY
+                        },
+                        data: JSON.stringify({
+                            "ticket": ticket.val()
+                        }),
+                        dataType: "JSON",
+                        success: function(n)
+                        {
+                            console.log(n);
+                            var rsp = n.response;
+
+                            var li = "";
+                            $.each(rsp, function(i,item)
+                            {
+                                li += '<li><div class="div">';
+                                    li += '<div class="div"><span class="sli_icon-clock fsize10 icn"></span><b class="fsize12">'+item.date+'</b></div>';
+                                    
+                                    li += '<div class="div inf"><div class="div"><span>'+item.label+'</span></div>';
+                                    
+                                    li += item.url === "" ? "" : '<div class="div"><a href="'+item.url+'" target="_blank">Link Download Berkas</a></div>';
+                                    li += '</div>';
+                                li += '</div></li>';
+                            });
+
+                            cmd.attr("role", "off");
+                            area.html(li);
+                        },
+                        error: function(n)
+                        {
+                            console.log(n);
+                            ticket.parent(".ar-content").append("<span class='error'>"+n.responseJSON.message+"</span>");
+                            ticket.addClass("br-error");
+                            cmd.attr("role", "off");
+                            ticket.focus();
+                        }
+                    });
+                }
+                
+                return false;
+            });
+
+            $("#form-check-tracking").find("button.btn").click(function(e)
+            {
+                e.preventDefault();
+                $(this).parents("form").submit();
+            });
+
+            return false;
+        });
+    </script>
 </html>
