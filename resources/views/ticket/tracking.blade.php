@@ -95,46 +95,6 @@
                                                                     </div>
                                                                     <div class="fot">
                                                                         <ul class="area-list-tracking">
-                                                                            <li>
-                                                                                <div class="div">
-                                                                                    <div class="div">
-                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
-                                                                                        <b class="fsize12">19/12/2021 09.20</b>
-                                                                                    </div>
-                                                                                    <div class="div inf">
-                                                                                        <span>HUSDF9123: Pengajuan Tiket</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="div">
-                                                                                    <div class="div">
-                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
-                                                                                        <b class="fsize12">19/12/2021 10.20</b>
-                                                                                    </div>
-                                                                                    <div class="div inf">
-                                                                                    
-                                                                                        <span>Diproses oleh Admin</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="div">
-                                                                                    <div class="div">
-                                                                                        <span class="sli_icon-clock fsize10 icn"></span>
-                                                                                        <b class="fsize12">19/12/2021 10.31</b>
-                                                                                    </div>
-                                                                                    <div class="div inf">
-                                                                                        <div class="div">
-                                                                                            <span>Selesai oleh Admin</span>
-                                                                                        </div>
-                                                                                        <div class="div">
-                                                                                            <a href="#">Link Download Berkas</a>
-                                                                                        </div>
-                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -446,7 +406,7 @@
                         dataType: "JSON",
                         success: function(n)
                         {
-                            console.log(n);
+                            // console.log(n);
                             var rsp = n.response;
 
                             var li = "";
@@ -467,7 +427,7 @@
                         },
                         error: function(n)
                         {
-                            console.log(n);
+                            // console.log(n);
                             ticket.parent(".ar-content").append("<span class='error'>"+n.responseJSON.message+"</span>");
                             ticket.addClass("br-error");
                             cmd.attr("role", "off");
