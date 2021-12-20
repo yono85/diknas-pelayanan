@@ -815,6 +815,7 @@
     background-color: #fff;
     padding: 2px;
     box-sizing: border-box;
+    margin-right: 3px;
 }
 
 .ar-track .inr-track .box-track .fot ul li::before{
@@ -839,6 +840,31 @@
     color: #666;
 }
 
+@media(max-width:620px){
+    .ar-track{
+        padding: 0px 15px;
+    }
+
+    .ar-track .inr-track{
+        width: 100%;
+    }
+
+    .ar-track .inr-track .box-track .head{
+        padding: 15px;
+    }
+
+    .ar-track .inr-track .box-track .bdy{
+        padding: 15px;
+    }
+
+    .ar-track .inr-track .box-track .fot{
+        padding:0px 15px;
+    }
+
+    .ar-track .inr-track .box-track .fot ul li .inf{
+        font-size: 14px;
+    }
+}
 /* END TRACKING AREA */
 
 
