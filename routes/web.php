@@ -17,7 +17,7 @@ $root = '\App\Http\Controllers';
 //     return view('welcome');
 // });
 
-Route::get('/', $root . '\access\index@login');
+Route::get('/', $root . '\access\index@branda');
 Route::get('/login', $root . '\access\index@login');
 Route::get('/registers', $root . '\access\index@register');
 Route::get('/registers/success', $root . '\access\index@registerSuccess');

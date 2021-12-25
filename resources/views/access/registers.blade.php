@@ -58,7 +58,7 @@
                 <!-- header -->
                 <header id="page-header" class="page-header header-05 header-light header-layout-fixed nav-links-hover-style-01 header-sticky-dark-logo headroom headroom--top headroom--not-bottom">
                     
-                <!-- <div class="header-content-inner">
+                    <!-- <div class="header-content-inner">
                                         <div id="header-right-inner" class="header-right-inner">
                                             <div class="header-right-inner-content">
 
@@ -88,6 +88,13 @@
 
                                                 <div class="header-user-buttons">
                                                     <div class="inner">
+                                                    <div class="tm-button-wrapper">
+                                                            <a class="tm-button style-flat tm-button-sm open-popup-register button-thin button-secondary-white reg" href="{{$apps['URI']}}" >
+                                                                <div class="button-content-wrapper">
+                                                                    <span class="button-text">Branda</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
                                                         <div class="tm-button-wrapper">
                                                             <a class="tm-button style-flat tm-button-sm open-popup-register button-thin button-secondary-white" href="{{$apps['URI']}}/login" style="background-color:#ffc221">
                                                                 <div class="button-content-wrapper">

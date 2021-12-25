@@ -26,6 +26,20 @@ class index extends Controller
         return view('access.login')->with($data);
     }
 
+    public function branda(Request $request)
+    {
+
+        $Config = new Config;
+
+        //
+        $data = [
+            'apps'          =>  $Config->apps(),
+            'title'         =>  'Selamat Datang | ' . $Config->apps()['name']
+        ];
+
+        return view('access.branda')->with($data);
+    }
+
 
     //REGISTER
     public function register(Request $request)

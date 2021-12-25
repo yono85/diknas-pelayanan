@@ -46,7 +46,7 @@
             <div class="content-wrapper">
             
                 <!-- header -->
-                <!-- <header id="page-header" class="page-header header-05 header-light header-layout-fixed nav-links-hover-style-01 header-sticky-dark-logo headroom headroom--top headroom--not-bottom">
+                <header id="page-header" class="page-header header-05 header-light header-layout-fixed nav-links-hover-style-01 header-sticky-dark-logo headroom headroom--top headroom--not-bottom">
                     
                     <div id="page-header-inner" class="page-header-inner" data-sticky="1">
                         <div class="container">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                </header> -->
+                </header>
                 
                 <div id="page-content" class="page-content">
                     <div class="container">

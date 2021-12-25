@@ -840,6 +840,37 @@
     color: #666;
 }
 
+.header-user-buttons .inner{
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.header-user-buttons .inner:before{
+    display: none;
+}
+
+.header-user-buttons .tm-button-wrapper a.reg{
+    background-color: rgb(46, 180, 46);
+}
+
+.header-user-buttons .tm-button-wrapper:last-child{
+    margin-left: 30px;
+    position: relative;
+}
+
+.header-user-buttons .tm-button-wrapper:last-child:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 1px;
+    height: 40px;
+    background: #d9dee3;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 @media(max-width:620px){
     .ar-track{
         padding: 0px 15px;
